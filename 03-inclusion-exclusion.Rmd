@@ -28,15 +28,33 @@
 
 ## Inclusion Criteria
 
+> Create a numbered list of the inclusion criteria that define who will be included in your final study sample (e.g., age, gender, condition, etc.)
+
+1. Graduate students, postdocs, teaching faculty, research staff, research faculty, and administrators at Penn State, all 18+ years of age or older and of any gender.
+
 ### Does this research involve collecting data from individuals residing outside of the US?
 
-[ ] No</br>
+[X] No</br>
 [ ] Yes -- identify the countries where data collection will take place
 
 ## Exclusion Criteria
+
+> Create a numbered list of the exclusion criteria that define who will be excluded in your study.
+
+1. Participants younger than 18 years of age.
+2. Participants not associated with Penn State in one of the included roles.
 
 ## Early Withdrawal of Subjects
 
 ### Criteria for removal from study
 
+> Insert subject withdrawal criteria (e.g., safety reasons, failure of subject to adhere to protocol requirements, subject consent withdrawal, disease progression, etc.).
+
+Subjects can withdraw from the survey at any time and for any reason. 
+
 ### Follow-up for withdrawn subjects
+
+> Describe when and how to withdraw subjects from the study; the type and timing of the data to be collected for withdrawal of subjects; whether and how subjects are to be replaced; the follow-up for subjects withdrawn from investigational treatment.
+
+Because this is an online survey, subjects can withdraw by closing the web browser that they are using to take the survey.
+No follow-up or subject replacement will occur for subjects who withdraw.  

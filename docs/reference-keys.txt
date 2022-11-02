@@ -160,3 +160,5 @@ data-being-transferred-or-disclosed-from-penn-state
 specimens-being-transferred-or-disclosed-to-penn-state
 specimens-being-transferred-or-disclosed-from-penn-state
 if-transferring-dataspecimens-with-identifiers-to-or-from-penn-state-which-of-the-following-identifiers-will-be-included-with-the-dataspecimens-check-all-that-apply
+data-gathering
+set-up

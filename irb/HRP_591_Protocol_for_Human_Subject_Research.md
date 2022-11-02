@@ -295,15 +295,15 @@ Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
 > samples) state what will be queried, how and by whom.
 >
 > StudyFinder:
-
--   If you intend to use StudyFinder (<http://studyfinder.psu.edu>) for
+> 
+> -   If you intend to use StudyFinder (<http://studyfinder.psu.edu>) for
     recruitment purposes, include this method in this section.
-
--   Information provided in this protocol, including the description of
+> 
+> -   Information provided in this protocol, including the description of
     study procedures, compensation, and recruitment, needs to be
     consistent with information provided on the StudyFinder page in your
     CATS IRB study.
-
+> 
 > For Penn State Health submissions using Enterprise Information
 > Management (EIM) for recruitment, and for non-Hershey locations as
 > applicable, attach your EIM Design Specification form in CATS IRB
@@ -314,8 +314,6 @@ Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
 > protocol.
 >
 > \[Type protocol text here\]
-
-## 
 
 ## Recruitment process
 

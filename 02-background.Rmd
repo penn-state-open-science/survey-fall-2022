@@ -11,18 +11,24 @@
 > non-investigational setting); and if applicable, indicate if the study
 > procedure is available to patient without taking part in the study.
 
-\[Type protocol text here\]
+There is a growing movement in the scientific community towards more openness and transparency: data and code sharing; open access publishing; pre-registration, etc.
+In part this is in reaction to a perceived crisis of reproducibility and replicability; in part it is due to many high-profile examples of “questionable research practices.”
+ 
 
 ## Previous Data
 
 > Describe any relevant preliminary data.
->
-> \[Type protocol text here\]
 
+The Penn State Libraries conducted a survey of XXX in the XXXX in XXXX.
+Outside of that survey, little is currently known about researchers' knowledge about common Open Science practices and principles.  
+
+One of the investigators (Lazar) is part of a team that conducted a similar survey at the University of Georgia focused on graduate students. 
+They found that knowledge about Open Science varies by student field of study.
+They also found clusters of practices that had similar levels of familiarity among the students. 
 
 ## Study Rationale
 
 > Provide the scientific rationale for the research.
->
-> \[Type protocol text here\]
 
+The investigators believe that there is significant need for more organized and focal educational activities and project-specific support related to Open Science.
+This survey will characterize the current state of knowledge and need for these sorts of activities at Penn State.

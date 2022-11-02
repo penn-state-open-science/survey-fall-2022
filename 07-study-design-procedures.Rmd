@@ -1,11 +1,27 @@
 #	Study Design and Procedures
 
+> Data collection materials that will be seen or used by subjects in your study must be uploaded to CATS IRB (http://irb.psu.edu).   DO NOT include any actual data collection materials in this protocol (e.g., actual survey or interview questions)
+
 ## Study Design
+
+Participants will be sent a link to the online survey, which contains several questions about their knowledge of Open Science in general, specific Open Science practices, and barriers that might exist that slow greater adoption of Open Science practices.  
 
 ## Study Procedures
 
+> Provide a step by step description of all research procedures being conducted (broken down by visit, if applicable) including such information as below (where and when applicable); describe the following:
+> •	HOW: (e.g., data collection via interviews, focus groups, forms such as surveys and questionnaires, medical/school records, audio/video/digital recordings, photographs, EKG procedures, MRI, mobile devices such as electronic tablets/cell phones, observations, collection of specimens, experimental drug/device testing, manipulation of behavior/use of deception, computer games, etc.)
+> •	WHERE: (e.g., classrooms, labs, internet/online, places of business, medical settings, public spaces, etc.)
+
 ### Visit 1 or Day 1 or Pre-test, etc. 
 
-###	Visit 2 or Day 2 or Post-test, etc. (If applicable) 
+Participants will be sent a link to the online survey. 
+They will be able to take the survey anywhere with a stable internet connection (e.g. laptop, desktop, mobile phone).
+Participants may skip questions or stop the survey at any time. 
+
+###	Visit 2 or Day 2 or Post-test, etc. (If applicable)
+
+Not applicable.
 
 ##	Duration of Participation
+
+The survey will take approximately ten (10) minutes to complete. 

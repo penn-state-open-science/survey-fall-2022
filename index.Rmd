@@ -1,0 +1,25 @@
+--- 
+title: "Open Science at Penn State"
+author: ["Rick O. Gilmore", "Frank Hillary", "Nicole Lazar", "Brianna Wham"]
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [bib/book.bib, bib/packages.bib]
+url: "https://github.com/penn-state-open-science/survey-fall-2022"
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is the protocol for the Fall 2022 survey.
+link-citations: yes
+github-repo: penn-state-open-science/survey-fall-2022
+---
+
+# About {-}
+
+This is a research protocol for "Knowledge about and attitudes toward open science practices among Penn State researchers", (STUDY00021455: Open science at Penn State) written in **Markdown**.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'bib/packages.bib')
+```

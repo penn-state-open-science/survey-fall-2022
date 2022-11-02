@@ -1,4 +1,3 @@
-about
 objectives
 study-objectives
 primary-study-endpoints

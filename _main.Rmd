@@ -1,164 +1,45 @@
-![C:\\Users\\bxb235\\Desktop\\PS_HOR_RGB_2C_forToolkit.png](media/image1.png){width="1.5833333333333333in"
-height="0.6666666666666666in"}
+--- 
+title: "Open Science at Penn State"
+author: ["Rick O. Gilmore", "Frank Hillary", "Nicole Lazar", "Brianna Wham"]
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [bib/book.bib, bib/packages.bib]
+url: "https://github.com/penn-state-open-science/survey-fall-2022"
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is the protocol for the Fall 2022 survey.
+link-citations: yes
+github-repo: penn-state-open-science/survey-fall-2022
+---
 
-# HRP-591 - Protocol for Human Subject Research**
+# About {-}
 
-## Protocol Title:
+This is a research protocol for *Knowledge about and attitudes toward open science practices among Penn State researchers*, (STUDY00021455: Open science at Penn State) written in **Markdown**.
 
-Knowledge about and attitudes toward open science practices among Penn State researchers
+It also represents an exercise in how to use git-based version control, Rmarkdown, and the `bookdown` package to create an open research protocol that also addresses questions required for the Penn State IRB's protocol review process. 
+Our goal is to reduce duplication of effort.
 
-## Principal Investigator:
+These materials may be copied and reused by anyone.
 
-Name: Rick O. Gilmore
-
-Department: Psychology
-
-Telephone: 814-865-3664
-
-E-mail Address: rog1\@psu.edu
-
-## Version Date:**
-
-20221102
-
-## Clinicaltrials.gov Registration #:
-
-Not applicable
-
-**[Important Instructions for Using This Protocol Template:]{.underline}**
-
-This template is provided to help investigators prepare a protocol that
-includes the necessary information needed by the IRB to determine
-whether a study meets all applicable criteria for approval.
-
-1.  **GENERAL INSTRUCTIONS**[^1]**:**
-
-    -   Prior to completing this protocol, ensure that you are using the
-        > most recent version by verifying the protocol template version
-        > date in the footer of this document with the current version
-        > provided in the CATS IRB Library.
-
-    -   Do not change the protocol template version date located in the
-        > footer of this document.
-
-    -   Some of the items may not be applicable to all types of
-        > research. If an item is not applicable, please indicate as
-        > such or skip question(s) if indicated in any of the
-        > instructional text.
-
-    -   **GRAY INSTRUCTIONAL BOXES:** Type your protocol responses
-        > [below]{.underline} the gray instructional boxes of guidance
-        > language. If the section or item is not applicable, indicate
-        > not applicable.
-
--   **Do NOT delete the instructional boxes from the final version of
-    the protocol.**
-
-```{=html}
-<!-- -->
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'bib/packages.bib')
 ```
--   The protocol should be written in lay language. Do **NOT** copy and
-    > paste grant proposal information into the protocol.
 
--   Add the completed protocol template to your study in CATS IRB
-    > (<http://irb.psu.edu>) on the "Basic Information" page.
+<!--chapter:end:index.Rmd-->
 
-    1.  **CATS IRB LIBRARY:**
+# Objectives
 
-```{=html}
-<!-- -->
-```
--   Documents referenced in this protocol template (e.g., SOP's,
-    Worksheets, Checklists, and Templates) can be accessed by clicking
-    the Library link in CATS IRB (<http://irb.psu.edu>).
+## Study Objectives
 
-    1.  **PROTOCOL REVISIONS:**
+> Describe the purpose, specific aims, or objectives. 
 
-```{=html}
-<!-- -->
-```
--   When making revisions to this protocol as requested by the IRB,
-    please follow the instructions outlined in the guides available in
-    the Help Center in CATS IRB (<http://irb.psu.edu>) for using track
-    changes.
+\[State the hypotheses to be tested\].
 
--   Update the Version Date on page 1 each time this document is
-    submitted to the IRB office with revisions.
-
-**If you need help...**
-
-**All locations:**
-
-**Human Research Protection Program**
-
-Office for Research Protections
-
-101 Technology Center\
-University Park, PA 16802-7014\
-Phone: 814-865-1775\
-Fax: 814-863-8699\
-Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
-
-[**https://www.research.psu.edu/irb**](https://www.research.psu.edu/irb)
-
-# Table of Contents
-
-## [1.0 Objectives](#objectives)
-
-## [2.0 Background](#background)
-
-## [3.0 Inclusion and Exclusion Criteria](#inclusion-and-exclusion-criteria)
-
-## [4.0 Recruitment Methods](#recruitment-methods)
-
-## [5.0 Consent Process and Documentation](#consent-process-and-documentation)
-
-## [6.0 HIPAA Research Authorization and/or Waiver or Alteration of Authorization](#hipaa-research-authorization-andor-waiver-or-alteration-of-authorization)
-
-## [7.0 Study Design and Procedures](#study-design-and-procedures)
-
-## [8.0 Number of Subjects and Statistical Plan](#number-of-subjects-and-statistical-plan)
-
-## [9.0 Data and Safety Monitoring Plan](#data-and-safety-monitoring-plan)
-
-## [10.0 Risks](#risks)
-
-## [11.0 Potential Benefits to Subjects and Others](#_Toc117767339)
-
-## [12.0 Sharing Results with Subjects](#sharing-results-with-subjects)
-
-## [13.0 Subject Payment and/or Travel Reimbursements](#subject-payment-andor-travel-reimbursements)
-
-## [14.0 Economic Burden to Subjects](#economic-burden-to-subjects)
-
-## [15.0 Resources Available](#resources-available)
-
-## [16.0 Other Approvals](#other-approvals)
-
-## [17.0 Multi-Site Study](#_Toc117767345)
-
-## [18.0 Adverse Event Reporting](#adverse-event-reporting)
-
-## [19.0 Study Monitoring, Auditing, and Inspecting](#study-monitoring-auditing-and-inspecting)
-
-## [20.0 Future Undetermined Research: Data and Specimen Banking](#future-undetermined-research-data-and-specimen-banking)
-
-## [21.0 References](#references)
-
-## [22.0 Confidentiality, Privacy and Data Management](#confidentiality-privacy-and-data-management)
-
-**\
-**
-
-1.1 Objectives
-  - 1.1  Study Objectives
-
-> Describe the purpose, specific aims, or objectives. State the
-> hypotheses to be tested.
->
-> \[Type protocol text here\]
-
-  - 1.2 Primary Study Endpoints
+## Primary Study Endpoints
 
 > State the primary endpoints to be measured in the study.
 >
@@ -170,13 +51,16 @@ Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
 
 \[Type protocol text here or indicate as not applicable\]
 
-  - 1.3 Secondary Study Endpoints
+## Secondary Study Endpoints
 
 > State the secondary endpoints to be measured in the study.
->
-> \[Type protocol text here or indicate as not applicable\]
 
-2.0 Background 
+\[Type protocol text here or indicate as not applicable\]
+
+
+<!--chapter:end:01-objectives.Rmd-->
+
+# Background
 
 ## Scientific Background and Gaps
 
@@ -189,7 +73,7 @@ Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
 > non-investigational setting); and if applicable, indicate if the study
 > procedure is available to patient without taking part in the study.
 
-> \[Type protocol text here\]
+\[Type protocol text here\]
 
 ## Previous Data
 
@@ -197,11 +81,15 @@ Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
 >
 > \[Type protocol text here\]
 
+
 ## Study Rationale
 
 > Provide the scientific rationale for the research.
 >
 > \[Type protocol text here\]
+
+
+<!--chapter:end:02-background.Rmd-->
 
 # Inclusion and Exclusion Criteria
 
@@ -231,740 +119,167 @@ Email: [irb-orp@psu.edu](mailto:ORProtections@psu.edu)
 > 
 > -   **Neonates of uncertain viability or non-viable neonates-** Review "HRP-413- Checklist - Non-Viable Neonates" or "HRP-414- Checklist - Neonates of Uncertain Viability"
 
-> \[Do not type here\]
-
 ## Inclusion Criteria
 
-> Create a numbered list of the inclusion criteria that define who will be included in your final study sample (e.g., age, gender, condition, etc.)
-> \[Type protocol text here\]
+### Does this research involve collecting data from individuals residing outside of the US?
 
-### Does this research involve collecting data from individuals residing outside of the US?**
-
-- [ ] No
-- [ ] Yes -- identify the countries where data collection will take place
-
-> \[Type protocol text here\]
+[ ] No</br>
+[ ] Yes -- identify the countries where data collection will take place
 
 ## Exclusion Criteria
 
-### Create a numbered list of the exclusion criteria that define who will be excluded in your study.
-
-## \[Type protocol text here\]
-
 ## Early Withdrawal of Subjects
-
-### 
 
 ### Criteria for removal from study
 
-### Insert subject withdrawal criteria (e.g., safety reasons, failure of subject to adhere to protocol requirements, subject consent withdrawal, disease progression, etc.).
-
-> \[Type protocol text here or indicate as not applicable\]
-
 ### Follow-up for withdrawn subjects
 
-### Describe when and how to withdraw subjects from the study; the type and timing of the data to be collected for withdrawal of subjects; whether and how subjects are to be replaced; the follow-up for subjects withdrawn from investigational treatment.
+<!--chapter:end:03-inclusion-exclusion.Rmd-->
 
-> \[Type protocol text here or indicate as not applicable\]
-
-4.  # Recruitment Methods
-
-    -   Upload recruitment materials for your study in CATS IRB
-        > (<http://irb.psu.edu>). **DO NOT** include the actual
-        > recruitment wording in this protocol.
-
-    -   StudyFinder: If StudyFinder (<http://studyfinder.psu.edu>) is to
-        > be used for recruitment purposes, separate recruitment
-        > documents do not need to be uploaded in CATS IRB. The
-        > necessary information will be captured from the StudyFinder
-        > page in your CATS IRB study.
-
-    -   Any eligibility screening questions (verbal/phone scripts,
-        > email, etc.) used when contacting potential participants must
-        > be uploaded to your study in CATS IRB (<http://irb.psu.edu>).
-
-> \[Do not type here\]
+# Recruitment Methods
 
 ## Identification of subjects
 
-> Describe the source of subjects and the methods that will be used to
-> identify potential subjects (e.g., organizational listservs,
-> established recruitment databases, subject pools, medical or school
-> records, interactions during a clinic visit, etc.). If not recruiting
-> subjects directly (e.g., database query for eligible records or
-> samples) state what will be queried, how and by whom.
->
-> StudyFinder:
-
--   If you intend to use StudyFinder (<http://studyfinder.psu.edu>) for
-    recruitment purposes, include this method in this section.
-
--   Information provided in this protocol, including the description of
-    study procedures, compensation, and recruitment, needs to be
-    consistent with information provided on the StudyFinder page in your
-    CATS IRB study.
-
-> For Penn State Health submissions using Enterprise Information
-> Management (EIM) for recruitment, and for non-Hershey locations as
-> applicable, attach your EIM Design Specification form in CATS IRB
-> (<http://irb.psu.edu>). See "HRP-103- Investigator Manual, Study
-> Recruitment" for additional information.
->
-> **DO NOT** include the actual recruitment material or wording in this
-> protocol.
->
-> \[Type protocol text here\]
-
-## 
-
 ## Recruitment process
 
-> Describe how potential subjects first learn about this research
-> opportunity or indicate 'not applicable' if subjects will not be
-> prospectively recruited to participate in the research. Subject
-> recruitment can involve various methods (e.g., approaching potential
-> subjects in person, contacting potential subjects via email, letters,
-> telephone, ResearchMatch, or advertising to a general public via
-> flyers, websites, StudyFinder, newspaper, television, and radio etc.).
-> **DO NOT** include the actual recruitment material or wording in this
-> protocol.
->
-> \[Do not type here\]
+### How potential subjects will be recruited
 
-### How potential subjects will be recruited.
+### Where potential subjects will be recruited
 
-> \[Type protocol text here or indicate as not applicable\]
+### When potential subjects will be recruited
 
-### Where potential subjects will be recruited.
+### Describe the eligibility screening process. Screening begins when the investigator obtains information about or from a prospective participant in order to determine their eligibility.
 
-> \[Type protocol text here or indicate as not applicable\]
+<!--chapter:end:04-recruitment-methods.Rmd-->
 
-### When potential subjects will be recruited.
+# Consent Process and Documentation
 
-> \[Type protocol text here or indicate as not applicable\]
+## Consent Process
 
-4.  **Describe the eligibility screening process. Screening begins when
-    the investigator obtains information about or from a prospective
-    participant in order to determine their eligibility.**
+## Obtaining Informed Consent
 
-> Eligibility screening is occurring *before* consent\*
->
-> Eligibility screening is occurring *after* consent
->
-> Consent is not being obtained in this research
->
-> Not applicable - Eligibility screening is not being done in this
-> research
->
-> \[Type protocol text here\]
->
-> \*Unless informed consent is waived by the IRB, screening before
-> consent is only permitted when screening activities are limited to the
-> collection of information through oral or written communication OR
-> when identifiable private information or identifiable biospecimens is
-> obtained by accessing records or stored identifiable biospecimens.
-> Screening before consent is not permitted if data will be used for
-> activities other than eligibility screening/recruitment (e.g., data
-> analysis). In some studies, these procedures may not take place unless
-> HIPAA Authorization is obtained OR a waiver of HIPAA Authorization
-> when applicable for the screening procedures is approved by the IRB.
+### Consent Process
 
-# Consent Process and Documentation 
+### Coercion or Undue Influence during Consent
 
-> Refer to the following materials:
-
--   The "HRP-090- SOP - Informed Consent Process for Research" outlines
-    > the process for obtaining informed consent.
-
--   The "HRP-091-- SOP - Written Documentation of Consent" describes how
-    > the consent process will be documented.
-
--   The "HRP-314- Worksheet - Criteria for Approval" section 7 lists the
-    > required elements of consent.
-
--   The "HRP-312- Worksheet - Exemption Determination" includes
-    > information on requirements for the consent process for exempt
-    > research. In addition, the CATS IRB Library contains consent
-    > guidance and templates for exempt research.
-
--   The CATS IRB library contains various consent templates for
-    > expedited or full review research that are designed to include the
-    > required information.
-
--   Add the consent document(s) to your study in CATS IRB
-    > (<http://irb.psu.edu>). Links to Penn State's consent templates
-    > are available in the same location where they are uploaded. **DO
-    > NOT** include the actual consent wording in this protocol.
-
-\[Do not type here\]
-
-## Consent Process:
-
-> **Check all applicable boxes below:**
->
-> **Informed consent will be sought and documented with a written
-> consent form** *\[Complete Sections 5.2 and 5.6; If this is the only
-> box checked, mark Sections 5.3, 5.4 and 5.5 as 'Not applicable'\]*
->
-> **Implied or verbal consent will be obtained -- subjects will not sign
-> a consent form (waiver of written documentation of consent)**
-> *\[Complete Sections 5.2, 5.3 and 5.6; If this is the only box
-> checked, mark Sections 5.4 and 5.5 as 'Not applicable'\]*
->
-> **Informed consent will be sought but some of the elements of informed
-> consent will be omitted or altered (e.g., deception).** *\[Complete
-> section 5.2, 5.4 and 5.6; If this is the only box checked, mark
-> Section 5.5 as 'Not applicable'\]*
->
-> **Informed consent will not be obtained -- request to completely waive
-> the informed consent requirement.** *\[Complete Section 5.5; If this
-> is the only box checked, mark Sections 5.2, 5.3, 5.4 and 5.6 as 'Not
-> applicable'\]*
->
-> **[Exempt Research]{.underline}: If you believe that the research
-> activities outlined meet one or more of the criteria outlined in
-> "HRP-312- Worksheet- Exemption Determination", check this box. By
-> checking this box, you are verifying that the exempt consent process
-> will disclose the following:**
->
-> Penn State affiliation; name and contact information for the
-> researcher and advisor (if the researcher is a student); the
-> activities involve research; the procedures to be performed;
-> participation is voluntary; that there are adequate provisions to
-> maintain the privacy interests of subjects and the confidentiality of
-> the data.
->
-> **If the research includes the use of student educational records
-> include the following language in this section:** The parent or
-> eligible student will provide a signed and dated written consent that
-> discloses: the records that may be disclosed; the purpose of the
-> disclosure; the party or class of parties to whom the disclosure may
-> be made; if a parent or adult student requests, the school will
-> provide him or her with a copy of the records disclosed; if the parent
-> of a student who is not an adult so requests, the school will provide
-> the student with a copy of the records disclosed.
->
-> **Note: If this box has been checked, mark Sections 5.3, 5.4, 5.5, and
-> 5.6 as "Not applicable." If the investigator's assessment is
-> inaccurate, an IRB Analyst will request revision to the protocol and
-> ask that consent forms and recruitment materials be submitted. Except
-> for exemptions where Limited IRB Review is required (see "HRP-312-
-> Worksheet- Exemption Determination") or where otherwise requested by
-> the IRB, consent forms and recruitment materials are generally not
-> reviewed nor approved by the PSU HRPP for research undergoing exempt
-> review.**
-
-## Obtaining Informed Consent 
-
-### 
-
-### Consent Process 
-
-> Describe the consent process, including when and where it will take
-> place.
->
-> \[Type protocol text here\]
-
-### Coercion or Undue Influence during Consent 
-
-> Describe the steps that will be taken to minimize the possibility of
-> coercion or undue influence in the consent process.
->
-> \[Type protocol text here\]
-
-## Waiver of Written Documentation of Consent 
-
-> Review "HRP -- 411 -- Checklist -- Waiver of Written Documentation of
-> Consent."
+## Waiver of Written Documentation of Consent
 
 ### Indicate which of the following conditions applies to this research:
 
-> The research presents no more that minimal risk of harm to subjects
-> and involves no procedures for which written consent is normally
-> required outside of the research context.
->
-> OR
->
-> The only record linking the subject and the research would be the
-> consent document and the principal risk would be potential harm
-> resulting from a breach of confidentiality. Each subject will be asked
-> whether the subject wants documentation linking the subject with the
-> research, and the subject's wishes will govern. (*Note: This condition
-> is not applicable for FDA-regulated research. If this category is
-> chosen, include copies of a consent form and /or parental permission
-> form for participants who want written documentation linking them to
-> the research.)*
->
-> OR
->
-> If the subjects or legally authorized representatives are members of a
-> distinct cultural group or community in which signing forms is not the
-> norm, that the research presents no more than minimal risk of harm to
-> subjects and provided there is an appropriate alternative mechanism
-> for documenting that informed consent was obtained. (*Note: This
-> condition is not applicable for FDA-regulated research.)*
->
-> For distinct cultural groups, describe the alternative mechanism for
-> documenting that informed consent was obtained:
->
-> \[Type protocol text here\]
+### Indicate what materials, if any, will be used to inform potential subjects about the research (e.g., a letter accompanying a questionnaire, verbal script, or implied consent form).
 
-### Indicate what materials, if any, will be used to inform potential subjects about the research (e.g., a letter accompanying a questionnaire, verbal script, or implied consent form)
-
-> \[Type protocol text here or indicate as not applicable\]
 
 ## Informed consent will be sought but some of the elements of informed consent will be omitted or altered (e.g., deception).
 
-> Review "HRP-410-Checklist -Waiver or Alteration of Consent Process" to
-> ensure that you have provided sufficient information.
-
-### Indicate the elements of informed consent to be omitted or altered
-
-> \[Type protocol text here or indicate as not applicable\]
+### Indicate the elements of informed consent to be omitted or altered.
 
 ### Indicate why the research could not practicably be carried out without the omission or alteration of consent elements
 
-> \[Type protocol text here or indicate as not applicable\]
-
 ### Describe why the research involves no more than minimal risk to subjects.
-
-> \[Type protocol text here or indicate as not applicable\]
 
 ### Describe why the alteration/omission will not adversely affect the rights and welfare of subjects.
 
-> \[Type protocol text here or indicate as not applicable\]
-
 ### If the research involves using identifiable private information or identifiable biospecimens, describe why the research could not practicably be carried out without using such information or biospecimens in an identifiable format.
 
-> \[Type protocol text here or indicate as not applicable\]
+### Debriefing
 
-### Debriefing 
+## Informed consent will not be obtained – request to completely waive the informed consent requirement
 
-> Explain whether and how subjects will be debriefed after participation
-> in the study. If subjects will not be debriefed, provide a
-> justification for not doing so. Add any debriefing materials to the
-> study in CATS IRB.
->
-> \[Type protocol text here or indicate as not applicable\]
-
-## Informed consent will not be obtained -- request to completely waive the informed consent requirement
-
-> Review "HRP-410-Checklist -Waiver or Alteration of Consent Process" to
-> ensure that you have provided sufficient information.
-
-### Indicate why the research could not practicably be carried out without the waiver of consent
-
-> \[Type protocol text here or indicate as not applicable\]
+### Indicate why the research could not practicably be carried out without the waiver of consent.
 
 ### Describe why the research involves no more than minimal risk to subjects.
 
-> \[Type protocol text here or indicate as not applicable\]
-
 ### Describe why the alteration/omission will not adversely affect the rights and welfare of subjects.
-
-> \[Type protocol text here or indicate as not applicable\]
 
 ### If the research involves using identifiable private information or identifiable biospecimens, describe why the research could not practicably be carried out without using such information or biospecimens in an identifiable format.
 
-> \[Type protocol text here or indicate as not applicable\]
+### Additional pertinent information after participation.
 
-### Additional pertinent information after participation
+## Consent – Other Considerations
 
-> Explain if subjects will be provided with additional pertinent
-> information after participation.
->
-> \[Type protocol text here or indicate as not applicable\]
-
-6.  ## Consent -- Other Considerations 
-
-    1.  ### Non-English-Speaking Subjects
-
-> Indicate what language(s) other than English are understood by
-> prospective subjects or representatives.
->
-> If subjects who do not speak English will be enrolled, describe the
-> process to ensure that the oral and written information provided to
-> those subjects will be in that language. Indicate the language that
-> will be used by those obtaining consent.
->
-> Indicate whether the consent process will be documented in writing
-> with the long form of the consent documentation or with the short form
-> of the consent documentation. Review "HRP-091 --SOP- Written
-> Documentation of Consent" and "HRP-103 -Investigator Manual" to ensure
-> that you have provided sufficient information.
->
-> \[Type protocol text here or indicate as not applicable\]
+### Non-English-Speaking Subjects
 
 ### Cognitively Impaired Adults
 
-> Refer "HRP-417 -CHECKLIST- Cognitively Impaired Adults" for
-> information about research involving cognitively impaired adults as
-> subjects.
-
 #### Capability of Providing Consent
-
-> Describe the process to determine whether an individual is capable of
-> consent.
->
-> \[Type protocol text here or indicate as not applicable\]
 
 #### Adults Unable to Consent
 
-> Describe whether and how informed consent will be obtained from the
-> legally authorized representative. Describe who will be allowed to
-> provide informed consent. Describe the process used to determine these
-> individual's authority to consent to research.
->
-> For research conducted in the state of Pennsylvania, review "HRP-013
-> -SOP- Legally Authorized Representatives, Children and Guardians" to
-> be aware of which individuals in the state of Pennsylvania meet the
-> definition of "legally authorized representative."
->
-> For research conducted outside of the state of Pennsylvania, provide
-> information that describes which individuals are authorized under
-> applicable law to consent on behalf of a prospective subject to their
-> participation in the procedure(s) involved in this research. One
-> method of obtaining this information is to have a legal counsel or
-> authority review your protocol along with the definition of "children"
-> in "HRP-013 -SOP- Legally Authorized Representatives, Children, and
-> Guardians."
->
-> \[Type protocol text here or indicate as not applicable\]
+#### Assent of Adults Unable to Consent
 
-##### Assent of Adults Unable to Consent
+### Subjects who are not yet adults (infants, children, teenagers)
 
-> Describe the process for assent of the subjects. Indicate whether
-> assent will be required of all, some, or none of the subjects. If
-> some, indicate which subjects will be required to assent and which
-> will not.
->
-> If assent will not be obtained from some or all subjects, provide an
-> explanation of why not.
->
-> Describe whether assent of the subjects will be documented and the
-> process to document assent. The IRB allows the person obtaining assent
-> to document assent on the consent document and does not routinely
-> require assent documents and does not routinely require subjects to
-> sign assent documents.
->
-> \[Type protocol text here or indicate as not applicable\]
-
-### Subjects who are not yet adults (infants, children, teenagers) 
-
-#### 
-
-2.  1.  #### Parental Permission
-
-> Describe whether and how parental permission will be obtained. If
-> permission will be obtained from individuals other than parents,
-> describe who will be allowed to provide permission. Describe the
-> process used to determine these individual's authority to consent to
-> each child's general medical care.
->
-> For research conducted in the state of Pennsylvania, review
-> "HRP-013-SOP- Legally Authorized Representatives, Children and
-> Guardians" to be aware of which individuals in the state of
-> Pennsylvania meet the definition of "children."
->
-> For research conducted outside of the state of Pennsylvania, provide
-> information that describes which persons have not attained the legal
-> age for consent to treatments or procedures involved in the research,
-> under the applicable law of the jurisdiction in which research will be
-> conducted. One method of obtaining this information is to have a legal
-> counsel or authority review your protocol along with the definition of
-> "children" in "HRP-013-SOP- Legally Authorized Representatives,
-> Children, and Guardians."
->
-> \[Type protocol text here or indicate as not applicable\]
+#### Parental Permission
 
 #### Assent of subjects who are not yet adults
 
-> Indicate whether assent will be obtained from all, some, or none of
-> the children. If assent will be obtained from some children, indicate
-> which children will be required to assent. When assent of children is
-> obtained describe whether and how it will be documented.
->
-> \[Type protocol text here or indicate as not applicable\]
+
+
+<!--chapter:end:05-consent.Rmd-->
 
 # HIPAA Research Authorization and/or Waiver or Alteration of Authorization
 
-> This section is about the access, use or disclosure of Protected
-> Health Information (PHI). PHI is individually identifiable health
-> information (i.e., health information containing one or more 18
-> identifiers) that is transmitted or maintained in any form or medium
-> by a Covered Entity or its Business Associate. A Covered Entity is a
-> health plan, a health care clearinghouse or health care provider who
-> transmits health information in electronic form. See "HRP-103
-> -Investigator Manual" for a list of the 18 identifiers.
->
-> If requesting a waiver/alteration of HIPAA authorization, complete
-> sections 6.2 and 6.3 in addition to section 6.1. The Privacy Rule
-> permits waivers (or alterations) of authorization if the research
-> meets certain conditions. Include only information that will be
-> accessed with the waiver/alteration.
->
-> \[Do not type here\]
-
 ## Authorization and/or Waiver or Alteration of Authorization for the Uses and Disclosures of PHI
-
-> **Check all that apply:**
->
-> **Not applicable, no identifiable protected health information (PHI)
-> is accessed, used, or disclosed in this study.** *\[Mark all parts of
-> sections 6.2 and 6.3 as not applicable\]*
->
-> **Authorization will be obtained and documented as part of the consent
-> process.** *\[If this is the only box checked, mark sections 6.2 and
-> 6.3 as not applicable\]*
->
-> **Partial waiver is requested for recruitment purposes only (Check
-> this box if patients' medical records will be accessed to determine
-> eligibility before consent/authorization has been obtained).**
-> *\[Complete all parts of sections 6.2 and 6.3\]*
->
-> **Full waiver is requested for entire research study (e.g., medical
-> record review studies).** *\[Complete all parts of sections 6.2 and
-> 6.3\]*
->
-> **Alteration is requested to waive requirement for written
-> documentation of authorization (verbal or implied authorization will
-> be obtained).** *\[Complete all parts of sections 6.2 and 6.3\]*
 
 ## Waiver or Alteration of Authorization for the Uses and Disclosures of PHI
 
-### 
-
 ### Access, use or disclosure of PHI representing no more than a minimal risk to the privacy of the individual
-
-#### 
 
 #### Plan to protect PHI from improper use or disclosure
 
-> Include the following statement as written -- DO NOT ALTER OR DELETE
-> unless this section is not applicable because the research does not
-> involve a waiver of authorization. **If the section is
-> [not]{.underline} applicable, [remove]{.underline} the statement and
-> [indicate as not applicable]{.underline}.**
->
-> *Information is included in the "Confidentiality, Privacy and Data
-> Management" section of this protocol or in "HRP-598 -- Research Data
-> Plan Review Form".*
-
 #### Plan to destroy identifiers or a justification for retaining identifiers 
-
-> Describe the plan to destroy the identifiers at the earliest
-> opportunity consistent with the conduct of the research. Include when
-> and how identifiers will be destroyed. If identifiers will be
-> retained, provide the legal, health or research justification for
-> retaining the identifiers.
-
-### 
-
-> \[Type protocol text here or indicate as not applicable\]
 
 ### Explanation for why the research could not practicably be conducted without access to and use of PHI
 
-> Provide reasons why this research could not practicably be carried out
-> without access to and use of PHI.
-
-### 
-
-> \[Type protocol text here or indicate as not applicable\]
-
 ### Explanation for why the research could not practicably be conducted without the waiver or alteration of authorization
-
-> Provide reasons why this research could not practicably be carried out
-> without the waiver or alternation of authorization.
->
-> \[Type protocol text here or indicate as not applicable\]
 
 ## Waiver or alteration of authorization statements of agreement
 
-> By submitting this study for review with a waiver of authorization,
-> you agree to the following statement -- DO NOT ALTER OR DELETE unless
-> this section is not applicable because the research does not involve a
-> waiver or alteration of authorization. **If the section is
-> [not]{.underline} applicable, [remove]{.underline} the statement and
-> [indicate as not applicable.]{.underline}**
->
-> *Protected health information obtained as part of this research will
-> not be reused or disclosed to any other person or entity, except as
-> required by law, for authorized oversight of the research study, or
-> for other permitted uses and disclosures according to federal
-> regulations.*
->
-> *The research team will collect only information essential to the
-> study and in accord with the 'Minimum Necessary' standard (information
-> reasonably necessary to accomplish the objectives of the research) per
-> federal regulations.*
->
-> *Access to the information will be limited, to the greatest extent
-> possible, within the research team. All disclosures or releases of
-> identifiable information granted under this waiver will be accounted
-> for and documented.*
+<!--chapter:end:06-hipaa.Rmd-->
 
-# Study Design and Procedures
-
-Data collection materials that will be seen or used by subjects in your
-study must be uploaded to CATS IRB (<http://irb.psu.edu>). **DO NOT**
-include any actual data collection materials in this protocol (e.g.,
-actual survey or interview questions).
-
-\[Do not type here\]
+#	Study Design and Procedures
 
 ## Study Design
 
-> Describe and explain the study design.
->
-> \[Type protocol text here\]
-
 ## Study Procedures
-
-> Provide a step-by-step description of all research procedures being
-> conducted (broken down by visit, if applicable) including such
-> information as below (where and when applicable); describe the
-> following:
-
--   HOW: (e.g., data collection via interviews, focus groups, forms such
-    > as surveys and questionnaires, medical/school records,
-    > audio/video/digital recordings, photographs, EKG procedures, MRI,
-    > mobile devices such as electronic tablets/cell phones,
-    > observations, collection of specimens, experimental drug/device
-    > testing, manipulation of behavior/use of deception, computer
-    > games, etc.) For surveys, indicate if subjects are able to skip
-    > questions that they don't want to answer.
-
--   WHERE: (e.g., classrooms, labs, internet/online, places of business,
-    > medical settings, public spaces, etc.)
-
-> \[Type protocol text here\]
 
 ### Visit 1 or Day 1 or Pre-test, etc. 
 
-> Provide a description of what procedures will be performed on visit 1
-> or day 1 or pre-test in order of how these will be done. If your study
-> only involves one session or visit, use this section only and delete
-> 7.2.2.
->
-> \[Type protocol text here\]
+###	Visit 2 or Day 2 or Post-test, etc. (If applicable) 
 
-### Visit 2 or Day 2 or Post-test, etc. (If applicable) 
+##	Duration of Participation
 
-> Provide a description of what procedures will be performed on visit 2
-> or day 2 or post-test in order of how these will be done. If your
-> study involves more than two sessions or visits replicate this section
-> for each additional session or visit (e.g., 7.2.3, 7.2.4, etc.). If
-> your study involves only one session or visit, delete this section.
->
-> \[Type protocol text here or delete this section\]
+<!--chapter:end:07-study-design-procedures.Rmd-->
 
-## Duration of Participation
+#	Number of Subjects and Statistical Plan
 
-> Describe how long subjects will be involved in this research study.
-> Include the number of sessions and the duration of each session -
-> consider the total number of minutes, hours, days, months, years, etc.
->
-> \[Type protocol text here\]
-
-8.  # Number of Subjects and Statistical Plan
-
-    1.  ## Number of Subjects
-
-## Indicate the maximum number of subjects to be accrued/enrolled, to include all persons who sign consent for the study. If applicable, distinguish between the number of subjects who are expected to be enrolled and screened, and the number of subjects needed to complete the research procedures (i.e., numbers of subjects excluding screen failures.)
-
-> \[Type protocol text here\]
+## Number of Subjects
 
 ## Sample Size Determination
 
-> If applicable, provide a justification of the sample size outlined in
-> section 8.1 to include reflections on, or calculations of, the power
-> of the study.
->
-> \[Type protocol text here or indicate as not applicable\]
-
 ## Statistical or Analytic Methods
 
-> Describe the statistical methods (or non-statistical methods of
-> analysis) that will be employed.
->
-> \[Type protocol text here\]
+<!--chapter:end:08-n-subjects-stats-plan.Rmd-->
 
 # Data and Safety Monitoring Plan
 
-> **This section is required when research involves more than Minimal
-> Risk to subjects as defined in "HRP-001 SOP- Definitions."**
->
-> Minimal Risk is defined as the probability and magnitude of harm or
-> discomfort anticipated in the research that are not greater in and of
-> themselves than those ordinarily encountered in daily life or during
-> the performance of routine physical or psychological examinations or
-> tests. For research involving prisoners, Minimal Risk is the
-> probability and magnitude of physical or psychological harm that is
-> normally encountered in the daily lives, or in the routine medical,
-> dental, or psychological examination of healthy persons.
->
-> **Please complete each section below if the research involves more
-> than minimal risk to subjects or indicate not applicable.**
->
-> \[Do not type here\]
-
 ## Periodic evaluation of data
 
-> Describe the plan to periodically evaluate the data collected
-> regarding both harms and benefits to determine whether subjects remain
-> safe.
->
-> \[Type protocol text here or indicate as not applicable\]
-
-2.  **Data that are reviewed**
-
-## Describe the data that are reviewed, including safety data, untoward events, and efficacy data.
-
-> \[Type protocol text here or indicate as not applicable\]
+## Data that are reviewed
 
 ## Method of collection of safety information
 
-> Describe the method by which the safety information will be collected
-> (e.g., with case report forms, at study visits, by telephone calls and
-> with subjects).
->
-> \[Type protocol text here or indicate as not applicable\]
-
 ## Frequency of data collection
-
-> Describe the frequency of data collection, including when safety data
-> collection starts.
->
-> \[Type protocol text here or indicate as not applicable\]
 
 ## Individuals reviewing the data
 
-> Identify the individuals who will review the data. The plan might
-> include establishing a data and safety monitoring committee and a plan
-> for reporting data monitoring committee findings to the IRB and the
-> sponsor.
->
-> \[Type protocol text here or indicate as not applicable\]
-
 ## Frequency of review of cumulative data
-
-> Describe the frequency or periodicity of review of cumulative data.
->
-> \[Type protocol text here or indicate as not applicable\]
 
 ## Statistical tests
 
-> Describe the statistical tests for analyzing the safety data to
-> determine whether harms are occurring.
->
-> \[Type protocol text here or indicate as not applicable\]
-
 ## Suspension of research
 
-> Describe any conditions that trigger an immediate suspension of
-> research.
->
-> \[Type protocol text here or indicate as not applicable\]
+<!--chapter:end:09-data-safety-monitoring.Rmd-->
 
 # Risks
 
@@ -976,44 +291,27 @@ actual survey or interview questions).
 > psychological, social, legal, and economic risks. **Note: Loss of
 > confidentiality is a potential risk when conducting human subject
 > research and must be listed here.**
+> -   If applicable, indicate which procedures may have risks to the
+> subjects that are currently unforeseeable.
+> -   If applicable, indicate which procedures may have risks to an embryo
+> or fetus should the subject be or become pregnant.
+> -   If applicable, describe risks to others who are not subjects.
 
--   If applicable, indicate which procedures may have risks to the
-    > subjects that are currently unforeseeable.
+<!--chapter:end:10-risks.Rmd-->
 
--   If applicable, indicate which procedures may have risks to an embryo
-    > or fetus should the subject be or become pregnant.
-
--   If applicable, describe risks to others who are not subjects.
-
-\[Type protocol text here\]
-
-# Potential Benefits to Subjects and Others 
-
-## 
+# Potential Benefits to Subjects and Others
 
 ## Potential Benefits to Subjects
 
-> Describe the potential benefits that individual subjects may
-> experience from taking part in the research. If there is no direct
-> benefit to subjects, indicate as such. Compensation is not considered
-> a benefit. Compensation should be addressed in section 13.0.
->
-> \[Type protocol text here or indicate "none" if there is no direct
-> benefit to subjects\]
-
 ## Potential Benefits to Others
 
-> Describe the potential benefits to society or others.
->
-> \[Type protocol text here\]
+<!--chapter:end:11-potential-benefits.Rmd-->
 
 # Sharing Results with Subjects
 
-## Describe whether results (study results or individual subject results, such as results of investigational diagnostic tests, genetic tests, or incidental findings) will be shared with subjects or others (e.g., the subject's primary care physicians) and if so, describe how information will be shared. 
+> Describe whether results (study results or individual subject results, such as results of investigational diagnostic tests, genetic tests, or incidental findings) will be shared with subjects or others (e.g., the subject's primary care physicians) and if so, describe how information will be shared. 
 
-# 
-
-> \[Type protocol text here or indicate as not applicable\]
+<!--chapter:end:12-sharing-results.Rmd-->
 
 # Subject Payment and/or Travel Reimbursements
 
@@ -1031,8 +329,8 @@ actual survey or interview questions).
 > used; include in response below that course credit will be given and
 > alternatives will be offered as per the approved subject pool
 > procedures.
->
-> \[Type protocol text here or indicate as not applicable\]
+
+<!--chapter:end:13-subject-payment.Rmd-->
 
 # Economic Burden to Subjects
 
@@ -1041,7 +339,7 @@ actual survey or interview questions).
 > Describe any costs that subjects may be responsible for because of
 > participation in the research.
 
-> \[Type protocol text here or indicate as not applicable\]
+Not applicable
 
 ## Compensation for research-related injury
 
@@ -1071,9 +369,10 @@ actual survey or interview questions).
 > is available but will be provided at the usual charge. Such charges
 > may be paid by the study sponsor as outlined in the research agreement
 > and explained in the consent form.
->
-> \[Enter protocol text as outlined in the instructions here or indicate
-> as not applicable\]
+
+Not applicable.
+
+<!--chapter:end:14-economic-burden.Rmd-->
 
 # Resources Available
 
@@ -1125,6 +424,8 @@ actual survey or interview questions).
 > principal investigator is the only study team member listed on the
 > CATS IRB submission\]
 
+<!--chapter:end:15-resources.Rmd-->
+
 # Other Approvals
 
 ## Other Approvals from External Entities
@@ -1134,8 +435,8 @@ actual survey or interview questions).
 > also reviewing the research and other required review committees,
 > community leaders, schools, research locations where research is to be
 > conducted by the Penn State investigator, funding agencies, etc.).
->
-> \[Type protocol text here or indicate as not applicable\]
+
+Not applicable
 
 ## Internal PSU Ancillary Reviews
 
@@ -1148,14 +449,13 @@ actual survey or interview questions).
 > PSU IRB may set applicable ancillary reviews for your study. Please
 > refer to the "HRP-309 Worksheet -- Ancillary Review Matrix" for more
 > information (found in the CATS Library).
->
-> \[Do not type here\]
+
+
+<!--chapter:end:16-other-approvals.Rmd-->
 
 # Multi-Site Study
 
 ## If this is a multi-site study (i.e., a study in which two or more institutions coordinate, with each institution completing all research activities outlined in a specific protocol) and the Penn State PI is the lead investigator, describe the processes to ensure communication among sites in the sections below.
-
-> \[Do not type here\]
 
 ## Other sites 
 
@@ -1211,6 +511,8 @@ actual survey or interview questions).
 >
 > \[Type protocol text here or indicate as not applicable\]
 
+<!--chapter:end:17-multi-site.Rmd-->
+
 # Adverse Event Reporting
 
 ## Reporting Adverse Reactions and Unanticipated Problems to the Responsible IRB
@@ -1227,6 +529,8 @@ actual survey or interview questions).
 > submitted to the IRB in accordance with the IRB policies and
 > procedures.*
 
+<!--chapter:end:18-adverse-event-reporting.Rmd-->
+
 # Study Monitoring, Auditing, and Inspecting
 
 ## Auditing and Inspecting
@@ -1242,6 +546,8 @@ actual survey or interview questions).
 > the capability for inspections of applicable study-related facilities
 > (e.g., pharmacy, diagnostic laboratory, etc.).*
 
+<!--chapter:end:19-study-monitoring.Rmd-->
+
 # Future Undetermined Research: Data and Specimen Banking
 
 > If this study is collecting **identifiable** data and/or specimens
@@ -1253,8 +559,6 @@ actual survey or interview questions).
 > indirectly). If there are no plans to use identifiable data/specimens
 > for future, undetermined research, then this section is **NOT
 > applicable**.
->
-> \[Do not type here\]
 
 ## Data and/or specimens being stored
 
@@ -1297,12 +601,16 @@ actual survey or interview questions).
 >
 > \[Type protocol text here or indicate as not applicable\]
 
+<!--chapter:end:20-future-undetermined-research.Rmd-->
+
 # References
 
 > List relevant references in the literature which highlight methods,
 > controversies, and study outcomes.
 >
 > \[Type protocol text here or indicate as not applicable\]
+
+<!--chapter:end:21-references.Rmd-->
 
 # Confidentiality, Privacy and Data Management 
 
@@ -1998,3 +1306,6 @@ Information Security at <security@psu.edu>.
 [^1]: This template satisfies AAHRPP elements 1.7.B, I.8.B, I-9, II.2.
     A, II.2.I, II.3.A, II.3.B, II.3.C-II.3.C.1, II.3.D-F, II.4.A,
     III.1.C-F, II.2.D
+
+<!--chapter:end:22-confidentiality-privacy-data-mgmt.Rmd-->
+

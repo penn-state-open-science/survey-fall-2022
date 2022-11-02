@@ -15,7 +15,12 @@ github-repo: penn-state-open-science/survey-fall-2022
 
 # About {-}
 
-This is a research protocol for "Knowledge about and attitudes toward open science practices among Penn State researchers", (STUDY00021455: Open science at Penn State) written in **Markdown**.
+This is a research protocol for *Knowledge about and attitudes toward open science practices among Penn State researchers*, (STUDY00021455: Open science at Penn State) written in **Markdown**.
+
+It also represents an exercise in how to use git-based version control, Rmarkdown, and the `bookdown` package to create an open research protocol that also addresses questions required for the Penn State IRB's protocol review process. 
+Our goal is to reduce duplication of effort.
+
+These materials may be copied and reused by anyone.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

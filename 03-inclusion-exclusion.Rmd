@@ -1,8 +1,37 @@
 # Inclusion and Exclusion Criteria
 
+> Create a numbered list below in sections 3.1 and 3.2 of criteria
+> subjects must meet to be eligible for study enrollment (e.g., age,
+> gender, diagnosis, etc.).
+> 
+> **Vulnerable Populations:**
+> 
+> You MAY NOT include members of these populations as subjects in your
+> research unless you indicate this in your inclusion criteria because
+> specific regulations apply to studies that involve vulnerable
+> populations.
+> 
+> The checklists referenced below outline the determinations to be made
+> by the IRB when reviewing research involving these populations. Review
+> the checklists as these will help to inform your responses throughout
+> the remainder of the protocol.
+> 
+> -   **Children --**Review "HRP-416- Checklist - Children"
+> 
+> -   **Pregnant Women** -- Review "HRP-412- Checklist - Pregnant Women"
+> 
+> -   **Cognitively Impaired Adults-** Review "HRP-417- Checklist - Cognitively Impaired Adults"
+> 
+> -   **Prisoners-** Review "HRP-415- Checklist - Prisoners"
+> 
+> -   **Neonates of uncertain viability or non-viable neonates-** Review "HRP-413- Checklist - Non-Viable Neonates" or "HRP-414- Checklist - Neonates of Uncertain Viability"
+
 ## Inclusion Criteria
 
 ### Does this research involve collecting data from individuals residing outside of the US?
+
+[ ] No</br>
+[ ] Yes -- identify the countries where data collection will take place
 
 ## Exclusion Criteria
 

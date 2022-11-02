@@ -2,6 +2,25 @@
 
 ## Study Objectives
 
+> Describe the purpose, specific aims, or objectives. 
+
+\[State the hypotheses to be tested\].
+
 ## Primary Study Endpoints
 
+> State the primary endpoints to be measured in the study.
+>
+> Research typically has a primary objective or endpoint. Additional
+> objectives and endpoints are secondary. The endpoints (or outcomes),
+> determined for each study subject, are the quantitative measurements
+> required by the objectives. Measuring the selected endpoints is the
+> goal of a trial (examples: response rate and survival).
+
+\[Type protocol text here or indicate as not applicable\]
+
 ## Secondary Study Endpoints
+
+> State the secondary endpoints to be measured in the study.
+
+\[Type protocol text here or indicate as not applicable\]
+

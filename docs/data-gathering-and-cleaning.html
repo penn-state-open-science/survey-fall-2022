@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Number of Subjects and Statistical Plan | Open Science at Penn State</title>
+  <title>Data Gathering and Cleaning | Open Science at Penn State</title>
   <meta name="description" content="This is the protocol for the Fall 2022 survey." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Number of Subjects and Statistical Plan | Open Science at Penn State" />
+  <meta property="og:title" content="Data Gathering and Cleaning | Open Science at Penn State" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the protocol for the Fall 2022 survey." />
   <meta name="github-repo" content="penn-state-open-science/survey-fall-2022" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Number of Subjects and Statistical Plan | Open Science at Penn State" />
+  <meta name="twitter:title" content="Data Gathering and Cleaning | Open Science at Penn State" />
   
   <meta name="twitter:description" content="This is the protocol for the Fall 2022 survey." />
   
@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="study-design-and-procedures.html"/>
-<link rel="next" href="data-and-safety-monitoring-plan.html"/>
+<link rel="prev" href="confidentiality-privacy-and-data-management.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -384,40 +384,156 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="number-of-subjects-and-statistical-plan" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">8</span> Number of Subjects and Statistical Plan<a href="number-of-subjects-and-statistical-plan.html#number-of-subjects-and-statistical-plan" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="number-of-subjects" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> Number of Subjects<a href="number-of-subjects-and-statistical-plan.html#number-of-subjects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<blockquote>
-<p>Indicate the maximum number of subjects to be accrued/enrolled. Distinguish between the number of subjects who are expected to be enrolled and screened, and the number of subjects needed to complete the research procedures if applicable (i.e., numbers of subjects excluding screen failures.)</p>
-</blockquote>
+<div id="data-gathering-and-cleaning" class="section level1 unnumbered hasAnchor">
+<h1>Data Gathering and Cleaning<a href="data-gathering-and-cleaning.html#data-gathering-and-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="set-up" class="section level2 unnumbered hasAnchor">
+<h2>Set-up<a href="data-gathering-and-cleaning.html#set-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We ensure that all package dependencies are installed.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-gathering-and-cleaning.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {</span>
+<span id="cb1-2"><a href="data-gathering-and-cleaning.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb1-3"><a href="data-gathering-and-cleaning.html#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-4"><a href="data-gathering-and-cleaning.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(googledrive)) {</span>
+<span id="cb1-5"><a href="data-gathering-and-cleaning.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;googledrive&quot;</span>)</span>
+<span id="cb1-6"><a href="data-gathering-and-cleaning.html#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="data-gathering-and-cleaning.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="data-gathering-and-cleaning.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)) <span class="co"># for pipe %&gt;%</span></span></code></pre></div>
 </div>
-<div id="sample-size-determination" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Sample Size Determination<a href="number-of-subjects-and-statistical-plan.html#sample-size-determination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<blockquote>
-<p>If applicable, provide a justification of the sample size outlined in section 8.1 to include reflections on, or calculations of, the power of the study.</p>
-</blockquote>
-<p>This is an exploratory study that will use simple statistical techniques, and has no formal inferential goals.
-Hence power considerations are not directly applicable.</p>
+<div id="download-data" class="section level2 unnumbered hasAnchor">
+<h2>Download data<a href="data-gathering-and-cleaning.html#download-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Download the data file from the spreadsheet generated by the Google Form into a comma-separated value (CSV) file in a local directory called <code>csv/</code>.</p>
+<p>Authenticate to Google.
+For the time being, you must run <code>googledrive:drive_auth()</code> at the console, separate from rendering the protocol via <code>bookdown::render_book()</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-gathering-and-cleaning.html#cb2-1" aria-hidden="true" tabindex="-1"></a>googledrive<span class="sc">::</span><span class="fu">drive_auth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-gathering-and-cleaning.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">&#39;csv&#39;</span>)) {</span>
+<span id="cb3-2"><a href="data-gathering-and-cleaning.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="st">&#39;csv&#39;</span>)</span>
+<span id="cb3-3"><a href="data-gathering-and-cleaning.html#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="data-gathering-and-cleaning.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="data-gathering-and-cleaning.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(params<span class="sc">$</span>csv_fn)) {</span>
+<span id="cb3-6"><a href="data-gathering-and-cleaning.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  no_current_csv <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb3-7"><a href="data-gathering-and-cleaning.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  csv_fn <span class="ot">&lt;-</span> <span class="st">&quot;csv/open-science-survey-2022-fall.csv&quot;</span></span>
+<span id="cb3-8"><a href="data-gathering-and-cleaning.html#cb3-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-9"><a href="data-gathering-and-cleaning.html#cb3-9" aria-hidden="true" tabindex="-1"></a>  csv_fn <span class="ot">&lt;-</span> params<span class="sc">$</span>csv_fn</span>
+<span id="cb3-10"><a href="data-gathering-and-cleaning.html#cb3-10" aria-hidden="true" tabindex="-1"></a>  no_current_csv <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb3-11"><a href="data-gathering-and-cleaning.html#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="data-gathering-and-cleaning.html#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="data-gathering-and-cleaning.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (params<span class="sc">$</span>update_google_sheet <span class="sc">||</span> no_current_csv) {</span>
+<span id="cb3-14"><a href="data-gathering-and-cleaning.html#cb3-14" aria-hidden="true" tabindex="-1"></a>  googledrive<span class="sc">::</span><span class="fu">drive_download</span>(</span>
+<span id="cb3-15"><a href="data-gathering-and-cleaning.html#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">file =</span> google_sheet_fn,</span>
+<span id="cb3-16"><a href="data-gathering-and-cleaning.html#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> csv_fn,</span>
+<span id="cb3-17"><a href="data-gathering-and-cleaning.html#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&#39;csv&#39;</span>,</span>
+<span id="cb3-18"><a href="data-gathering-and-cleaning.html#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-19"><a href="data-gathering-and-cleaning.html#cb3-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-20"><a href="data-gathering-and-cleaning.html#cb3-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="statistical-or-analytic-methods" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> Statistical or Analytic Methods<a href="number-of-subjects-and-statistical-plan.html#statistical-or-analytic-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<blockquote>
-<p>Describe the statistical methods (or non-statistical methods of analysis) that will be employed.</p>
-</blockquote>
-<p>The survey results will be summarized as tabular breakdowns and cross-tabulations.<br />
-Simple visualizations may also be employed.
-The goal of the survey is exploratory.</p>
+<div id="clean-data" class="section level2 unnumbered hasAnchor">
+<h2>Clean data<a href="data-gathering-and-cleaning.html#clean-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Load the data file.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-gathering-and-cleaning.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">file.exists</span>(csv_fn)) {</span>
+<span id="cb4-2"><a href="data-gathering-and-cleaning.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  survey <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(csv_fn, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-3"><a href="data-gathering-and-cleaning.html#cb4-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-4"><a href="data-gathering-and-cleaning.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;File not found: &quot;</span>, csv_fn)</span>
+<span id="cb4-5"><a href="data-gathering-and-cleaning.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  survey <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb4-6"><a href="data-gathering-and-cleaning.html#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Examine the variable names.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-gathering-and-cleaning.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.null</span>(survey)) {</span>
+<span id="cb5-2"><a href="data-gathering-and-cleaning.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">warning</span>(<span class="st">&quot;Error loading data file&quot;</span>)</span>
+<span id="cb5-3"><a href="data-gathering-and-cleaning.html#cb5-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb5-4"><a href="data-gathering-and-cleaning.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(survey)</span>
+<span id="cb5-5"><a href="data-gathering-and-cleaning.html#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>##  [1] &quot;Timestamp&quot;                                                                                                                                                                        
+##  [2] &quot;What Penn State campus do you represent?&quot;                                                                                                                                         
+##  [3] &quot;What is your primary department?&quot;                                                                                                                                                 
+##  [4] &quot;What is your position?&quot;                                                                                                                                                           
+##  [5] &quot;At what career-stage are you relative to your current position&quot;                                                                                                                   
+##  [6] &quot;What are the primary types of digital data that are generated from your research? (choose all that apply)&quot;                                                                        
+##  [7] &quot;Do you collect data that have legal or ethical restrictions governing who may access it or how it may be used?&quot;                                                                   
+##  [8] &quot;Where do you store data for active projects where data collection and analysis is still ongoing?&quot;                                                                                 
+##  [9] &quot;How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?&quot;                                                    
+## [10] &quot;How convenient is it for you to share data from active projects with research collaborators at Penn State or outside of Penn State?&quot;                                              
+## [11] &quot;What are the main barriers to sharing data from active projects with research collaborators?&quot;                                                                                     
+## [12] &quot;How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?&quot;                                               
+## [13] &quot;Which of the following obstacles make sharing data with the research community harder for you?&quot;                                                                                   
+## [14] &quot;Do research sponsors/funders in your field require data sharing?&quot;                                                                                                                 
+## [15] &quot;Do journals in your field require data sharing?&quot;                                                                                                                                  
+## [16] &quot;If you have shared data with the research community, where have you shared it?&quot;                                                                                                   
+## [17] &quot;How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?&quot;                           
+## [18] &quot;How often do you create computer scripts or data analysis code in the conduct of your research?&quot;                                                                                  
+## [19] &quot;How often do you share computer scripts or data analysis code with other researchers?&quot;                                                                                            
+## [20] &quot;Do you create other kinds of software in the conduct of your research&quot;                                                                                                            
+## [21] &quot;How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket) to share code with others?&quot;                                                                 
+## [22] &quot;Do sponsors/funders in your field require code sharing?&quot;                                                                                                                          
+## [23] &quot;Do journals in your field require code sharing?&quot;                                                                                                                                  
+## [24] &quot;Do you openly share other materials related to your research (protocols, reagents, samples, apparatus, designs, etc.) with other researchers?&quot;                                    
+## [25] &quot;What is your experience with/knowledge of open science practices?&quot;                                                                                                                
+## [26] &quot;Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.&quot;                                                      
+## [27] &quot;Do you apply FAIR principles in your own data management and sharing practices?&quot;                                                                                                  
+## [28] &quot;Have you heard of the \&quot;reproducibility crisis\&quot; in science?&quot;                                                                                                                     
+## [29] &quot;Is there a reproducibility crisis in your area of research?&quot;                                                                                                                      
+## [30] &quot;How much would you benefit from a center at Penn State focused on supporting the adoption of best practices in data management, sharing, open science, and reproducible research?&quot;
+## [31] &quot;Select the services that would most benefit your research if offered by such a center.&quot;                                                                                           
+## [32] &quot;Any final comments about data management, data sharing, and open science?&quot;                                                                                                        
+## [33] &quot;(Optional) Provide us with your contact information if you would like us to follow up.&quot;</code></pre>
+<p>Let’s rename them.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-gathering-and-cleaning.html#cb7-1" aria-hidden="true" tabindex="-1"></a>full_questions <span class="ot">&lt;-</span> <span class="fu">names</span>(survey)</span>
+<span id="cb7-2"><a href="data-gathering-and-cleaning.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="data-gathering-and-cleaning.html#cb7-3" aria-hidden="true" tabindex="-1"></a>short_names <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb7-4"><a href="data-gathering-and-cleaning.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;timestamp&quot;</span>,</span>
+<span id="cb7-5"><a href="data-gathering-and-cleaning.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;campus&quot;</span>,</span>
+<span id="cb7-6"><a href="data-gathering-and-cleaning.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;department&quot;</span>,</span>
+<span id="cb7-7"><a href="data-gathering-and-cleaning.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;position&quot;</span>,</span>
+<span id="cb7-8"><a href="data-gathering-and-cleaning.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;career_stage&quot;</span>,</span>
+<span id="cb7-9"><a href="data-gathering-and-cleaning.html#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;data_types&quot;</span>,</span>
+<span id="cb7-10"><a href="data-gathering-and-cleaning.html#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;restricted_data&quot;</span>,</span>
+<span id="cb7-11"><a href="data-gathering-and-cleaning.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;storage_active&quot;</span>,</span>
+<span id="cb7-12"><a href="data-gathering-and-cleaning.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;importance_sharing_collab&quot;</span>,</span>
+<span id="cb7-13"><a href="data-gathering-and-cleaning.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;convenience_sharing_collab&quot;</span>,</span>
+<span id="cb7-14"><a href="data-gathering-and-cleaning.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;barriers_sharing_collab&quot;</span>,</span>
+<span id="cb7-15"><a href="data-gathering-and-cleaning.html#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;importance_share_community&quot;</span>,</span>
+<span id="cb7-16"><a href="data-gathering-and-cleaning.html#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;obstacles_share_community&quot;</span>,</span>
+<span id="cb7-17"><a href="data-gathering-and-cleaning.html#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;funders_require_data_sharing&quot;</span>,</span>
+<span id="cb7-18"><a href="data-gathering-and-cleaning.html#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;journals_require_data_sharing&quot;</span>,</span>
+<span id="cb7-19"><a href="data-gathering-and-cleaning.html#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;where_shared_widely&quot;</span>,</span>
+<span id="cb7-20"><a href="data-gathering-and-cleaning.html#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;equipped_data_mgmt_sharing&quot;</span>,</span>
+<span id="cb7-21"><a href="data-gathering-and-cleaning.html#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;create_analysis_code&quot;</span>,</span>
+<span id="cb7-22"><a href="data-gathering-and-cleaning.html#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;share_analysis_code&quot;</span>,</span>
+<span id="cb7-23"><a href="data-gathering-and-cleaning.html#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;create_other_code&quot;</span>,</span>
+<span id="cb7-24"><a href="data-gathering-and-cleaning.html#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;use_code_sharing_tools&quot;</span>,</span>
+<span id="cb7-25"><a href="data-gathering-and-cleaning.html#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;funders_require_code_sharing&quot;</span>,</span>
+<span id="cb7-26"><a href="data-gathering-and-cleaning.html#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;journals_require_code_sharing&quot;</span>,</span>
+<span id="cb7-27"><a href="data-gathering-and-cleaning.html#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;share_materials_community&quot;</span>,</span>
+<span id="cb7-28"><a href="data-gathering-and-cleaning.html#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;knowledge_open_science&quot;</span>,</span>
+<span id="cb7-29"><a href="data-gathering-and-cleaning.html#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;awareness_FAIR&quot;</span>,</span>
+<span id="cb7-30"><a href="data-gathering-and-cleaning.html#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;apply_FAIR&quot;</span>,</span>
+<span id="cb7-31"><a href="data-gathering-and-cleaning.html#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;heardof_reproducibility_crisis&quot;</span>,</span>
+<span id="cb7-32"><a href="data-gathering-and-cleaning.html#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;my_area_reproducibility_crisis&quot;</span>,</span>
+<span id="cb7-33"><a href="data-gathering-and-cleaning.html#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;benefit_psu_center&quot;</span>,</span>
+<span id="cb7-34"><a href="data-gathering-and-cleaning.html#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;service_psu_center&quot;</span>,</span>
+<span id="cb7-35"><a href="data-gathering-and-cleaning.html#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;comments&quot;</span>,</span>
+<span id="cb7-36"><a href="data-gathering-and-cleaning.html#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;contact_info&quot;</span></span>
+<span id="cb7-37"><a href="data-gathering-and-cleaning.html#cb7-37" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-38"><a href="data-gathering-and-cleaning.html#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="data-gathering-and-cleaning.html#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(short_names) <span class="sc">==</span> <span class="fu">length</span>(<span class="fu">names</span>(survey))) {</span>
+<span id="cb7-40"><a href="data-gathering-and-cleaning.html#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(survey) <span class="ot">&lt;-</span> short_names</span>
+<span id="cb7-41"><a href="data-gathering-and-cleaning.html#cb7-41" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-42"><a href="data-gathering-and-cleaning.html#cb7-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Name vector lengths differ; no change made.&quot;</span>)</span>
+<span id="cb7-43"><a href="data-gathering-and-cleaning.html#cb7-43" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 
 </div>
 </div>
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="study-design-and-procedures.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-and-safety-monitoring-plan.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="confidentiality-privacy-and-data-management.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -448,7 +564,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-n-subjects-stats-plan.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/23-data-gathering-cleaning.Rmd",
 "text": "Edit"
 },
 "history": {

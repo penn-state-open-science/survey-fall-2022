@@ -11,6 +11,10 @@ description: |
   This is the protocol for the Fall 2022 survey.
 link-citations: yes
 github-repo: penn-state-open-science/survey-fall-2022
+params:
+  update_google_sheet: false
+  google_sheet_fn: 'C-ORR Survey 2022 Fall (Responses)'
+  csv_fn: "csv/open-science-survey-2022-fall.csv"
 ---
 
 # About {-}

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>23 Data Gathering | Open Science at Penn State</title>
+  <title>Data Gathering | Open Science at Penn State</title>
   <meta name="description" content="This is the protocol for the Fall 2022 survey." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="23 Data Gathering | Open Science at Penn State" />
+  <meta property="og:title" content="Data Gathering | Open Science at Penn State" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the protocol for the Fall 2022 survey." />
   <meta name="github-repo" content="penn-state-open-science/survey-fall-2022" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="23 Data Gathering | Open Science at Penn State" />
+  <meta name="twitter:title" content="Data Gathering | Open Science at Penn State" />
   
   <meta name="twitter:description" content="This is the protocol for the Fall 2022 survey." />
   
@@ -358,9 +358,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Data Analysis &amp; Visualization</b></span></li>
-<li class="chapter" data-level="23" data-path="data-gathering.html"><a href="data-gathering.html"><i class="fa fa-check"></i><b>23</b> Data Gathering</a>
+<li class="chapter" data-level="" data-path="data-gathering.html"><a href="data-gathering.html"><i class="fa fa-check"></i>Data Gathering</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="data-gathering.html"><a href="data-gathering.html#set-up"><i class="fa fa-check"></i><b>23.1</b> Set-up</a></li>
+<li class="chapter" data-level="" data-path="data-gathering.html"><a href="data-gathering.html#set-up"><i class="fa fa-check"></i>Set-up</a></li>
 <li class="chapter" data-level="" data-path="data-gathering.html"><a href="data-gathering.html#download-data"><i class="fa fa-check"></i>Download data</a></li>
 <li class="chapter" data-level="" data-path="data-gathering.html"><a href="data-gathering.html#clean-data"><i class="fa fa-check"></i>Clean data</a></li>
 </ul></li>
@@ -384,33 +384,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-gathering" class="section level1 hasAnchor" number="23">
-<h1><span class="header-section-number">23</span> Data Gathering<a href="data-gathering.html#data-gathering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="set-up" class="section level2 hasAnchor" number="23.1">
-<h2><span class="header-section-number">23.1</span> Set-up<a href="data-gathering.html#set-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-gathering" class="section level1 unnumbered hasAnchor">
+<h1>Data Gathering<a href="data-gathering.html#data-gathering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="set-up" class="section level2 unnumbered hasAnchor">
+<h2>Set-up<a href="data-gathering.html#set-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We ensure that all package dependencies are installed.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-gathering.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {</span>
 <span id="cb1-2"><a href="data-gathering.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb1-3"><a href="data-gathering.html#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-4"><a href="data-gathering.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(googledrive)) {</span>
-<span id="cb1-5"><a href="data-gathering.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;googledrive&quot;</span>)</span>
-<span id="cb1-6"><a href="data-gathering.html#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-7"><a href="data-gathering.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="data-gathering.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)) <span class="co"># for pipe %&gt;%</span></span></code></pre></div>
+<span id="cb1-3"><a href="data-gathering.html#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## Loading required package: tidyverse</code></pre>
+<pre><code>## ── Attaching packages ────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.3.6      ✔ purrr   0.3.5 
+## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+## ✔ readr   2.1.3      ✔ forcats 0.5.2 
+## ── Conflicts ───────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-gathering.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(googledrive)) {</span>
+<span id="cb4-2"><a href="data-gathering.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;googledrive&quot;</span>)</span>
+<span id="cb4-3"><a href="data-gathering.html#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## Loading required package: googledrive</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-gathering.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)) <span class="co"># for pipe %&gt;%</span></span></code></pre></div>
 </div>
 <div id="download-data" class="section level2 unnumbered hasAnchor">
 <h2>Download data<a href="data-gathering.html#download-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Download the data file from the spreadsheet generated by the Google Form into a comma-separated value (CSV) file in a local directory called <code>csv/</code>.</p>
 <p>Authenticate to Google.
 For the time being, you must run <code>googledrive:drive_auth()</code> at the console, separate from rendering the protocol via <code>bookdown::render_book()</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-gathering.html#cb2-1" aria-hidden="true" tabindex="-1"></a>googledrive<span class="sc">::</span><span class="fu">drive_auth</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-gathering.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">&#39;csv&#39;</span>)) {</span>
-<span id="cb3-2"><a href="data-gathering.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="st">&#39;csv&#39;</span>)</span>
-<span id="cb3-3"><a href="data-gathering.html#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-4"><a href="data-gathering.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="data-gathering.html#cb3-5" aria-hidden="true" tabindex="-1"></a>csv_fn <span class="ot">&lt;-</span> <span class="st">&quot;csv/open-science-survey-2022-fall.csv&quot;</span></span>
-<span id="cb3-6"><a href="data-gathering.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="data-gathering.html#cb3-7" aria-hidden="true" tabindex="-1"></a>googledrive<span class="sc">::</span><span class="fu">drive_download</span>(<span class="at">file =</span> <span class="st">&#39;C-ORR Survey 2022 Fall (Responses)&#39;</span>, <span class="at">path =</span> csv_fn, <span class="at">type =</span> <span class="st">&#39;csv&#39;</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-gathering.html#cb7-1" aria-hidden="true" tabindex="-1"></a>googledrive<span class="sc">::</span><span class="fu">drive_auth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-gathering.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">&#39;csv&#39;</span>)) {</span>
+<span id="cb8-2"><a href="data-gathering.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="st">&#39;csv&#39;</span>)</span>
+<span id="cb8-3"><a href="data-gathering.html#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-4"><a href="data-gathering.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="data-gathering.html#cb8-5" aria-hidden="true" tabindex="-1"></a>csv_fn <span class="ot">&lt;-</span> <span class="st">&quot;csv/open-science-survey-2022-fall.csv&quot;</span></span>
+<span id="cb8-6"><a href="data-gathering.html#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="data-gathering.html#cb8-7" aria-hidden="true" tabindex="-1"></a>googledrive<span class="sc">::</span><span class="fu">drive_download</span>(<span class="at">file =</span> <span class="st">&#39;C-ORR Survey 2022 Fall (Responses)&#39;</span>, <span class="at">path =</span> csv_fn, <span class="at">type =</span> <span class="st">&#39;csv&#39;</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## File downloaded:</code></pre>
 <pre><code>## • &#39;C-ORR Survey 2022 Fall (Responses)&#39;
 ##   &lt;id: 1kyZDCFU4vEqWBw6z2sFIpAs8RVpOLn2jic3kIuyLHmM&gt;</code></pre>
@@ -420,18 +429,18 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div id="clean-data" class="section level2 unnumbered hasAnchor">
 <h2>Clean data<a href="data-gathering.html#clean-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Load the data file.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-gathering.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">file.exists</span>(csv_fn)) {</span>
-<span id="cb8-2"><a href="data-gathering.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  survey <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(csv_fn, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb8-3"><a href="data-gathering.html#cb8-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb8-4"><a href="data-gathering.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;File not found: &quot;</span>, csv_fn)</span>
-<span id="cb8-5"><a href="data-gathering.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  survey <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb8-6"><a href="data-gathering.html#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-gathering.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">file.exists</span>(csv_fn)) {</span>
+<span id="cb13-2"><a href="data-gathering.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  survey <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(csv_fn, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-3"><a href="data-gathering.html#cb13-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb13-4"><a href="data-gathering.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;File not found: &quot;</span>, csv_fn)</span>
+<span id="cb13-5"><a href="data-gathering.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  survey <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb13-6"><a href="data-gathering.html#cb13-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Examine the variable names.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-gathering.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.null</span>(survey)) {</span>
-<span id="cb9-2"><a href="data-gathering.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">warning</span>(<span class="st">&quot;Error loading data file&quot;</span>)</span>
-<span id="cb9-3"><a href="data-gathering.html#cb9-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb9-4"><a href="data-gathering.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(survey)</span>
-<span id="cb9-5"><a href="data-gathering.html#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-gathering.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.null</span>(survey)) {</span>
+<span id="cb14-2"><a href="data-gathering.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">warning</span>(<span class="st">&quot;Error loading data file&quot;</span>)</span>
+<span id="cb14-3"><a href="data-gathering.html#cb14-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb14-4"><a href="data-gathering.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(survey)</span>
+<span id="cb14-5"><a href="data-gathering.html#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>##  [1] &quot;Timestamp&quot;                                                                                                                                                                        
 ##  [2] &quot;What Penn State campus do you represent?&quot;                                                                                                                                         
 ##  [3] &quot;What is your primary department?&quot;                                                                                                                                                 
@@ -465,6 +474,48 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 ## [31] &quot;Select the services that would most benefit your research if offered by such a center.&quot;                                                                                           
 ## [32] &quot;Any final comments about data management, data sharing, and open science?&quot;                                                                                                        
 ## [33] &quot;(Optional) Provide us with your contact information if you would like us to follow up.&quot;</code></pre>
+<p>Let’s rename them.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-gathering.html#cb16-1" aria-hidden="true" tabindex="-1"></a>new_names <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-2"><a href="data-gathering.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;timestamp&quot;</span>,</span>
+<span id="cb16-3"><a href="data-gathering.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;campus&quot;</span>,</span>
+<span id="cb16-4"><a href="data-gathering.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;department&quot;</span>,</span>
+<span id="cb16-5"><a href="data-gathering.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;position&quot;</span>,</span>
+<span id="cb16-6"><a href="data-gathering.html#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;career_stage&quot;</span>,</span>
+<span id="cb16-7"><a href="data-gathering.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;data_types&quot;</span>,</span>
+<span id="cb16-8"><a href="data-gathering.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;restricted_data&quot;</span>,</span>
+<span id="cb16-9"><a href="data-gathering.html#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;storage_active&quot;</span>,</span>
+<span id="cb16-10"><a href="data-gathering.html#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;importance_sharing_collab&quot;</span>,</span>
+<span id="cb16-11"><a href="data-gathering.html#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;convenience_sharing_collab&quot;</span>,</span>
+<span id="cb16-12"><a href="data-gathering.html#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;barriers_sharing_collab&quot;</span>,</span>
+<span id="cb16-13"><a href="data-gathering.html#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;importance_share_community&quot;</span>,</span>
+<span id="cb16-14"><a href="data-gathering.html#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;obstacles_share_community&quot;</span>,</span>
+<span id="cb16-15"><a href="data-gathering.html#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;funders_require_data_sharing&quot;</span>,</span>
+<span id="cb16-16"><a href="data-gathering.html#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;journals_require_data_sharing&quot;</span>,</span>
+<span id="cb16-17"><a href="data-gathering.html#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;where_shared_widely&quot;</span>,</span>
+<span id="cb16-18"><a href="data-gathering.html#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;equipped_data_mgmt_sharing&quot;</span>,</span>
+<span id="cb16-19"><a href="data-gathering.html#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;create_analysis_code&quot;</span>,</span>
+<span id="cb16-20"><a href="data-gathering.html#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;share_analysis_code&quot;</span>,</span>
+<span id="cb16-21"><a href="data-gathering.html#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;create_other_code&quot;</span>,</span>
+<span id="cb16-22"><a href="data-gathering.html#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;use_code_sharing_tools&quot;</span>,</span>
+<span id="cb16-23"><a href="data-gathering.html#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;funders_require_code_sharing&quot;</span>,</span>
+<span id="cb16-24"><a href="data-gathering.html#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;journals_require_code_sharing&quot;</span>,</span>
+<span id="cb16-25"><a href="data-gathering.html#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;share_materials_community&quot;</span>,</span>
+<span id="cb16-26"><a href="data-gathering.html#cb16-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;knowledge_open_science&quot;</span>,</span>
+<span id="cb16-27"><a href="data-gathering.html#cb16-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;awareness_FAIR&quot;</span>,</span>
+<span id="cb16-28"><a href="data-gathering.html#cb16-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;apply_FAIR&quot;</span>,</span>
+<span id="cb16-29"><a href="data-gathering.html#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;heardof_reproducibility_crisis&quot;</span>,</span>
+<span id="cb16-30"><a href="data-gathering.html#cb16-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;my_area_reproducibility_crisis&quot;</span>,</span>
+<span id="cb16-31"><a href="data-gathering.html#cb16-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;benefit_psu_center&quot;</span>,</span>
+<span id="cb16-32"><a href="data-gathering.html#cb16-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;service_psu_center&quot;</span>,</span>
+<span id="cb16-33"><a href="data-gathering.html#cb16-33" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;comments&quot;</span>,</span>
+<span id="cb16-34"><a href="data-gathering.html#cb16-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;contact_info&quot;</span></span>
+<span id="cb16-35"><a href="data-gathering.html#cb16-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-36"><a href="data-gathering.html#cb16-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-37"><a href="data-gathering.html#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(new_names) <span class="sc">==</span> <span class="fu">length</span>(<span class="fu">names</span>(survey))) {</span>
+<span id="cb16-38"><a href="data-gathering.html#cb16-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(survey) <span class="ot">&lt;-</span> new_names</span>
+<span id="cb16-39"><a href="data-gathering.html#cb16-39" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb16-40"><a href="data-gathering.html#cb16-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Name vector lengths differ; no change made.&quot;</span>)</span>
+<span id="cb16-41"><a href="data-gathering.html#cb16-41" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 
 </div>
 </div>

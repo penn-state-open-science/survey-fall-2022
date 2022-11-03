@@ -2,16 +2,19 @@
 
 ## Costs
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe any costs that subjects may be responsible for because of
 participation in the research.
+
 :::
 
 Not applicable
 
 ## Compensation for research-related injury
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 **If the research involves more than Minimal Risk to subjects,
 describe the available compensation in the event of research related
 injury.**
@@ -38,6 +41,7 @@ In the event of injury resulting from this research, medical treatment
 is available but will be provided at the usual charge. Such charges
 may be paid by the study sponsor as outlined in the research agreement
 and explained in the consent form.
+
 :::
 
 

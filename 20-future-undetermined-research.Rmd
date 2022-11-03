@@ -1,52 +1,92 @@
 # Future Undetermined Research: Data and Specimen Banking
 
-> If this study is collecting **identifiable** data and/or specimens
-> that will be banked for **future undetermined** **research**, please
-> describe this process in the sections below. This information should
-> not conflict with information provided in section 22 below OR the
-> "HRP-598 -- Research Data Plan Review Form" regarding whether or not
-> data and/or specimens will be associated with identifiers (directly or
-> indirectly). If there are no plans to use identifiable data/specimens
-> for future, undetermined research, then this section is **NOT
-> applicable**.
+::: {.instr_box}
+
+If this study is collecting **identifiable** data and/or specimens
+that will be banked for **future undetermined** **research**, please
+describe this process in the sections below. This information should
+not conflict with information provided in section 22 below OR the
+"HRP-598 -- Research Data Plan Review Form" regarding whether or not
+data and/or specimens will be associated with identifiers (directly or
+indirectly). If there are no plans to use identifiable data/specimens
+for future, undetermined research, then this section is **NOT
+applicable**.
+
+:::
 
 ## Data and/or specimens being stored
 
-## Identify what data and/or specimens will be stored, and the data associated with each specimen.
+::: {.instr_box}
 
-> \[Type protocol text here or indicate as not applicable\]
+Identify what data and/or specimens will be stored, and the data associated with each specimen.
+
+[Type protocol text here or indicate as not applicable]
+
+:::
+
+If respondents provide it, we will store their name and contact information along with their survey responses so that we may follow up with them at a later date.
 
 ## Location of storage
 
-> Identify the location where the data and/or specimens will be stored.
->
-> \[Type protocol text here or indicate as not applicable\]
+::: {.instr_box}
+
+Identify the location where the data and/or specimens will be stored.
+
+[Type protocol text here or indicate as not applicable]
+
+:::
+
+The data will be stored in the PI's password-protected Google Drive account and on the PI's password protected laptop computer.
 
 ## Duration of storage
 
-> Identify how long the data and/or specimens will be stored. If data
-> and/or specimens will be stored indefinitely, indicate such.
->
-> \[Type protocol text here or indicate as not applicable\]
+::: {.instr_box}
+
+Identify how long the data and/or specimens will be stored. If data
+and/or specimens will be stored indefinitely, indicate such.
+
+[Type protocol text here or indicate as not applicable]
+
+:::
+
+Personally identifying information will be stored for up to 2 years after the completion of the survey.
 
 ## Access to data and/or specimens
 
-> Identify who will have access to the data and/or specimens.
 
-## \[Type protocol text here or indicate as not applicable\]
+::: {.instr_box}
+Identify who will have access to the data and/or specimens.
+
+[Type protocol text here or indicate as not applicable]
+
+:::
+
+Other members of the research team will be granted access to these data.
 
 ## Procedures to release data or specimens
 
-> Describe the procedures to release the data and/or specimens,
-> including: the process to request a release, approvals required for
-> release, who can obtain data and/or specimens, and the data to be
-> provided with the specimens.
->
-> \[Type protocol text here or indicate as not applicable\]
+::: {.instr_box}
+
+Describe the procedures to release the data and/or specimens,
+including: the process to request a release, approvals required for
+release, who can obtain data and/or specimens, and the data to be
+provided with the specimens.
+
+[Type protocol text here or indicate as not applicable]
+
+:::
+
+There are no plans to release personally identifying data.
 
 ## Process for returning results
 
-> Describe the process for returning results about the use of the data
-> and/or specimens.
->
-> \[Type protocol text here or indicate as not applicable\]
+::: {.instr_box}
+
+Describe the process for returning results about the use of the data
+and/or specimens.
+
+[Type protocol text here or indicate as not applicable]
+
+:::
+
+Not applicable.

@@ -1,6 +1,7 @@
 # Subject Payment and/or Travel Reimbursements
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the amount, type (cash, check, gift card, other) and timing
 of any subject payment or travel reimbursement. If there is **no**
 subject payment or travel reimbursement, indicate as not applicable.
@@ -15,6 +16,8 @@ Approved Subject Pool: Indicate which approved subject pool will be
 used; include in response below that course credit will be given and
 alternatives will be offered as per the approved subject pool
 procedures.
+
 :::
 
+Not applicable.
 

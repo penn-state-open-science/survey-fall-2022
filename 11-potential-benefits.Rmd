@@ -2,7 +2,8 @@
 
 ## Potential Benefits to Subjects {#benefits-subjects}
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the potential benefits that individual subjects may
 experience from taking part in the research. If there is no direct
 benefit to subjects, indicate as such. Compensation is not considered
@@ -10,10 +11,19 @@ a benefit. Compensation should be addressed in section 13.0.
 
 [Type protocol text here or indicate "none" if there is no direct
 benefit to subjects]
+
 :::
+
+None.
 
 ## Potential Benefits to Others {#benefits-others}
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the potential benefits to society or others.
+
 :::
+
+The academic community will learn more about who knows what about Open Science at Penn State.
+The findings may help shape future institutional policies related to Open Science.
+The research might also be published, and hence become available to the general public.

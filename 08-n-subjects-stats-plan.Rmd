@@ -2,14 +2,18 @@
 
 ## Number of Subjects
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Indicate the maximum number of subjects to be accrued/enrolled. Distinguish between the number of subjects who are expected to be enrolled and screened, and the number of subjects needed to complete the research procedures if applicable (i.e., numbers of subjects excluding screen failures.)
+
 :::
 
 ## Sample Size Determination
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 If applicable, provide a justification of the sample size outlined in section 8.1  to include reflections on, or calculations of, the power of the study.
+
 :::
 
 This is an exploratory study that will use simple statistical techniques, and has no formal inferential goals.
@@ -17,8 +21,10 @@ Hence power considerations are not directly applicable.
 
 ## Statistical or Analytic Methods
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the statistical methods (or non-statistical methods of analysis) that will be employed.
+
 :::
 
 The survey results will be summarized as tabular breakdowns and cross-tabulations.  

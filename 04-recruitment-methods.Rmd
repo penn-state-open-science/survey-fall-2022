@@ -47,7 +47,7 @@ Subject recruitment will start once this protocol is approved.
 
 [X] Eligibility screening is occurring before consent^[Unless informed consent is waived by the IRB, screening before consent is only permitted when screening activities are limited to the collection of information through oral or written communication OR when identifiable private information or identifiable biospecimens is obtained by accessing records or stored identifiable biospecimens.
 Screening before consent is not permitted if data will be used for activities other than eligibility screening/recruitment (e.g., data analysis).
-In some studies, these procedures may not take place unless HIPAA Authorization is obtained OR a waiver of HIPAA Authorization when applicable for the screening procedures is approved by the IRB.]
+In some studies, these procedures may not take place unless HIPAA Authorization is obtained OR a waiver of HIPAA Authorization when applicable for the screening procedures is approved by the IRB.]</br>
 [ ] Eligibility screening is occurring after consent</br>
 [ ] Consent is not being obtained in this research</br>
 [ ] Not applicable - Eligibility screening is not being done in this research.

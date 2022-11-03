@@ -1,6 +1,7 @@
 # Data and Safety Monitoring Plan
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 **This section is required when research involves more than Minimal
 Risk to subjects as defined in "HRP-001 SOP- Definitions."**
 
@@ -9,52 +10,69 @@ For research involving prisoners, *Minimal Risk* is the probability and magnitud
 
 **Please complete each section below if the research involves more
 than minimal risk to subjects or indicate not applicable.**
+
 :::
 
 ## Periodic evaluation of data
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the plan to periodically evaluate the data collected regarding both harms and benefits to determine whether subjects remain safe.
+
 :::
 
 ## Data that are reviewed
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the data that are reviewed, including safety data, untoward events, and efficacy data.
+
 :::
 
 ## Method of collection of safety information
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the method by which the safety information will be collected (e.g., with case report forms, at study visits, by telephone calls and with subjects).
+
 :::
 
 ## Frequency of data collection
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the frequency of data collection, including when safety data collection starts.
+
 :::
 
 ## Individuals reviewing the data
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Identify the individuals who will review the data. The plan might include establishing a data and safety monitoring committee and a plan for reporting data monitoring committee findings to the IRB and the sponsor.
+
 :::
 
 ## Frequency of review of cumulative data
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the frequency or periodicity of review of cumulative data.
+
 :::
 
 ## Statistical tests
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe the statistical tests for analyzing the safety data to determine whether harms are occurring.
+
 :::
 
 ## Suspension of research
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe any conditions that trigger an immediate suspension of research.
+
 :::

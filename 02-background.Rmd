@@ -2,7 +2,7 @@
 
 ## Scientific Background and Gaps
 
-::: {.instr_box align="center"}
+::: {.instr_box}
 Describe the scientific background and gaps in current knowledge.
 For clinical research studies being conducted at Penn State
 Health/Penn State College of Medicine, and for other non-PSH locations
@@ -17,7 +17,7 @@ In part this is in reaction to a perceived crisis of reproducibility and replica
  
 ## Previous Data
 
-::: {.instr_box align="center"}
+::: {.instr_box}
 Describe any relevant preliminary data.
 :::
 
@@ -30,7 +30,7 @@ They also found clusters of practices that had similar levels of familiarity amo
 
 ## Study Rationale
 
-::: {.instr_box align="center"}
+::: {.instr_box}
 Provide the scientific rationale for the research.
 :::
 

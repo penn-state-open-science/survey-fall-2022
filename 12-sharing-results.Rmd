@@ -1,5 +1,9 @@
 # Sharing Results with Subjects
 
-::: {.instr_box align="center"}
+::: {.instr_box}
+
 Describe whether results (study results or individual subject results, such as results of investigational diagnostic tests, genetic tests, or incidental findings) will be shared with subjects or others (e.g., the subject's primary care physicians) and if so, describe how information will be shared.
+
 :::
+
+There are no plans to share results with subjects, but we do plan to share aggregate and summary data with the Penn State community and possibly with the public.

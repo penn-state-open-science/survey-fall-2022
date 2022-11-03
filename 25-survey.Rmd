@@ -32,9 +32,15 @@
 
 ## Survey questions {- #survey-questions}
 
+**Note**: Here is a useful reference for what language to use for Likert scale questions <https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf>
+
 ```{r}
+suppressPackageStartupMessages(library("tidyverse")) # for pipe %>% operator
+
+# Read local copy of survey
 survey <- readr::read_csv("csv/open-science-survey-2022-fall.csv")
 
+# Drop the Timestamp since it is provided by Google Forms automatically
 survey_questions <- names(survey)[2:dim(survey)[2]]
 
 survey_questions %>%

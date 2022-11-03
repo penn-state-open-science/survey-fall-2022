@@ -25,7 +25,26 @@ Our goal is to reduce duplication of effort and to demonstrate how an IRB resear
 
 These materials may be copied and reused by anyone.
 
-```{r include=FALSE}
+```{r update-data, include=FALSE}
+if (!file.exists(params$csv_fn)) {
+  no_current_csv <- TRUE
+  csv_fn <- "csv/open-science-survey-2022-fall.csv"
+} else {
+  csv_fn <- params$csv_fn
+  no_current_csv <- FALSE
+}
+
+if (params$update_google_sheet || no_current_csv) {
+  googledrive::drive_download(
+    file = params$google_sheet_fn,
+    path = csv_fn,
+    type = 'csv',
+    overwrite = TRUE
+  )
+}
+```
+
+```{r add-bib-entries, include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'

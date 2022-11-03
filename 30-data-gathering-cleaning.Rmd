@@ -32,29 +32,29 @@ googledrive::drive_auth()
 ```
 
 ```{r}
-if (!dir.exists('csv')) {
-  dir.create('csv')
-}
-
-if (!file.exists(params$csv_fn)) {
-  no_current_csv <- TRUE
-  csv_fn <- "csv/open-science-survey-2022-fall.csv"
-} else {
-  csv_fn <- params$csv_fn
-  no_current_csv <- FALSE
-}
-
-if (params$update_google_sheet || no_current_csv) {
-  googledrive::drive_download(
-    file = google_sheet_fn,
-    path = csv_fn,
-    type = 'csv',
-    overwrite = TRUE
-  )
-}
+# if (!dir.exists('csv')) {
+#   dir.create('csv')
+# }
+# 
+# if (!file.exists(params$csv_fn)) {
+#   no_current_csv <- TRUE
+#   csv_fn <- "csv/open-science-survey-2022-fall.csv"
+# } else {
+#   csv_fn <- params$csv_fn
+#   no_current_csv <- FALSE
+# }
+# 
+# if (params$update_google_sheet || no_current_csv) {
+#   googledrive::drive_download(
+#     file = google_sheet_fn,
+#     path = csv_fn,
+#     type = 'csv',
+#     overwrite = TRUE
+#   )
+# }
 ```
 
-## Clean data {-}
+## Load data {-}
 
 Load the data file.
 
@@ -66,6 +66,9 @@ if (file.exists(csv_fn)) {
   survey <- NULL
 }
 ```
+
+
+## Clean data {-}
 
 Examine the variable names.
 
@@ -87,21 +90,21 @@ short_names <- c(
   "campus",
   "department",
   "position",
-  "career_stage",
+  "years_since_degree",
   "data_types",
   "restricted_data",
-  "storage_active",
+  "storage_active_projects",
   "importance_sharing_collab",
   "convenience_sharing_collab",
   "barriers_sharing_collab",
   "importance_share_community",
-  "obstacles_share_community",
+  "barriers_share_community",
   "funders_require_data_sharing",
   "journals_require_data_sharing",
-  "where_shared_widely",
+  "where_shared_community",
   "equipped_data_mgmt_sharing",
   "create_analysis_code",
-  "share_analysis_code",
+  "share_analysis_code_collab",
   "create_other_code",
   "use_code_sharing_tools",
   "funders_require_code_sharing",
@@ -115,7 +118,9 @@ short_names <- c(
   "benefit_psu_center",
   "service_psu_center",
   "comments",
-  "contact_info"
+  "contact_info",
+  "highest_degree_earned",
+  "share_analysis_code_community"
 )
 
 if (length(short_names) == length(names(survey))) {
@@ -127,4 +132,45 @@ if (length(short_names) == length(names(survey))) {
 
 Some of the variables have values that are easy to parse, while others are more challenging, `data_types` for example.
 
+### Modify `campus`
 
+Make all campus locations lowercase and replace white space with underscores.
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(., campus = tolower(campus)) %>%
+  dplyr::mutate(., campus = stringr::str_replace(campus, " ", "_"))
+```
+
+### Modify `department`
+
+Make lowercase.
+\\TODO: Fix spelling errors.
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(., campus = tolower(campus)) %>%
+  dplyr::mutate(., )
+```
+
+### Modify `position`
+
+Make lowercase, replace spaces and dash with underscore.
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(., position = tolower(position)) %>%
+  dplyr::mutate(., position = stringr::str_replace_all(position, "[ -]", "_"))
+```
+
+### Modify `years_since_degree`
+
+\\TODO: Make ordinal
+
+### Modify `data_types`
+
+\\TODO: Parse each row into string array; then create column var for each value
+
+### Modify `restricted_data`
+
+\\TODO: Recode values

@@ -41,7 +41,7 @@ Create a numbered list of the exclusion criteria that define who will be exclude
 1. Participants younger than 18 years of age.
 2. Participants not associated with Penn State as a graduate student, postdoc, teaching faculty, research staff, research faculty, or administrator.
 
-## Early Withdrawal of Subjects
+## Early Withdrawal of Subjects {#early-withdrawal}
 
 ### Criteria for removal from study
 

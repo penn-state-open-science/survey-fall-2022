@@ -80,8 +80,8 @@ statistical-tests
 suspension-of-research
 risks
 potential-benefits-to-subjects-and-others
-potential-benefits-to-subjects
-potential-benefits-to-others
+benefits-subjects
+benefits-others
 sharing-results-with-subjects
 subject-payment-andor-travel-reimbursements
 economic-burden-to-subjects

@@ -2,22 +2,24 @@
 
 ## Scientific Background and Gaps
 
-> Describe the scientific background and gaps in current knowledge.
->
-> For clinical research studies being conducted at Penn State
-> Health/Penn State College of Medicine, and for other non-PSH locations
-> as applicable, describe the treatment/procedure that is considered
-> standard of care (i.e., indicate how patients would be treated in
-> non-investigational setting); and if applicable, indicate if the study
-> procedure is available to patient without taking part in the study.
+::: {.instr_box align="center"}
+Describe the scientific background and gaps in current knowledge.
+For clinical research studies being conducted at Penn State
+Health/Penn State College of Medicine, and for other non-PSH locations
+as applicable, describe the treatment/procedure that is considered
+standard of care (i.e., indicate how patients would be treated in
+non-investigational setting); and if applicable, indicate if the study
+procedure is available to patient without taking part in the study.
+:::
 
 There is a growing movement in the scientific community towards more openness and transparency: data and code sharing; open access publishing; pre-registration, etc.
 In part this is in reaction to a perceived crisis of reproducibility and replicability; in part it is due to many high-profile examples of “questionable research practices.”
  
-
 ## Previous Data
 
-> Describe any relevant preliminary data.
+::: {.instr_box align="center"}
+Describe any relevant preliminary data.
+:::
 
 The Penn State Libraries conducted a survey of XXX in the XXXX in XXXX.
 Outside of that survey, little is currently known about researchers' knowledge about common Open Science practices and principles.  
@@ -28,7 +30,9 @@ They also found clusters of practices that had similar levels of familiarity amo
 
 ## Study Rationale
 
-> Provide the scientific rationale for the research.
+::: {.instr_box align="center"}
+Provide the scientific rationale for the research.
+:::
 
 The investigators believe that there is significant need for more organized and focal educational activities and project-specific support related to Open Science.
 This survey will characterize the current state of knowledge and need for these sorts of activities at Penn State.

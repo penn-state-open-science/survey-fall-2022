@@ -1,12 +1,20 @@
 # HIPAA Research Authorization and/or Waiver or Alteration of Authorization
 
-> This section is about the access, use or disclosure of Protected Health Information (PHI). PHI is individually identifiable health information (i.e., health information containing one or more 18 identifiers) that is transmitted or maintained in any form or medium by a Covered Entity or its Business Associate. A Covered Entity is a health plan, a health care clearinghouse or health care provider who transmits health information in electronic form.  See “HRP-103 -Investigator Manual” for a list of the 18 identifiers.
->
-> If requesting a waiver/alteration of HIPAA authorization, complete sections 6.2 and 6.3 in addition to section 6.1. The Privacy Rule permits waivers (or alterations) of authorization if the research meets certain conditions. Include only information that will be accessed with the waiver/alteration. 
+::: {.instr_box align="center"}
+This section is about the access, use or disclosure of Protected Health Information (PHI).
+PHI is individually identifiable health information (i.e., health information containing one or more 18 identifiers) that is transmitted or maintained in any form or medium by a Covered Entity or its Business Associate. 
+A Covered Entity is a health plan, a health care clearinghouse or health care provider who transmits health information in electronic form.
+See “HRP-103 -Investigator Manual” for a list of the 18 identifiers.
+
+If requesting a waiver/alteration of HIPAA authorization, complete sections 6.2 and 6.3 in addition to section 6.1. The Privacy Rule permits waivers (or alterations) of authorization if the research meets certain conditions. Include only information that will be accessed with the waiver/alteration. 
+:::
+
 
 ## Authorization and/or Waiver or Alteration of Authorization for the Uses and Disclosures of PHI
 
-> Check all that apply:
+::: {.instr_box align="center"}
+Check all that apply:
+:::
 
 [x]	Not applicable, no identifiable protected health information (PHI) is accessed, used or disclosed in this study. [Mark all parts of sections 6.2 and 6.3 as not applicable]
 
@@ -24,20 +32,32 @@
 
 #### Plan to protect PHI from improper use or disclosure
 
-> Include the following statement as written – DO NOT ALTER OR DELETE unless this section is not applicable because the research does not involve a waiver of authorization. If the section is not applicable, remove the statement and indicate as not applicable. 
+::: {.instr_box align="center"}
+Include the following statement as written – DO NOT ALTER OR DELETE unless this section is not applicable because the research does not involve a waiver of authorization. If the section is not applicable, remove the statement and indicate as not applicable.
+:::
 
 #### Plan to destroy identifiers or a justification for retaining identifiers 
 
-> Describe the plan to destroy the identifiers at the earliest opportunity consistent with the conduct of the research. Include when and how identifiers will be destroyed. If identifiers will be retained, provide the legal, health or research justification for retaining the identifiers.
+::: {.instr_box align="center"}
+Describe the plan to destroy the identifiers at the earliest opportunity consistent with the conduct of the research. Include when and how identifiers will be destroyed. If identifiers will be retained, provide the legal, health or research justification for retaining the identifiers.
+:::
 
 ### Explanation for why the research could not practicably be conducted without access to and use of PHI
 
-> Provide reasons why this research could not practicably be carried out without access to and use of PHI.
+::: {.instr_box align="center"}
+Provide reasons why this research could not practicably be carried out without access to and use of PHI.
+:::
 
 ### Explanation for why the research could not practicably be conducted without the waiver or alteration of authorization
 
-> Provide reasons why this research could not practicably be carried out without the waiver or alternation of authorization.
+::: {.instr_box align="center"}
+Provide reasons why this research could not practicably be carried out without the waiver or alternation of authorization.
+
+:::
 
 ## Waiver or alteration of authorization statements of agreement
 
-> By submitting this study for review with a waiver of authorization, you agree to the following statement – DO NOT ALTER OR DELETE unless this section is not applicable because the research does not involve a waiver or alteration of authorization. If the section is not applicable, remove the statement and indicate as not applicable.
+::: {.instr_box align="center"}
+By submitting this study for review with a waiver of authorization, you agree to the following statement – DO NOT ALTER OR DELETE unless this section is not applicable because the research does not involve a waiver or alteration of authorization. If the section is not applicable, remove the statement and indicate as not applicable.
+:::
+

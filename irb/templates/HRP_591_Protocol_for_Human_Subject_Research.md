@@ -955,7 +955,7 @@ actual survey or interview questions).
 
 2.  **Data that are reviewed**
 
-## Describe the data that are reviewed, including safety data, untoward events, and efficacy data.
+> Describe the data that are reviewed, including safety data, untoward events, and efficacy data.
 
 > \[Type protocol text here or indicate as not applicable\]
 
@@ -1025,8 +1025,6 @@ actual survey or interview questions).
 \[Type protocol text here\]
 
 # Potential Benefits to Subjects and Others 
-
-## 
 
 ## Potential Benefits to Subjects
 

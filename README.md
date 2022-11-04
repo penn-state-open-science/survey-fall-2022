@@ -1,6 +1,11 @@
 # survey-fall-2022
 Code for analyzing a survey conducted in Fall 2022.
 
+## Installation
+
+- Clone the repo from GitHub.
+- We use `renv` to try to make the code more readily reproducible. So, there is some time at the beginning where you will be asked to approve the installation of a number of required packages. In some cases (e.g., Penn State's RStudio Server instance), the installation process timed out several times because a number of packages had to be compiled from source. Running `renv::restore()` again until the full package installation list has been processed seems to work.
+
 ## Survey
 
 - We drafted the survey using Google Forms: <https://docs.google.com/forms/d/13wH71-Es_HkeR_pVCdyelX0R3mIh4hDpXtsWfJtMSOY/edit>

@@ -182,7 +182,7 @@ survey <- survey %>%
   dplyr::mutate(., collect_sims = stringr::str_detect(data_types, "Simulation data, models, and software code")) %>%
   dplyr::mutate(., collect_procedures = stringr::str_detect(data_types, "Standard operating procedures and protocols")) %>%
   dplyr::mutate(., collect_txt = stringr::str_detect(data_types, "Text files")) %>%
-  dplyr::mutate(., collect_genomic = stringr::str_detect(data_types, "Genomic data")) %>%
+  dplyr::mutate(., collect_genomic = stringr::str_detect(data_types, "Genomic")) %>%
   dplyr::mutate(., collect_image = stringr::str_detect(data_types, "Image data")) %>%
   dplyr::mutate(., collect_surveys = stringr::str_detect(data_types, "Survey results")) %>%
   dplyr::mutate(., collect_spreadsheets = stringr::str_detect(data_types, "Spreadsheets")) %>%
@@ -289,12 +289,19 @@ survey <- survey %>%
                 share_lab_web = stringr::str_detect(where_shared_community,
                                                     "Lab/project website")) %>%
   dplyr::mutate(.,
-                share_ext_rep = stringr::str_detect(where_shared_community,
+                share_ext_repo = stringr::str_detect(where_shared_community,
                                                     "External data repository")) %>%
   dplyr::mutate(.,
-                share_govt_rep = stringr::str_detect(where_shared_community,
+                share_govt_repo = stringr::str_detect(where_shared_community,
                                                      "Government data repository")) %>%
   dplyr::mutate(.,
                 share_consortia = stringr::str_detect(where_shared_community,
                                                       "Research consortia"))
 ```
+
+## Re-export cleaned data {-}
+
+```{r}
+readr::write_csv(survey, "csv/open-science-survey-2022-fall-clean.csv")
+```
+

@@ -163,9 +163,3 @@ data-being-transferred-or-disclosed-from-penn-state
 specimens-being-transferred-or-disclosed-to-penn-state
 specimens-being-transferred-or-disclosed-from-penn-state
 if-transferring-dataspecimens-with-identifiers-to-or-from-penn-state-which-of-the-following-identifiers-will-be-included-with-the-dataspecimens-check-all-that-apply
-modify-campus
-modify-department
-modify-position
-modify-years_since_degree
-modify-data_types
-modify-restricted_data

@@ -26,7 +26,7 @@
 <meta name="author" content="Briana Wham" />
 
 
-<meta name="date" content="2022-11-03" />
+<meta name="date" content="2022-11-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,7 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Protocol</a></li>
+<li><a href="./">Penn State Open Science Survey Protocol</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
@@ -376,12 +376,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#load-data"><i class="fa fa-check"></i>Load data</a></li>
 <li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#clean-data"><i class="fa fa-check"></i>Clean data</a>
 <ul>
-<li class="chapter" data-level="22.14.8" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-campus"><i class="fa fa-check"></i><b>22.14.8</b> Modify <code>campus</code></a></li>
-<li class="chapter" data-level="22.14.9" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-department"><i class="fa fa-check"></i><b>22.14.9</b> Modify <code>department</code></a></li>
-<li class="chapter" data-level="22.14.10" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-position"><i class="fa fa-check"></i><b>22.14.10</b> Modify <code>position</code></a></li>
-<li class="chapter" data-level="22.14.11" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-years_since_degree"><i class="fa fa-check"></i><b>22.14.11</b> Modify <code>years_since_degree</code></a></li>
-<li class="chapter" data-level="22.14.12" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-data_types"><i class="fa fa-check"></i><b>22.14.12</b> Modify <code>data_types</code></a></li>
-<li class="chapter" data-level="22.14.13" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-restricted_data"><i class="fa fa-check"></i><b>22.14.13</b> Modify <code>restricted_data</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-campus"><i class="fa fa-check"></i>Modify <code>campus</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-department"><i class="fa fa-check"></i>Modify <code>department</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-position"><i class="fa fa-check"></i>Modify <code>position</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-years_since_degree"><i class="fa fa-check"></i>Modify <code>years_since_degree</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-data_types"><i class="fa fa-check"></i>Modify <code>data_types</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-restricted_data"><i class="fa fa-check"></i>Modify <code>restricted_data</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-storage_active_projects"><i class="fa fa-check"></i>Modify <code>storage_active_projects</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-barriers_share_community"><i class="fa fa-check"></i>Modify <code>barriers_share_community</code></a></li>
+<li class="chapter" data-level="" data-path="data-gathering-and-cleaning.html"><a href="data-gathering-and-cleaning.html#modify-where_shared_community"><i class="fa fa-check"></i>Modify <code>where_shared_community</code></a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -547,39 +550,152 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <span id="cb11-44"><a href="data-gathering-and-cleaning.html#cb11-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Name vector lengths differ; no change made.&quot;</span>)</span>
 <span id="cb11-45"><a href="data-gathering-and-cleaning.html#cb11-45" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Some of the variables have values that are easy to parse, while others are more challenging, <code>data_types</code> for example.</p>
-<div id="modify-campus" class="section level3 hasAnchor" number="22.14.8">
-<h3><span class="header-section-number">22.14.8</span> Modify <code>campus</code><a href="data-gathering-and-cleaning.html#modify-campus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modify-campus" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>campus</code><a href="data-gathering-and-cleaning.html#modify-campus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make all campus locations lowercase and replace white space with underscores.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-gathering-and-cleaning.html#cb12-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="data-gathering-and-cleaning.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">campus =</span> <span class="fu">tolower</span>(campus)) <span class="sc">%&gt;%</span></span>
 <span id="cb12-3"><a href="data-gathering-and-cleaning.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">campus =</span> stringr<span class="sc">::</span><span class="fu">str_replace</span>(campus, <span class="st">&quot; &quot;</span>, <span class="st">&quot;_&quot;</span>))</span></code></pre></div>
 </div>
-<div id="modify-department" class="section level3 hasAnchor" number="22.14.9">
-<h3><span class="header-section-number">22.14.9</span> Modify <code>department</code><a href="data-gathering-and-cleaning.html#modify-department" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modify-department" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>department</code><a href="data-gathering-and-cleaning.html#modify-department" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make lowercase.
 \TODO: Fix spelling errors.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-gathering-and-cleaning.html#cb13-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="data-gathering-and-cleaning.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">campus =</span> <span class="fu">tolower</span>(campus)) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="data-gathering-and-cleaning.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., )</span></code></pre></div>
 </div>
-<div id="modify-position" class="section level3 hasAnchor" number="22.14.10">
-<h3><span class="header-section-number">22.14.10</span> Modify <code>position</code><a href="data-gathering-and-cleaning.html#modify-position" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modify-position" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>position</code><a href="data-gathering-and-cleaning.html#modify-position" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make lowercase, replace spaces and dash with underscore.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-gathering-and-cleaning.html#cb14-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="data-gathering-and-cleaning.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">position =</span> <span class="fu">tolower</span>(position)) <span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href="data-gathering-and-cleaning.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">position =</span> stringr<span class="sc">::</span><span class="fu">str_replace_all</span>(position, <span class="st">&quot;[ -]&quot;</span>, <span class="st">&quot;_&quot;</span>))</span></code></pre></div>
 </div>
-<div id="modify-years_since_degree" class="section level3 hasAnchor" number="22.14.11">
-<h3><span class="header-section-number">22.14.11</span> Modify <code>years_since_degree</code><a href="data-gathering-and-cleaning.html#modify-years_since_degree" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modify-years_since_degree" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>years_since_degree</code><a href="data-gathering-and-cleaning.html#modify-years_since_degree" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>\TODO: Make ordinal</p>
 </div>
-<div id="modify-data_types" class="section level3 hasAnchor" number="22.14.12">
-<h3><span class="header-section-number">22.14.12</span> Modify <code>data_types</code><a href="data-gathering-and-cleaning.html#modify-data_types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>\TODO: Parse each row into string array; then create column var for each value</p>
+<div id="modify-data_types" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>data_types</code><a href="data-gathering-and-cleaning.html#modify-data_types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-gathering-and-cleaning.html#cb15-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="data-gathering-and-cleaning.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_audio =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Audio files&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="data-gathering-and-cleaning.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_video =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Video files&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="data-gathering-and-cleaning.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_photos =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Digital photographs and/or other images&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="data-gathering-and-cleaning.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_computer_data =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Data automatically generated from or by computer programs&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="data-gathering-and-cleaning.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_sensor =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Data collected from sensors&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="data-gathering-and-cleaning.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_docs =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Documents or reports&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="data-gathering-and-cleaning.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_models =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Models/algorithms&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-9"><a href="data-gathering-and-cleaning.html#cb15-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_obs =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Observational data&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-10"><a href="data-gathering-and-cleaning.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_sims =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Simulation data, models, and software code&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-11"><a href="data-gathering-and-cleaning.html#cb15-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_procedures =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Standard operating procedures and protocols&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-12"><a href="data-gathering-and-cleaning.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_txt =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Text files&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-13"><a href="data-gathering-and-cleaning.html#cb15-13" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_genomic =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Genomic data&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-14"><a href="data-gathering-and-cleaning.html#cb15-14" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_image =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Image data&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-15"><a href="data-gathering-and-cleaning.html#cb15-15" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_surveys =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Survey results&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-16"><a href="data-gathering-and-cleaning.html#cb15-16" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_spreadsheets =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Spreadsheets&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-17"><a href="data-gathering-and-cleaning.html#cb15-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_interviews =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;interview transcripts&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-18"><a href="data-gathering-and-cleaning.html#cb15-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_gis =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Geographic Information Systems&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-19"><a href="data-gathering-and-cleaning.html#cb15-19" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_sketches =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Sketches, diaries in digital form&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-20"><a href="data-gathering-and-cleaning.html#cb15-20" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_vr =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Virtual reality, 3D models&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-21"><a href="data-gathering-and-cleaning.html#cb15-21" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_xml_json =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Structured text files&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-22"><a href="data-gathering-and-cleaning.html#cb15-22" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">collect_web_social =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(data_types, <span class="st">&quot;Websites and blogs&quot;</span>))</span></code></pre></div>
 </div>
-<div id="modify-restricted_data" class="section level3 hasAnchor" number="22.14.13">
-<h3><span class="header-section-number">22.14.13</span> Modify <code>restricted_data</code><a href="data-gathering-and-cleaning.html#modify-restricted_data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modify-restricted_data" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>restricted_data</code><a href="data-gathering-and-cleaning.html#modify-restricted_data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>\TODO: Recode values</p>
+</div>
+<div id="modify-storage_active_projects" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>storage_active_projects</code><a href="data-gathering-and-cleaning.html#modify-storage_active_projects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>\TODO: Handle other options</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-gathering-and-cleaning.html#cb16-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="data-gathering-and-cleaning.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-3"><a href="data-gathering-and-cleaning.html#cb16-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">store_usb =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-4"><a href="data-gathering-and-cleaning.html#cb16-4" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;External USB or flash drive&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="data-gathering-and-cleaning.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-6"><a href="data-gathering-and-cleaning.html#cb16-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">store_lab =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-7"><a href="data-gathering-and-cleaning.html#cb16-7" aria-hidden="true" tabindex="-1"></a>                                                <span class="st">&quot;Personal/lab computer&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-8"><a href="data-gathering-and-cleaning.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-9"><a href="data-gathering-and-cleaning.html#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">store_server =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-10"><a href="data-gathering-and-cleaning.html#cb16-10" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;Departmental/college server&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-11"><a href="data-gathering-and-cleaning.html#cb16-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-12"><a href="data-gathering-and-cleaning.html#cb16-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">store_icds =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-13"><a href="data-gathering-and-cleaning.html#cb16-13" aria-hidden="true" tabindex="-1"></a>                                                 <span class="st">&quot;ICDS/ROAR allocation&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-14"><a href="data-gathering-and-cleaning.html#cb16-14" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-15"><a href="data-gathering-and-cleaning.html#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">store_onedrive =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-16"><a href="data-gathering-and-cleaning.html#cb16-16" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Microsoft OneDrive/SharePoint&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-17"><a href="data-gathering-and-cleaning.html#cb16-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-18"><a href="data-gathering-and-cleaning.html#cb16-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">store_googledrive =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-19"><a href="data-gathering-and-cleaning.html#cb16-19" aria-hidden="true" tabindex="-1"></a>                                                        <span class="st">&quot;Google Drive&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-20"><a href="data-gathering-and-cleaning.html#cb16-20" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb16-21"><a href="data-gathering-and-cleaning.html#cb16-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">store_dropbox =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-22"><a href="data-gathering-and-cleaning.html#cb16-22" aria-hidden="true" tabindex="-1"></a>                                                    <span class="st">&quot;Dropbox&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-23"><a href="data-gathering-and-cleaning.html#cb16-23" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(., <span class="at">store_box =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(storage_active_projects, </span>
+<span id="cb16-24"><a href="data-gathering-and-cleaning.html#cb16-24" aria-hidden="true" tabindex="-1"></a>                                                   <span class="st">&quot;Box&quot;</span>))</span></code></pre></div>
+</div>
+<div id="modify-barriers_share_community" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>barriers_share_community</code><a href="data-gathering-and-cleaning.html#modify-barriers_share_community" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>\TODO: Handle “other” cases.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-gathering-and-cleaning.html#cb17-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="data-gathering-and-cleaning.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb17-3"><a href="data-gathering-and-cleaning.html#cb17-3" aria-hidden="true" tabindex="-1"></a>    .,</span>
+<span id="cb17-4"><a href="data-gathering-and-cleaning.html#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">barriers_sharing_security =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(</span>
+<span id="cb17-5"><a href="data-gathering-and-cleaning.html#cb17-5" aria-hidden="true" tabindex="-1"></a>      barriers_share_community,</span>
+<span id="cb17-6"><a href="data-gathering-and-cleaning.html#cb17-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Ensuring security/restricting access&quot;</span></span>
+<span id="cb17-7"><a href="data-gathering-and-cleaning.html#cb17-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-8"><a href="data-gathering-and-cleaning.html#cb17-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-9"><a href="data-gathering-and-cleaning.html#cb17-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb17-10"><a href="data-gathering-and-cleaning.html#cb17-10" aria-hidden="true" tabindex="-1"></a>    .,</span>
+<span id="cb17-11"><a href="data-gathering-and-cleaning.html#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">barriers_sharing_curation =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(</span>
+<span id="cb17-12"><a href="data-gathering-and-cleaning.html#cb17-12" aria-hidden="true" tabindex="-1"></a>      barriers_share_community,</span>
+<span id="cb17-13"><a href="data-gathering-and-cleaning.html#cb17-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Taking time to curate, organize, document data&quot;</span></span>
+<span id="cb17-14"><a href="data-gathering-and-cleaning.html#cb17-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-15"><a href="data-gathering-and-cleaning.html#cb17-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-16"><a href="data-gathering-and-cleaning.html#cb17-16" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb17-17"><a href="data-gathering-and-cleaning.html#cb17-17" aria-hidden="true" tabindex="-1"></a>    .,</span>
+<span id="cb17-18"><a href="data-gathering-and-cleaning.html#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">barriers_sharing_alter =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(</span>
+<span id="cb17-19"><a href="data-gathering-and-cleaning.html#cb17-19" aria-hidden="true" tabindex="-1"></a>      barriers_share_community,</span>
+<span id="cb17-20"><a href="data-gathering-and-cleaning.html#cb17-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Altering data to make it suitable to share&quot;</span></span>
+<span id="cb17-21"><a href="data-gathering-and-cleaning.html#cb17-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-22"><a href="data-gathering-and-cleaning.html#cb17-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-23"><a href="data-gathering-and-cleaning.html#cb17-23" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb17-24"><a href="data-gathering-and-cleaning.html#cb17-24" aria-hidden="true" tabindex="-1"></a>    .,</span>
+<span id="cb17-25"><a href="data-gathering-and-cleaning.html#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">barriers_sharing_resources =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(barriers_share_community, </span>
+<span id="cb17-26"><a href="data-gathering-and-cleaning.html#cb17-26" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">&quot;Insufficient resources for sharing&quot;</span>)</span>
+<span id="cb17-27"><a href="data-gathering-and-cleaning.html#cb17-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-28"><a href="data-gathering-and-cleaning.html#cb17-28" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb17-29"><a href="data-gathering-and-cleaning.html#cb17-29" aria-hidden="true" tabindex="-1"></a>    .,</span>
+<span id="cb17-30"><a href="data-gathering-and-cleaning.html#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">barriers_sharing_staff =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(</span>
+<span id="cb17-31"><a href="data-gathering-and-cleaning.html#cb17-31" aria-hidden="true" tabindex="-1"></a>      barriers_share_community,</span>
+<span id="cb17-32"><a href="data-gathering-and-cleaning.html#cb17-32" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Lack of available or knowledgeable staff&quot;</span></span>
+<span id="cb17-33"><a href="data-gathering-and-cleaning.html#cb17-33" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-34"><a href="data-gathering-and-cleaning.html#cb17-34" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+</div>
+<div id="modify-where_shared_community" class="section level3 unnumbered hasAnchor">
+<h3>Modify <code>where_shared_community</code><a href="data-gathering-and-cleaning.html#modify-where_shared_community" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-gathering-and-cleaning.html#cb18-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="data-gathering-and-cleaning.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb18-3"><a href="data-gathering-and-cleaning.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">share_inst_repo =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(where_shared_community,</span>
+<span id="cb18-4"><a href="data-gathering-and-cleaning.html#cb18-4" aria-hidden="true" tabindex="-1"></a>                                                      <span class="st">&quot;Institutional repository&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="data-gathering-and-cleaning.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb18-6"><a href="data-gathering-and-cleaning.html#cb18-6" aria-hidden="true" tabindex="-1"></a>    .,</span>
+<span id="cb18-7"><a href="data-gathering-and-cleaning.html#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">share_journal_suppl =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(</span>
+<span id="cb18-8"><a href="data-gathering-and-cleaning.html#cb18-8" aria-hidden="true" tabindex="-1"></a>      where_shared_community,</span>
+<span id="cb18-9"><a href="data-gathering-and-cleaning.html#cb18-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Supplemental material linked to journal article&quot;</span></span>
+<span id="cb18-10"><a href="data-gathering-and-cleaning.html#cb18-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-11"><a href="data-gathering-and-cleaning.html#cb18-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-12"><a href="data-gathering-and-cleaning.html#cb18-12" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb18-13"><a href="data-gathering-and-cleaning.html#cb18-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">share_lab_web =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(where_shared_community,</span>
+<span id="cb18-14"><a href="data-gathering-and-cleaning.html#cb18-14" aria-hidden="true" tabindex="-1"></a>                                                    <span class="st">&quot;Lab/project website&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-15"><a href="data-gathering-and-cleaning.html#cb18-15" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb18-16"><a href="data-gathering-and-cleaning.html#cb18-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">share_ext_rep =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(where_shared_community,</span>
+<span id="cb18-17"><a href="data-gathering-and-cleaning.html#cb18-17" aria-hidden="true" tabindex="-1"></a>                                                    <span class="st">&quot;External data repository&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-18"><a href="data-gathering-and-cleaning.html#cb18-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb18-19"><a href="data-gathering-and-cleaning.html#cb18-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">share_govt_rep =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(where_shared_community,</span>
+<span id="cb18-20"><a href="data-gathering-and-cleaning.html#cb18-20" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">&quot;Government data repository&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-21"><a href="data-gathering-and-cleaning.html#cb18-21" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(.,</span>
+<span id="cb18-22"><a href="data-gathering-and-cleaning.html#cb18-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">share_consortia =</span> stringr<span class="sc">::</span><span class="fu">str_detect</span>(where_shared_community,</span>
+<span id="cb18-23"><a href="data-gathering-and-cleaning.html#cb18-23" aria-hidden="true" tabindex="-1"></a>                                                      <span class="st">&quot;Research consortia&quot;</span>))</span></code></pre></div>
 
 </div>
 </div>
@@ -613,15 +729,15 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
 "whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": "github"
 },
 "fontsettings": {
 "theme": "white",

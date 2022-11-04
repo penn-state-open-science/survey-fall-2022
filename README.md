@@ -4,7 +4,12 @@ Code for analyzing a survey conducted in Fall 2022.
 ## Installation
 
 - Clone the repo from GitHub.
-- We use `renv` to try to make the code more readily reproducible. So, there is some time at the beginning where you will be asked to approve the installation of a number of required packages. In some cases (e.g., Penn State's RStudio Server instance), the installation process timed out several times because a number of packages had to be compiled from source. Running `renv::restore()` again until the full package installation list has been processed seems to work.
+- ~~We use `renv` to try to make the code more readily reproducible. So, there is some time at the beginning where you will be asked to approve the installation of a number of required packages. In some cases (e.g., Penn State's RStudio Server instance), the installation process timed out several times because a number of packages had to be compiled from source. Running `renv::restore()` again until the full package installation list has been processed seems to work.~~ As of 2022-11-04, this is not quite working. So, it is disabled.
+
+### GitHub authentication
+
+- run `usethis::create_github_token()` to generate an access token on GitHub. Copy and save the token in a safe location, e.g., a password manager.
+- run `gitcreds::gitcreds_set()` to save the token.
 
 ## Survey
 

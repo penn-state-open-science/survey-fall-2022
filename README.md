@@ -17,12 +17,12 @@ Code for analyzing a survey conducted in Fall 2022.
 
 ## IRB protocol
 
-- Documents related to the protocol may be found in [`irb/`](irb)`.
+- Documents related to the protocol may be found in [irb/](irb).
 - The protocol name and number are as follows:
     - STUDY00021455: Open science at Penn State
-- Submissions
+- [Submissions](irb/submissions)
     - [202211](irb/submissions/2021111)
-- Templates (`irb/templates`)
+- [Templates](irb/templates)
     - [HRP-591](https://irb.psu.edu/IRB/sd/Doc/0/RI1D4A1VTUS4R30B6EGVR56JBC/HRP-591%20-%20Protocol%20for%20Human%20Subject%20Research.docx) protocol template.
     - [HRP-509](https://irb.psu.edu/IRB/sd/Doc/0/5QOLUGBK59AK1F170VP48451AC/HRP-509%20-%20Study%20Team%20Member%20Qualification%20Template.docx) Study Member Qualification Template.
     - [Consent templates](https://irb.psu.edu/IRB/sd/Rooms/DisplayPages/LayoutInitial?tab2=294B1E5FDD6A8142A2AF57F5F7F197BF&container=com.webridge.entity.Entity%5BOID%5BFB78CE9F10C2AF4B91A7880D62D229EE%5D%5D)

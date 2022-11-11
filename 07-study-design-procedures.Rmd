@@ -8,7 +8,8 @@ Data collection materials that will be seen or used by subjects in your study mu
 
 ## Study Design
 
-Participants will be sent a link to the online survey, which contains several questions about their knowledge of Open Science in general, specific Open Science practices, and barriers that might exist that slow greater adoption of Open Science practices.  
+The survey involves a one-time assessment of knowledge and opinions.
+Participants will be sent a link to the online survey, which contains several questions about their knowledge of Open Science in general, specific Open Science practices, and barriers that might exist that slow greater adoption of Open Science practices.
 
 ## Study Procedures
 
@@ -28,7 +29,8 @@ Participants may skip questions or stop the survey at any time.
 
 ###	Visit 2 or Day 2 or Post-test, etc. (If applicable)
 
-Not applicable.
+Not applicable to most participants. 
+Some may elect to provide us their name and email so that we may follow up at a later date with additional related questions. 
 
 ##	Duration of Participation
 

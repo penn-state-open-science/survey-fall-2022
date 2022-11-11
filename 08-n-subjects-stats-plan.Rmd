@@ -8,6 +8,9 @@ Indicate the maximum number of subjects to be accrued/enrolled. Distinguish betw
 
 :::
 
+The number of participants depends on the number of University-approved lists we are able to access, the number of subscribers to those lists, and the proportion of recipients who respond. 
+We hope to have a sample of several hundred.
+
 ## Sample Size Determination
 
 ::: {.instr_box}

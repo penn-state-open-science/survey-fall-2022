@@ -6,6 +6,8 @@
 - Any eligibility screening questions (verbal/phone scripts, email, etc.) used when contacting potential participants must be uploaded to your study in CATS IRB (http://irb.psu.edu).
 :::
 
+> [Do not type here]
+
 ## Identification of subjects
 
 ::: {.instr_box}
@@ -23,7 +25,6 @@ For Penn State Health submissions using Enterprise Information Management (EIM) 
 **DO NOT** include the actual recruitment material or wording in this protocol.
 :::
 
-Links to the survey will be distributed via email using Penn State email lists.
 
 ## Recruitment process
 
@@ -33,11 +34,15 @@ Subject recruitment can involve various methods (e.g., approaching potential sub
 DO NOT include the actual recruitment material or wording in this protocol.
 :::
 
+> [Do not type here]
+
 ### How potential subjects will be recruited
+
+Links to the survey will be distributed via email using official Penn State email lists.
 
 ### Where potential subjects will be recruited
 
-Subjects will be sent the online survey link via email.
+Subjects will be sent the online survey link via the recruiting email.
 
 ### When potential subjects will be recruited
 

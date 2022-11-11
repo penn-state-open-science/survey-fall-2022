@@ -21,6 +21,8 @@ Describe the plan to periodically evaluate the data collected regarding both har
 
 :::
 
+Not applicable.
+
 ## Data that are reviewed
 
 ::: {.instr_box}
@@ -28,6 +30,8 @@ Describe the plan to periodically evaluate the data collected regarding both har
 Describe the data that are reviewed, including safety data, untoward events, and efficacy data.
 
 :::
+
+Not applicable.
 
 ## Method of collection of safety information
 
@@ -37,6 +41,8 @@ Describe the method by which the safety information will be collected (e.g., wit
 
 :::
 
+Not applicable.
+
 ## Frequency of data collection
 
 ::: {.instr_box}
@@ -44,6 +50,8 @@ Describe the method by which the safety information will be collected (e.g., wit
 Describe the frequency of data collection, including when safety data collection starts.
 
 :::
+
+Not applicable.
 
 ## Individuals reviewing the data
 
@@ -53,6 +61,8 @@ Identify the individuals who will review the data. The plan might include establ
 
 :::
 
+Not applicable.
+
 ## Frequency of review of cumulative data
 
 ::: {.instr_box}
@@ -60,6 +70,8 @@ Identify the individuals who will review the data. The plan might include establ
 Describe the frequency or periodicity of review of cumulative data.
 
 :::
+
+Not applicable.
 
 ## Statistical tests
 
@@ -69,6 +81,8 @@ Describe the statistical tests for analyzing the safety data to determine whethe
 
 :::
 
+Not applicable.
+
 ## Suspension of research
 
 ::: {.instr_box}
@@ -76,3 +90,5 @@ Describe the statistical tests for analyzing the safety data to determine whethe
 Describe any conditions that trigger an immediate suspension of research.
 
 :::
+
+Not applicable.

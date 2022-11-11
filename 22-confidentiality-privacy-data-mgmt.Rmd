@@ -121,7 +121,7 @@ Information Security at <security@psu.edu>.
 
 [ ] Penn State OneDrive or SharePoint
 
-[ ] Penn State GoogleDrive
+[x] Penn State GoogleDrive
 
 [ ] Web-based system provided by the sponsor or cooperative group - Specify URL and contact information: 
 
@@ -210,7 +210,7 @@ The use of online survey tools and email to collect or send research data contai
 
 [ ] No -- skip to 22.9
 
-[ ] Yes - answer the following questions:
+[x] Yes - answer the following questions:
 
 ### Specify the identifiers collected over the internet or via email (Including IP addresses if IP addresses will be collected).
 
@@ -218,8 +218,7 @@ Name and email address.
 
 ### Specify the type of data collected over the internet or via email.
 
-Survey questions about open science.
-See research questions:
+
 
 ### Describe the measures taken to protect the confidentiality of the data collected?
 
@@ -256,7 +255,7 @@ If the subject matter presents more than minimal risk to the subjects, then, bef
 
 ## Will any type of recordings (e.g., audio or video) or photographs of the subjects be made during this study?
 
-[ ] No - skip to section 22.10
+[x] No - skip to section 22.10
 
 [ ] Yes - answer the following questions:
 
@@ -352,7 +351,7 @@ process
 
 [ ] Other -- Specify:
 
->[Type protocol text here]
+> [Type protocol text here]
 
 ## What is the process for ensuring correctness of data entry?
 
@@ -371,7 +370,7 @@ incorrect
 
 ## Does this research involve the generation of large-scale human genomic data as defined in NIH Genomic Data Sharing Policy (<http://gds.nih.gov>)?
 
-[ ] No
+[x] No
 
 [ ] Yes -- describe the plan for de-identifying the dataset before sharing
 it with NIH-designated data repositories.
@@ -383,7 +382,7 @@ it with NIH-designated data repositories.
 
 ## Does this research involve transfer or disclosure of data and/or specimens to and/or from Penn State?
 
-[ ] No - skip the remainder of section 22.14
+[x] No - skip the remainder of section 22.14
 
 [ ] Yes - answer the following questions:
 
@@ -433,9 +432,9 @@ What is the name(s) of the third party(ies) (the institution, sponsor, etc.) rec
 
 >[Type protocol text here]
 
-### 22.14.6 How are the research data/specimens being transferred from and/or sent to the third party(ies)? Complete the appropriate section(s) and check all that apply within each completed section.
+### How are the research data/specimens being transferred from and/or sent to the third party(ies)? Complete the appropriate section(s) and check all that apply within each completed section.
 
-#### 22.14.6.1 Data being transferred or disclosed to Penn State:
+#### Data being transferred or disclosed to Penn State:
 
 [ ] Data are being received in aggregate/metrics (just counts, no
 individual data)
@@ -467,7 +466,7 @@ being received
 
 >[Type protocol text here if box is checked]
 
-#### 22.14.6.2 Data being transferred or disclosed from Penn State:
+#### Data being transferred or disclosed from Penn State:
 
 [ ] Data are being sent in aggregate/metrics (just counts, no individual
 data)
@@ -499,7 +498,7 @@ being sent
 
 >[Type protocol text here if box is checked]
 
-#### 22.14.6.3 Specimens being transferred or disclosed to Penn State:
+#### Specimens being transferred or disclosed to Penn State:
 
 [ ] De-identified specimens are being received and there is no linking
 list at either institution (no identifiers, or links to identifiers,
@@ -529,7 +528,7 @@ Other -- Specify:
 
 >[Type protocol text here if box is checked]
 
-#### 22.14.6.4 Specimens being transferred or disclosed from Penn State:
+#### Specimens being transferred or disclosed from Penn State:
 
 [ ] De-identified specimens are being sent and there is no linking list at
 either institution (no identifiers, or links to identifiers, such as
@@ -557,9 +556,9 @@ list are being sent
 
 [ ] Other -- Specify:
 
->[Type protocol text here if box is checked]
+> [Type protocol text here if box is checked]
 
-### 22.14.7 If transferring data/specimens with identifiers to or from Penn State, which of the following identifiers will be included with the data/specimens? Check all that apply:
+### If transferring data/specimens with identifiers to or from Penn State, which of the following identifiers will be included with the data/specimens? Check all that apply:
 
 +=============================+========================================+
 +-----------------------------+----------------------------------------+

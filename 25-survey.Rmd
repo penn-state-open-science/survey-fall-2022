@@ -4,35 +4,37 @@
 
 ## Email to prospective participants {- #email-to-participants}
 
-> Dear Penn Stater:
-> 
-> We are a group of faculty who are interested in knowing more about what students, postdocs, staff, faculty, and adminstrators know about open science practices and whether they incorporate open science practices into their research.</br>
-> Our goal is to determine whether there is a need for a center that provides training and support for open science practices.</br>
-> To that end, we have devised a short survey that should take you no more than 10 min to complete.
-> The survey is created using a Google Form, and unless you decide to provide us with your name and email, no identifiable information will be collected.
->
-> Survey link: <https://forms.gle/BpK1Zsyw1k3tVnSE7>
->
-> Once we have analyzed the results, we plan to share them with the Penn State community
->
-> Thank you for your consideration.
->
-> Yours truly,
->
-> Rick Gilmore, Department of Psychology</br>
-> Frank Hillary, Department of Psychology</br>
-> Nicole Lazar, Department of Statistics</br>
-> Briana Wham, University Libraries
+Read the latest version of the recruiting email text (`survey_recruiting_email.txt`):
+
+```{r}
+fileConn1 <- file("survey_recruiting_email.txt")
+survey_recruiting_email <- readLines(fileConn1)
+close(fileConn1)
+```
+
+And then display it:
+
+`r survey_recruiting_email`
 
 ## Survey introduction {-}
 
-> We are asking you to be in a research study. Whether or not you take part is up to you. You can choose not to take part. You can agree to take part and later change your mind. Your decision will not be held against you, and there will be no penalty.</br>
-> The study involves a taking a brief survey. The survey focuses on data management and sharing practices and principles of open science. Unless you provide us your name and/or contact information, your responses are anonymous. If you provide us your name or contact information we may contact you at a later time.</br>
-> The target audience for the survey is Penn State students, faculty, and staff who are over the age of 18. If you are not 18 and not a Penn State student, faculty member, or staff member, please do not take this survey.
+Read the lastest version of the introduction to the survey (`survey_intro.txt`):
+
+```{r}
+fileConn2 <- file("survey_intro.txt")
+survey_intro <- readLines(fileConn2)
+close(fileConn2)
+```
+
+Display the survey intro:
+
+`r survey_intro`
 
 ## Survey questions {- #survey-questions}
 
 **Note**: Here is a useful reference for what language to use for Likert scale questions <https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf>
+
+Read the survey questions from the most recent copy of the downloaded dataset.
 
 ```{r}
 suppressPackageStartupMessages(library("tidyverse")) # for pipe %>% operator
@@ -47,3 +49,15 @@ survey_questions %>%
   kableExtra::kbl(.) %>%
   kableExtra::kable_classic(.)
 ```
+
+Let's export these questions for transparency and to use as an attachment for IRB submissions:
+
+```{r}
+fileConn3 <- file("survey_questions.txt")
+writeLines(survey_questions, fileConn3)
+close(fileConn3)
+```
+
+::: {.instr_box}
+**TODO**: Use the Google API to upload and download questions.
+:::

@@ -50,6 +50,8 @@ Describe the plan to destroy the identifiers at the earliest opportunity consist
 
 :::
 
+Not applicable.
+
 ### Explanation for why the research could not practicably be conducted without access to and use of PHI
 
 ::: {.instr_box}
@@ -58,14 +60,17 @@ Provide reasons why this research could not practicably be carried out without a
 
 :::
 
+Not applicable.
+
 ### Explanation for why the research could not practicably be conducted without the waiver or alteration of authorization
 
 ::: {.instr_box}
 
 Provide reasons why this research could not practicably be carried out without the waiver or alternation of authorization.
 
-
 :::
+
+Not applicable.
 
 ## Waiver or alteration of authorization statements of agreement
 
@@ -75,3 +80,4 @@ By submitting this study for review with a waiver of authorization, you agree to
 
 :::
 
+Not applicable.

@@ -36,7 +36,7 @@ Identify the location where the data and/or specimens will be stored.
 
 :::
 
-The data will be stored in the PI's password-protected Google Drive account and on the PI's password protected laptop computer.
+The data will be stored in the PI's password-protected Penn State-affiliated Google Drive account and on the PI's password protected laptop computer.
 
 ## Duration of storage
 
@@ -76,7 +76,7 @@ provided with the specimens.
 
 :::
 
-There are no plans to release personally identifying data.
+There are no plans to release any personally identifying data (names and emails) from the expected small number of respondents who provide it.
 
 ## Process for returning results
 

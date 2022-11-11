@@ -14,16 +14,21 @@ params:
   update_google_sheet: false
   google_sheet_fn: 'C-ORR Survey 2022 Fall (Responses)'
   csv_fn: "csv/open-science-survey-2022-fall.csv"
+  irb_id: "STUDY00021455"
+  irb_long_name: "Knowledge about and attitudes toward open science practices among Penn State researchers"
+  irb_short_name: "Open science at Penn State"
 ---
 
 # About {-}
 
-This is a research protocol for *Knowledge about and attitudes toward open science practices among Penn State researchers*, (STUDY00021455: Open science at Penn State) written in **Markdown**.
+This is a research protocol for *`r params$irb_long_name`*, `r params$irb_id` written in **Markdown**.
 
 It also represents an exercise in how to use git-based version control, Rmarkdown, and the `bookdown` package to create an open research protocol that also addresses questions required for the Penn State IRB's protocol review process. 
 Our goal is to reduce duplication of effort and to demonstrate how an IRB research application might also be used as a living, version-controlled, research protocol.
 
 These materials may be copied and reused by anyone.
+
+By default, we do *not* update the data from Google Drive (`params$update_google_sheet==FALSE`).
 
 ```{r update-data, include=FALSE}
 if (!file.exists(params$csv_fn)) {

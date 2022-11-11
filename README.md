@@ -21,6 +21,7 @@ Materials related to a survey conducted in Fall 2022.
 - Documents related to the protocol may be found in [irb/](irb).
 - The protocol name and number are as follows:
     - STUDY00021455: Open science at Penn State
+<<<<<<< HEAD
 - [Action log](irb/README.md)
 - [Submissions](irb/submissions)
     - [202211](irb/submissions/2021111)

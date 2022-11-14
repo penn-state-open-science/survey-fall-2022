@@ -26,7 +26,7 @@
 <meta name="author" content="Briana Wham" />
 
 
-<meta name="date" content="2022-11-11" />
+<meta name="date" content="2022-11-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
 <li class="part"><span><b>I IRB Protocol</b></span></li>
+<li class="chapter" data-level="" data-path="hrp-591.html"><a href="hrp-591.html"><i class="fa fa-check"></i>HRP-591</a></li>
 <li class="chapter" data-level="1" data-path="objectives.html"><a href="objectives.html"><i class="fa fa-check"></i><b>1</b> Objectives</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="objectives.html"><a href="objectives.html#study-objectives"><i class="fa fa-check"></i><b>1.1</b> Study Objectives</a></li>
@@ -417,7 +418,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-2"><a href="survey-language-and-questions.html#cb2-2" aria-hidden="true" tabindex="-1"></a>survey_recruiting_email <span class="ot">&lt;-</span> <span class="fu">readLines</span>(fileConn1)</span>
 <span id="cb2-3"><a href="survey-language-and-questions.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(fileConn1)</span></code></pre></div>
 <p>And then display it:</p>
-<p>Dear Penn Stater:, , We are a group of faculty who are interested in knowing more about what students, postdocs, staff, faculty, and adminstrators know about open science practices and whether they incorporate open science practices into their research., , Our goal is to determine whether there is a need for a center that provides training and support for open science practices., , To that end, we have devised a short survey that should take you no more than 10 min to complete. The survey is created using a Google Form, and unless you decide to provide us with your name and email, no identifiable information will be collected. There is no compensation for participating and no penalty to you for withdrawing once you have started completing the survey., , Survey link: <a href="https://forms.gle/BpK1Zsyw1k3tVnSE7" class="uri">https://forms.gle/BpK1Zsyw1k3tVnSE7</a>, , Once we have analyzed the results, we plan to share them with the Penn State community, , Thank you for your consideration., , Yours truly,, , Rick Gilmore, Department of Psychology, , Frank Hillary, Department of Psychology, , Nicole Lazar, Department of Statistics, , Briana Wham, University Libraries</p>
+<p>Dear Penn Stater:, , We are a group of faculty who are interested in knowing more about what students, postdocs, staff, faculty, and adminstrators know about open science practices and whether they incorporate open science practices into their research., , Our research goal is to determine whether there is a need for an initiative at Penn State that provides training and support for open science practices and serves as a focal point for open science here., , To that end, we have devised a short survey that should take you no more than 10 min to complete. The survey is created using a Google Form. Participation is voluntary. You may start the survey and choose not to complete it, or you may choose not to complete specific questions. Unless you decide to provide us with your name and email for follow up, no identifiable information will be collected. There is no compensation for participating and no penalty to you for withdrawing once you have started completing the survey., , Survey link: <a href="https://forms.gle/BpK1Zsyw1k3tVnSE7" class="uri">https://forms.gle/BpK1Zsyw1k3tVnSE7</a>, , Once we have analyzed the results, we plan to share them with the Penn State community., , If you have any questions about this research, please contact Rick Gilmore (<a href="mailto:rog1@psu.edu" class="email">rog1@psu.edu</a>; 814-865-3664)., , Thank you for your consideration., , Yours truly,, , Rick Gilmore, Department of Psychology, , Frank Hillary, Department of Psychology, , Nicole Lazar, Department of Statistics, , Briana Wham, University Libraries</p>
 </div>
 <div id="survey-introduction" class="section level2 unnumbered hasAnchor">
 <h2>Survey introduction<a href="survey-language-and-questions.html#survey-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -426,7 +427,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="survey-language-and-questions.html#cb3-2" aria-hidden="true" tabindex="-1"></a>survey_intro <span class="ot">&lt;-</span> <span class="fu">readLines</span>(fileConn2)</span>
 <span id="cb3-3"><a href="survey-language-and-questions.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(fileConn2)</span></code></pre></div>
 <p>Display the survey intro:</p>
-<p>We are asking you to be in a research study. Whether or not you take part is up to you. You can choose not to take part. You can agree to take part and later change your mind. Your decision will not be held against you, and there will be no penalty. The study involves a taking a brief survey. The survey focuses on data management and sharing practices and principles of open science. Unless you provide us your name and/or contact information, your responses are anonymous. If you provide us your name or contact information we may contact you at a later time. The target audience for the survey is Penn State students, faculty, and staff who are over the age of 18. If you are not 18 and not a Penn State student, faculty member, or staff member, please do not take this survey.</p>
+<p>We are asking you to be in a research study. Whether or not you take part is up to you. You can choose not to take part. You can agree to take part and later change your mind. Your decision will not be held against you, and there will be no penalty. , , The study involves a taking a brief survey. The survey focuses on data management and sharing practices and principles of open science. You may choose to answer some questions and not others or start the survey and choose not to complete it. Unless you provide us your name and email, your responses are anonymous. If you provide us your name or contact information we may contact you at a later time. , , The target audience for the survey is Penn State students, faculty, and staff who are over the age of 18. If you are not 18 and not a Penn State student, faculty member, or staff member, please do not take this survey. , , Questions about the survey may be directed to Rick Gilmore (<a href="mailto:rog1@psu.edu" class="email">rog1@psu.edu</a>; 814-865-3664). If you have questions regarding your rights as a research subject or concerns regarding your privacy, you may contact the Human Research Protection Program at 814-865-1775.</p>
 </div>
 <div id="survey-questions" class="section level2 unnumbered hasAnchor">
 <h2>Survey questions<a href="survey-language-and-questions.html#survey-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -437,9 +438,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-3"><a href="survey-language-and-questions.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read local copy of survey</span></span>
 <span id="cb4-4"><a href="survey-language-and-questions.html#cb4-4" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;csv/open-science-survey-2022-fall.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 3 Columns: 35
-## ── Column specification ─────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
-## chr (35): Timestamp, What Penn State campus do you represent?, Wh...
+## chr (35): Timestamp, What Penn State campus do you represen...
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>

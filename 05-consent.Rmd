@@ -50,7 +50,7 @@ Describe where and when the consent process will take place.
 :::
 
 Subjects who are interested in participating will be directed to the online survey link.
-They will be able to read information about consent prior to participating.
+They will be able to read information about consent prior to participating. Participants will indicate their consent to participate by completing the survey.
 
 ### Coercion or Undue Influence during Consent
 

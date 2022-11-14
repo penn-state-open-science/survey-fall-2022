@@ -21,6 +21,11 @@ Provide a step by step description of all research procedures being conducted (b
 
 :::
 
+The research procedure consists of an email with a link to an online survey sent to participants via a University-approved listserv. 
+Participants may delete the email, visit the survey but choose not to take it, take the survey but not complete it, or take the complete survey. 
+Participants may skip questions that they do not want to answer. 
+Participants may take the survey using any internet-connected device they have access to and in any location with internet connectivity participants choose.
+
 ### Visit 1 or Day 1 or Pre-test, etc. 
 
 Participants will be sent a link to the online survey. 

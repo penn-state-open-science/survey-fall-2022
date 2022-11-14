@@ -1,0 +1,34 @@
+What Penn State campus do you represent?
+What is your primary department/unit?
+What is your position at Penn State?
+How many years have passed since you completed that degree?
+What are the primary types of digital data that are used in your research? (choose all that apply)
+Do you collect data that have legal or ethical restrictions governing who may access it or how it may be used?
+Where do you store data for active projects where data collection and analysis is still ongoing?
+How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?
+How convenient is it for you to share data from active projects with research collaborators at Penn State or outside of Penn State?
+What are the main barriers to sharing data from active projects with research collaborators?
+How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?
+Which of the following obstacles make sharing data with the research community harder for you?
+Do research sponsors/funders in your field require data sharing?
+Do journals in your field require data sharing?
+If you have shared data with the research community, where have you shared it?
+How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?
+How often do you create computer scripts or data analysis code in the conduct of your research?
+How often do you share computer scripts or data analysis code with direct research collaborators ?
+Do you create other kinds of software in the conduct of your research?
+How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?
+Do sponsors/funders in your field require code sharing?
+Do journals in your field require code sharing?
+How often do you openly share other materials related to your research (protocols, reagents, samples, apparatus, designs, etc.) with other researchers?
+What is your experience with/knowledge of open science practices?
+Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.
+Do you apply FAIR principles in your own data management and sharing practices?
+Have you heard of the "reproducibility crisis" in science?
+Is there a reproducibility crisis in your area of research?
+How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?
+Select the services that would most benefit your research if offered by such a center.
+Any final comments about data management, data sharing, and open science?
+(Optional) Provide us with your contact information if you would like us to follow up.
+What is the highest post-secondary degree you have earned?
+How often do you share computer scripts or data analysis code openly?

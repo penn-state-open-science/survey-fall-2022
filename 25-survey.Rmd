@@ -61,3 +61,7 @@ close(fileConn3)
 ::: {.instr_box}
 **TODO**: Use the Google API to upload and download questions.
 :::
+
+::: {.instr_box}
+**TODO**: Make the printout of `survey_recruiting_email.txt` look prettier.
+:::

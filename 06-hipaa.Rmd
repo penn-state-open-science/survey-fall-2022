@@ -42,6 +42,8 @@ Include the following statement as written – DO NOT ALTER OR DELETE unless thi
 
 :::
 
+Not applicable.
+
 #### Plan to destroy identifiers or a justification for retaining identifiers 
 
 ::: {.instr_box}

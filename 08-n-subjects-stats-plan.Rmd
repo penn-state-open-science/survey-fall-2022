@@ -9,7 +9,8 @@ Indicate the maximum number of subjects to be accrued/enrolled. Distinguish betw
 :::
 
 The number of participants depends on the number of University-approved lists we are able to access, the number of subscribers to those lists, and the proportion of recipients who respond. 
-We hope to have a sample of several hundred.
+We hope to have a sample of several hundred. 
+We estimate that the maximum number of participants is about 2,000, assuming a very optimistic response rate of 10% and a total possible participant pool of ~20,000 (see Section 15.2). 
 
 ## Sample Size Determination
 

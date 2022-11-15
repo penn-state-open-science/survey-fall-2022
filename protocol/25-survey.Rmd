@@ -7,23 +7,19 @@
 Read the latest version of the recruiting email text (`survey_recruiting_email.txt`):
 
 ```{r}
-fileConn1 <- file("survey_recruiting_email.txt")
-survey_recruiting_email <- readLines(fileConn1)
-close(fileConn1)
+survey_recruiting_email <- readr::read_file("survey_recruiting_email.txt")
 ```
 
 And then display it:
 
 `r survey_recruiting_email`
 
-## Survey introduction {-}
+## Survey introduction {- #survey_intro}
 
 Read the lastest version of the introduction to the survey (`survey_intro.txt`):
 
 ```{r}
-fileConn2 <- file("survey_intro.txt")
-survey_intro <- readLines(fileConn2)
-close(fileConn2)
+survey_intro <- readr::read_file("survey_intro.txt")
 ```
 
 Display the survey intro:
@@ -58,10 +54,6 @@ writeLines(survey_questions, fileConn3)
 close(fileConn3)
 ```
 
-::: {.instr_box}
+::: {.todo_box}
 **TODO**: Use the Google API to upload and download questions.
-:::
-
-::: {.instr_box}
-**TODO**: Make the printout of `survey_recruiting_email.txt` look prettier.
 :::

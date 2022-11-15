@@ -1,0 +1,7 @@
+# Data Visualization {-}
+
+This is a placeholder for our eventual data visualization code and commentary.
+
+::: {.todo_box}
+**TODO** Add question by question visualizations.
+:::

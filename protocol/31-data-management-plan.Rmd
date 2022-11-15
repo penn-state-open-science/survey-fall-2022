@@ -1,0 +1,17 @@
+# Data Management Plan {#data_mgmt_plan -}
+
+::: {.todo_box}
+**TODO**: Complete this DMP
+:::
+
+## Project Information {-}
+
+## Types of Data {-}
+
+## Data Standards {-}
+
+## Policies for Access and Sharing and Provisions for Protection/Privacy {-}
+
+## Policies for Re-use, Re-distribution {-}
+
+## Data Retention {-}

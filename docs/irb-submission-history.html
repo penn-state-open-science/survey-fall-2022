@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Survey language and questions | Open Science at Penn State</title>
+  <title>IRB submission history | Open Science at Penn State</title>
   <meta name="description" content="This is the protocol for the Fall 2022 survey on Open Science." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Survey language and questions | Open Science at Penn State" />
+  <meta property="og:title" content="IRB submission history | Open Science at Penn State" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the protocol for the Fall 2022 survey on Open Science." />
   <meta name="github-repo" content="penn-state-open-science/survey-fall-2022" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Survey language and questions | Open Science at Penn State" />
+  <meta name="twitter:title" content="IRB submission history | Open Science at Penn State" />
   
   <meta name="twitter:description" content="This is the protocol for the Fall 2022 survey on Open Science." />
   
@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="confidentiality-privacy-and-data-management.html"/>
-<link rel="next" href="irb-submission-history.html"/>
+<link rel="prev" href="survey-language-and-questions.html"/>
+<link rel="next" href="data_mgmt_plan.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -420,256 +420,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="survey-language-and-questions" class="section level1 unnumbered hasAnchor">
-<h1>Survey language and questions<a href="survey-language-and-questions.html#survey-language-and-questions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="email-to-participants" class="section level2 unnumbered hasAnchor">
-<h2>Email to prospective participants<a href="survey-language-and-questions.html#email-to-participants" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Read the latest version of the recruiting email text (<code>survey_recruiting_email.txt</code>):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="survey-language-and-questions.html#cb2-1" aria-hidden="true" tabindex="-1"></a>survey_recruiting_email <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_file</span>(<span class="st">&quot;survey_recruiting_email.txt&quot;</span>)</span></code></pre></div>
-<p>And then display it:</p>
-<p>Dear Penn Stater:</p>
-<p>We are a group of faculty who are interested in knowing more about what students, postdocs, staff, faculty, and adminstrators know about open science practices and whether they incorporate open science practices into their research.</p>
-<p>Our research goal is to determine whether there is a need for an initiative at Penn State that provides training and support for open science practices and serves as a focal point for open science here.</p>
-<p>To that end, we have devised a short survey that should take you no more than 10 min to complete. The survey is created using a Google Form. Participation is voluntary. You may start the survey and choose not to complete it, or you may choose not to complete specific questions. Unless you decide to provide us with your name and email for follow up, no identifiable information will be collected. There is no compensation for participating and no penalty to you for withdrawing once you have started completing the survey.</p>
-<p>Survey link: <a href="https://forms.gle/BpK1Zsyw1k3tVnSE7" class="uri">https://forms.gle/BpK1Zsyw1k3tVnSE7</a></p>
-<p>Once we have analyzed the results, we plan to share them with the Penn State community.</p>
-<p>If you have any questions about this research, please contact Rick Gilmore (<a href="mailto:rog1@psu.edu" class="email">rog1@psu.edu</a>; 814-865-3664).</p>
-<p>Thank you for your consideration.</p>
-<p>Yours truly,</p>
-<p>Rick Gilmore, Department of Psychology</p>
-<p>Frank Hillary, Department of Psychology</p>
-<p>Nicole Lazar, Department of Statistics</p>
-<p>Briana Wham, University Libraries</p>
-</div>
-<div id="survey_intro" class="section level2 unnumbered hasAnchor">
-<h2>Survey introduction<a href="survey-language-and-questions.html#survey_intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Read the lastest version of the introduction to the survey (<code>survey_intro.txt</code>):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="survey-language-and-questions.html#cb3-1" aria-hidden="true" tabindex="-1"></a>survey_intro <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_file</span>(<span class="st">&quot;survey_intro.txt&quot;</span>)</span></code></pre></div>
-<p>Display the survey intro:</p>
-<p>We are asking you to be in a research study. Whether or not you take part is up to you. You can choose not to take part. You can agree to take part and later change your mind. Your decision will not be held against you, and there will be no penalty.</p>
-<p>The study involves a taking a brief survey. The survey focuses on data management and sharing practices and principles of open science. You may choose to answer some questions and not others or start the survey and choose not to complete it. Unless you provide us your name and email, your responses are anonymous. If you provide us your name or contact information we may contact you at a later time.</p>
-<p>The target audience for the survey is Penn State students, faculty, and staff who are over the age of 18. If you are not 18 and not a Penn State student, faculty member, or staff member, please do not take this survey.</p>
-<p>Questions about the survey may be directed to Rick Gilmore (<a href="mailto:rog1@psu.edu" class="email">rog1@psu.edu</a>; 814-865-3664). If you have questions regarding your rights as a research subject or concerns regarding your privacy, you may contact the Human Research Protection Program at 814-865-1775.</p>
-</div>
-<div id="survey-questions" class="section level2 unnumbered hasAnchor">
-<h2>Survey questions<a href="survey-language-and-questions.html#survey-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Note</strong>: Here is a useful reference for what language to use for Likert scale questions <a href="https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf" class="uri">https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf</a></p>
-<p>Read the survey questions from the most recent copy of the downloaded dataset.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="survey-language-and-questions.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)) <span class="co"># for pipe %&gt;% operator</span></span>
-<span id="cb4-2"><a href="survey-language-and-questions.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="survey-language-and-questions.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read local copy of survey</span></span>
-<span id="cb4-4"><a href="survey-language-and-questions.html#cb4-4" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;csv/open-science-survey-2022-fall.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 3 Columns: 35
-## ── Column specification ───────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (35): Timestamp, What Penn State campus do you represen...
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="survey-language-and-questions.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the Timestamp since it is provided by Google Forms automatically</span></span>
-<span id="cb6-2"><a href="survey-language-and-questions.html#cb6-2" aria-hidden="true" tabindex="-1"></a>survey_questions <span class="ot">&lt;-</span> <span class="fu">names</span>(survey)[<span class="dv">2</span><span class="sc">:</span><span class="fu">dim</span>(survey)[<span class="dv">2</span>]]</span>
-<span id="cb6-3"><a href="survey-language-and-questions.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="survey-language-and-questions.html#cb6-4" aria-hidden="true" tabindex="-1"></a>survey_questions <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="survey-language-and-questions.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kbl</span>(.) <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="survey-language-and-questions.html#cb6-6" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_classic</span>(.)</span></code></pre></div>
-<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-x
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-What Penn State campus do you represent?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-What is your primary department/unit?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-What is your position at Penn State?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How many years have passed since you completed that degree?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-What are the primary types of digital data that are used in your research? (choose all that apply)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do you collect data that have legal or ethical restrictions governing who may access it or how it may be used?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Where do you store data for active projects where data collection and analysis is still ongoing?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How convenient is it for you to share data from active projects with research collaborators at Penn State or outside of Penn State?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-What are the main barriers to sharing data from active projects with research collaborators?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Which of the following obstacles make sharing data with the research community harder for you?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do research sponsors/funders in your field require data sharing?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do journals in your field require data sharing?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-If you have shared data with the research community, where have you shared it?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How often do you create computer scripts or data analysis code in the conduct of your research?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How often do you share computer scripts or data analysis code with direct research collaborators ?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do you create other kinds of software in the conduct of your research?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do sponsors/funders in your field require code sharing?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do journals in your field require code sharing?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How often do you openly share other materials related to your research (protocols, reagents, samples, apparatus, designs, etc.) with other researchers?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-What is your experience with/knowledge of open science practices?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Do you apply FAIR principles in your own data management and sharing practices?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Have you heard of the “reproducibility crisis” in science?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Is there a reproducibility crisis in your area of research?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Select the services that would most benefit your research if offered by such a center.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Any final comments about data management, data sharing, and open science?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-(Optional) Provide us with your contact information if you would like us to follow up.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-What is the highest post-secondary degree you have earned?
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-How often do you share computer scripts or data analysis code openly?
-</td>
-</tr>
-</tbody>
-</table>
-<p>Let’s export these questions for transparency and to use as an attachment for IRB submissions:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="survey-language-and-questions.html#cb7-1" aria-hidden="true" tabindex="-1"></a>fileConn3 <span class="ot">&lt;-</span> <span class="fu">file</span>(<span class="st">&quot;survey_questions.txt&quot;</span>)</span>
-<span id="cb7-2"><a href="survey-language-and-questions.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(survey_questions, fileConn3)</span>
-<span id="cb7-3"><a href="survey-language-and-questions.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(fileConn3)</span></code></pre></div>
-<div class="todo_box">
-<p><strong>TODO</strong>: Use the Google API to upload and download questions.</p>
-</div>
+<div id="irb-submission-history" class="section level1 unnumbered hasAnchor">
+<h1>IRB submission history<a href="irb-submission-history.html#irb-submission-history" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<pre><code>## /Users/rick/rrr/survey-fall-2022/irb/submissions
+## ├── 20221111
+## │   ├── HRP-509 - Study Team Member Qualification Template.docx
+## │   ├── HRP-591 - Protocol for Human Subject Research.docx
+## │   ├── STUDY00021455_Gilmore_AI_(11-14-22).docx
+## │   ├── survey_intro.txt
+## │   ├── survey_questions.txt
+## │   └── survey_recruiting_email.txt
+## └── 20221114
+##     ├── HRP-591 - Protocol for Human Subject Research.docx
+##     ├── STUDY00021455_Gilmore_AI_(11-15-22).docx
+##     ├── survey_intro.txt
+##     ├── survey_questions.txt
+##     └── survey_recruiting_email.txt</code></pre>
 
 </div>
+
+
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="confidentiality-privacy-and-data-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="irb-submission-history.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="survey-language-and-questions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data_mgmt_plan.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -700,7 +479,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/25-survey.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/26-irb-submission-history.Rmd",
 "text": "Edit"
 },
 "history": {

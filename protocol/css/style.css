@@ -19,3 +19,11 @@ pre code {
   border-radius: 10px;
   background: #d5e0f7 center/3em no-repeat;
 }
+
+.todo_box {
+  padding: 1em 1em 1em 1em;
+  border: 2px solid green;
+  border-radius: 10px;
+  background: #bfd1be center/3em no-repeat;
+}
+

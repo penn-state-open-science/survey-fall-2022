@@ -1,5 +1,3 @@
-# (PART) Data Analysis & Visualization {-}
-
 # Data Gathering and Cleaning {-}
 
 ## Set-up {-}

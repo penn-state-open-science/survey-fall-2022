@@ -23,7 +23,7 @@ Describe any relevant preliminary data.
 
 The Penn State Libraries conducted a survey of researchers in the physical sciences on somewhat related topics in the last year. That survey was determined to be exempt. Outside of that survey, little is currently known about researchers' knowledge about common Open Science practices and principles.  
 
-One of the investigators (Lazar) is part of a team that conducted a similar survey at the University of Georgia focused on graduate students. They found that knowledge about Open Science varies by student field of study. They also found clusters of practices that had similar levels of familiarity among the students. Lazar has recently collected data from but not analyzed some similar survey questions from graduate students in the Huck Institute of the Life Sciences graduate program. This survey was also determined by the PSU IRB to be exempt.
+One of the investigators (Lazar) is part of a team that conducted a similar survey at the University of Georgia focused on graduate students. They found that knowledge about Open Science varies by student field of study. They also found clusters of practices that had similar levels of familiarity among the students. Lazar has recently collected data from but not analyzed some similar survey questions from graduate students in the Huck Institute of the Life Sciences graduate program. This survey (STUDY00021123) was also determined by the PSU IRB to be exempt.
 
 ## Study Rationale
 

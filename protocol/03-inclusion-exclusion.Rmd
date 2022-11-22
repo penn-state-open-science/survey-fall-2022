@@ -1,6 +1,6 @@
 # Inclusion and Exclusion Criteria
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Create a numbered list below in sections \@ref(inclusion-criteria) and \@ref(exclusion-criteria) of criteria subjects must meet to be eligible for study enrollment (e.g., age, gender, diagnosis, etc.).
 
 **Vulnerable Populations:**
@@ -21,7 +21,7 @@ The checklists referenced below outline the determinations to be made by the IRB
 
 ## Inclusion Criteria
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Create a numbered list of the inclusion criteria that define who will be included in your final study sample (e.g., age, gender, condition, etc.)
 :::
 
@@ -29,12 +29,12 @@ Create a numbered list of the inclusion criteria that define who will be include
 
 ### Does this research involve collecting data from individuals residing outside of the US?
 
-[X] No</br>
-[ ] Yes -- identify the countries where data collection will take place
+- [X] No
+- [ ] Yes -- identify the countries where data collection will take place
 
 ## Exclusion Criteria
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Create a numbered list of the exclusion criteria that define who will be excluded in your study.
 :::
 
@@ -45,7 +45,7 @@ Create a numbered list of the exclusion criteria that define who will be exclude
 
 ### Criteria for removal from study
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Insert subject withdrawal criteria (e.g., safety reasons, failure of subject to adhere to protocol requirements, subject consent withdrawal, disease progression, etc.).
 :::
 
@@ -53,7 +53,7 @@ Subjects can withdraw from the survey at any time and for any reason.
 
 ### Follow-up for withdrawn subjects
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Describe when and how to withdraw subjects from the study; the type and timing of the data to be collected for withdrawal of subjects; whether and how subjects are to be replaced; the follow-up for subjects withdrawn from investigational treatment.
 :::
 

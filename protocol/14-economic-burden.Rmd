@@ -2,7 +2,7 @@
 
 ## Costs
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe any costs that subjects may be responsible for because of
 participation in the research.
@@ -13,7 +13,7 @@ Not applicable
 
 ## Compensation for research-related injury
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 **If the research involves more than Minimal Risk to subjects,
 describe the available compensation in the event of research related

@@ -1,31 +1,35 @@
 # (PART) IRB Protocol {-}
 
+```{r echo=FALSE}
+knitr::include_graphics("include/img/psu-logo-sm.png")
+```
+
 # HRP-591 {-}
 
 **Protocol for Human Subject Research**
 
 **Protocol Title:**
 
-::: {.instr_box}
+::: {.rmdnote .instr_box}
 Provide the full title of the study as listed in item 1 on the "Basic
 Information" page in CATS IRB (<http://irb.psu.edu>).
 :::
 
-Knowledge about and attitudes toward open science practices among Penn State researchers
+`r params$irb_long_name`
 
 **Principal Investigator:**
 
-Name: Rick Gilmore
+Name: `r params$pi_name`
 
-Department: Psychology
+Department: `r params$pi_dept`
 
-Telephone: 814-865-3664
+Telephone: `r params$pi_ph`
 
-E-mail Address: rog1\@psu.edu
+E-mail Address: `r params$pi_email`
 
 **Version Date:**
 
-::: {.instr_box}
+::: {.rmdnote .instr_box}
 Provide a version date for this document. This date must be updated each
 time this document is submitted to the IRB office with revisions. DO NOT
 revise the version date in the footer of this document.
@@ -35,10 +39,9 @@ revise the version date in the footer of this document.
 
 **Clinicaltrials.gov Registration #:**
 
-::: {.instr_box}
-Provide the registration number for this study, if applicable. See
-"HRP-103- Investigator Manual", under "ClinicalTrials.gov" for more
-information.
+::: {.rmdnote .instr_box}
+Provide the registration number for this study, if applicable.
+See "HRP-103- Investigator Manual", under "ClinicalTrials.gov" for more information.
 :::
 
 Not applicable.
@@ -98,32 +101,27 @@ Table of Contents
 
 [2.0 Background](#background)
 
-[3.0 Inclusion and Exclusion
-Criteria](#inclusion-and-exclusion-criteria)
+[3.0 Inclusion and Exclusion Criteria](#inclusion-and-exclusion-criteria)
 
 [4.0 Recruitment Methods](#recruitment-methods)
 
-[5.0 Consent Process and
-Documentation](#consent-process-and-documentation)
+[5.0 Consent Process and Documentation](#consent-process-and-documentation)
 
-[6.0 HIPAA Research Authorization and/or Waiver or Alteration of
-Authorization](#hipaa-research-authorization-andor-waiver-or-alteration-of-authorization)
+[6.0 HIPAA Research Authorization and/or Waiver or Alteration of Authorization](#hipaa-research-authorization-andor-waiver-or-alteration-of-authorization)
 
 [7.0 Study Design and Procedures](#study-design-and-procedures)
 
-[8.0 Number of Subjects and Statistical
-Plan](#number-of-subjects-and-statistical-plan)
+[8.0 Number of Subjects and Statistical Plan](#number-of-subjects-and-statistical-plan)
 
 [9.0 Data and Safety Monitoring Plan](#data-and-safety-monitoring-plan)
 
 [10.0 Risks](#risks)
 
-[11.0 Potential Benefits to Subjects and Others](#_Toc117767339)
+[11.0 Potential Benefits to Subjects and Others](#benefits)
 
 [12.0 Sharing Results with Subjects](#sharing-results-with-subjects)
 
-[13.0 Subject Payment and/or Travel
-Reimbursements](#subject-payment-andor-travel-reimbursements)
+[13.0 Subject Payment and/or Travel Reimbursements](#subject-payment-andor-travel-reimbursements)
 
 [14.0 Economic Burden to Subjects](#economic-burden-to-subjects)
 
@@ -131,17 +129,14 @@ Reimbursements](#subject-payment-andor-travel-reimbursements)
 
 [16.0 Other Approvals](#other-approvals)
 
-[17.0 Multi-Site Study](#_Toc117767345)
+[17.0 Multi-Site Study](#multisite)
 
 [18.0 Adverse Event Reporting](#adverse-event-reporting)
 
-[19.0 Study Monitoring, Auditing, and
-Inspecting](#study-monitoring-auditing-and-inspecting)
+[19.0 Study Monitoring, Auditing, and Inspecting](#study-monitoring-auditing-and-inspecting)
 
-[20.0 Future Undetermined Research: Data and Specimen
-Banking](#future-undetermined-research-data-and-specimen-banking)
+[20.0 Future Undetermined Research: Data and Specimen Banking](#future-undetermined-research-data-and-specimen-banking)
 
 [21.0 References](#references)
 
-[22.0 Confidentiality, Privacy and Data
-Management](#confidentiality-privacy-and-data-management)
+[22.0 Confidentiality, Privacy and Data Management](#confidentiality-privacy-and-data-management)

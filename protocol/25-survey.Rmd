@@ -28,7 +28,11 @@ Display the survey intro:
 
 ## Survey questions {- #survey-questions}
 
+::: {.rmdnote}
+
 **Note**: Here is a useful reference for what language to use for Likert scale questions <https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf>
+
+:::
 
 Read the survey questions from the most recent copy of the downloaded dataset.
 
@@ -54,6 +58,9 @@ writeLines(survey_questions, fileConn3)
 close(fileConn3)
 ```
 
-::: {.todo_box}
+::: {.rmdtip}
+
 **TODO**: Use the Google API to upload and download questions.
+
 :::
+

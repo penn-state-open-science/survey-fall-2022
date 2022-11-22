@@ -4,7 +4,8 @@ author: ["Rick O. Gilmore", "Frank Hillary", "Nicole Lazar", "Briana Wham"]
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [bib/book.bib, bib/packages.bib]
+bibliography: [include/bib/book.bib, include/bib/packages.bib]
+csl: include/bib/apa.csl
 url: "https://github.com/penn-state-open-science/survey-fall-2022"
 description: |
   This is the protocol for the Fall 2022 survey on Open Science.
@@ -17,11 +18,15 @@ params:
   irb_id: "STUDY00021455"
   irb_long_name: "Knowledge about and attitudes toward open science practices among Penn State researchers"
   irb_short_name: "Open science at Penn State"
+  pi_name: 'Rick Gilmore'
+  pi_phone: '814-865-3664'
+  pi_email: 'rog1@psu.edu'
+  pi_dept: 'Psychology'
 ---
 
 # About {-}
 
-This is a research protocol for *`r params$irb_long_name`*, `r params$irb_id` written in **Markdown**.
+This is a research protocol for *`r params$irb_long_name`*, `r params$irb_id` (`r params$irb_short_name`) written in **Markdown**.
 
 It also represents an exercise in how to use git-based version control, Rmarkdown, and the `bookdown` package to create an open research protocol that also addresses questions required for the Penn State IRB's protocol review process. 
 Our goal is to reduce duplication of effort and to demonstrate how an IRB research application might also be used as a living, version-controlled, research protocol.
@@ -53,5 +58,5 @@ if (params$update_google_sheet || no_current_csv) {
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'bib/packages.bib')
+), 'include/bib/packages.bib')
 ```

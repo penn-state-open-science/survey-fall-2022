@@ -2,7 +2,7 @@
 
 ## Study Objectives
 
-::: {.instr_box}
+::: {.rmdnote .instr_box}
 
 Describe the purpose, specific aims, or objectives.
 
@@ -14,7 +14,7 @@ We aim to understand what our colleagues at Penn State know about Open Science a
 
 ## Primary Study Endpoints
 
-::: {.instr_box}
+::: {.rmdnote .instr_box}
 
 State the primary endpoints to be measured in the study.
 
@@ -29,7 +29,7 @@ Exploration of familiarity with Open Science among researchers and teachers at P
 
 ## Secondary Study Endpoints
 
-::: {.instr_box} 
+::: {.rmdnote .instr_box} 
 State the secondary endpoints to be measured in the study.
 :::
 

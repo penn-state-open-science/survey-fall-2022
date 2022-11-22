@@ -2,7 +2,7 @@
 
 ## Facilities and locations
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Identify and describe the facilities, sites, and locations where
 recruitment and study procedures will be performed.
@@ -21,7 +21,7 @@ The survey will be conducted online using Penn State's email servers, a Google F
 
 ## Feasibility of recruiting the required number of subjects
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Indicate the number of potential subjects to which the study team has
 access. Indicate the percentage of those potential subjects needed for
@@ -39,7 +39,7 @@ That would result in 850-1,700 responses.
 
 ## PI Time devoted to conducting the research
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe how the PI will ensure that a sufficient amount of time will
 be devoted to conducting and completing the research. Consider outside
@@ -56,7 +56,7 @@ The investigator will allocate time during the week to collect and analyze data,
 
 ## Availability of medical or psychological resources
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Describe the availability of medical or psychological resources that
 subjects might need as a result of their participation in the study.
 
@@ -68,7 +68,7 @@ Not applicable.
 
 ## Process for informing Study Team
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe the training plans to ensure members of the research team are informed about the protocol and their duties.
 

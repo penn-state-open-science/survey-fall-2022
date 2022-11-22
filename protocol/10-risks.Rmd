@@ -1,6 +1,6 @@
 # Risks
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 List the reasonably foreseeable risks, discomforts, hazards, or inconveniences to the subjects related the subjects' participation in the research. Include as may be useful for the IRB's consideration, a description of the probability, magnitude, duration, and reversibility of the risks.
 Consider all types of risk including physical, psychological, social, legal, and economic risks.

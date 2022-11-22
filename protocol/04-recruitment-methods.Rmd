@@ -6,11 +6,11 @@
 - Any eligibility screening questions (verbal/phone scripts, email, etc.) used when contacting potential participants must be uploaded to your study in CATS IRB (http://irb.psu.edu).
 :::
 
-> [Do not type here]
+[Do not type here]
 
 ## Identification of subjects
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Describe the source of subjects and the methods that will be used to identify potential subjects (e.g., organizational listservs, established recruitment databases, subject pools, medical or school records, interactions during a clinic visit, etc.). 
 If not recruiting subjects directly (e.g., database query for eligible records or
 samples) state what will be queried, how and by whom.
@@ -29,13 +29,13 @@ We will identify participants via organizational listservs.
 
 ## Recruitment process
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 Describe how potential subjects first learn about this research opportunity or indicate as not applicable if subjects will not be prospectively recruited to participant in the research.
 Subject recruitment can involve various methods (e.g., approaching potential subjects in person, contacting potential subjects via email, letters, telephone, ResearchMatch, or advertising to a general public via flyers, websites, StudyFinder, newspaper, television, and radio etc.).
 DO NOT include the actual recruitment material or wording in this protocol.
 :::
 
-> [Do not type here]
+[Do not type here]
 
 ### How potential subjects will be recruited
 
@@ -51,11 +51,11 @@ Subject recruitment will start once this protocol is approved.
 
 ### Describe the eligibility screening process. Screening begins when the investigator obtains information about or from a prospective participant in order to determine their eligibility.
 
-[X] Eligibility screening is occurring before consent^[Unless informed consent is waived by the IRB, screening before consent is only permitted when screening activities are limited to the collection of information through oral or written communication OR when identifiable private information or identifiable biospecimens is obtained by accessing records or stored identifiable biospecimens.
+- [X] Eligibility screening is occurring before consent^[Unless informed consent is waived by the IRB, screening before consent is only permitted when screening activities are limited to the collection of information through oral or written communication OR when identifiable private information or identifiable biospecimens is obtained by accessing records or stored identifiable biospecimens.
 Screening before consent is not permitted if data will be used for activities other than eligibility screening/recruitment (e.g., data analysis).
-In some studies, these procedures may not take place unless HIPAA Authorization is obtained OR a waiver of HIPAA Authorization when applicable for the screening procedures is approved by the IRB.]</br>
-[ ] Eligibility screening is occurring after consent</br>
-[ ] Consent is not being obtained in this research</br>
-[ ] Not applicable - Eligibility screening is not being done in this research.
+In some studies, these procedures may not take place unless HIPAA Authorization is obtained OR a waiver of HIPAA Authorization when applicable for the screening procedures is approved by the IRB.]
+- [ ] Eligibility screening is occurring after consent
+- [ ] Consent is not being obtained in this research
+- [ ] Not applicable - Eligibility screening is not being done in this research.
 
 Subjects will self-screen, via instructions in the recruitment information.

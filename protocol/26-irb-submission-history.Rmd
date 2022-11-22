@@ -1,5 +1,11 @@
 # IRB submission history {-}
 
+::: {.rmdtip}
+
+**TODO**: Drop local part of file path from the following.
+
+:::
+
 ```{r echo=FALSE}
 fs::dir_tree(file.path(here::here(), "irb/submissions"))
 ```

@@ -79,7 +79,7 @@ frequency-of-review-of-cumulative-data
 statistical-tests
 suspension-of-research
 risks
-potential-benefits-to-subjects-and-others
+benefits
 benefits-subjects
 benefits-others
 sharing-results-with-subjects
@@ -96,7 +96,7 @@ process-for-informing-study-team
 other-approvals
 other-approvals-from-external-entities
 internal-psu-ancillary-reviews
-multi-site-study
+multisite
 other-sites
 communication-plans
 data-submission-and-security-plan

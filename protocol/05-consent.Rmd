@@ -1,6 +1,6 @@
 # Consent Process and Documentation
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Refer to the following materials:
 - The “HRP-090- SOP - Informed Consent Process for Research” outlines the process for obtaining informed consent.  
@@ -13,25 +13,25 @@ Links to Penn State’s consent templates are available in the same location whe
 
 :::
 
-> [Do not type here]
+[Do not type here]
 
 ## Consent Process
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Check all applicable boxes below:
 
 :::
 
-[ ] Informed consent will be sought and documented with a written consent form *[Complete Sections \@ref(obtaining-consent) and \@ref(consent-other); If this is the only box checked, mark Sections \@ref(#waive-doc), \@ref(altered-consent) and \@ref(no-consent) as ‘Not applicable’]* 
+[ ] Informed consent will be sought and documented with a written consent form *[Complete Sections \@ref(obtaining-consent) and \@ref(consent-other); If this is the only box checked, mark Sections \@ref(waive-doc), \@ref(altered-consent) and \@ref(no-consent) as ‘Not applicable’]* 
 
-[x] Implied or verbal consent will be obtained – subjects will not sign a consent form (waiver of written documentation of consent) *[Complete Sections 5.2, 5.3 and 5.6; If this is the only box checked, mark Sections 5.4 and 5.5 as ‘Not applicable’]*
+[x] Implied or verbal consent will be obtained – subjects will not sign a consent form (waiver of written documentation of consent) *[Complete Sections \@ref(obtaining-consent), \@ref(waive-doc), and \@ref(consent-other); If this is the only box checked, mark Sections \@ref(altered-consent) and  \@ref(no-consent) as ‘Not applicable’]*
 
 [ ] Informed consent will be sought but some of the elements of informed consent will be omitted or altered (e.g., deception). *[Complete section \@ref(obtaining-consent), \@ref(altered-consent) and \@ref(consent-other); If this is the only box checked, mark Section \@ref(no-consent) as ‘Not applicable’]*
 
 [ ] Informed consent will not be obtained – request to completely waive the informed consent requirement. *[Complete Section \@ref(no-consent); If this is the only box checked, mark Sections \@ref(obtaining-consent), \@ref(waive-doc), \@ref(altered-consent) and \@ref(consent-other) as ‘Not applicable’]*
 
-[x] Exempt Research: If you believe that the research activities outlined meet one or more of the criteria outlined in “HRP-312- Worksheet- Exemption Determination”, check this box. By checking this box, you are verifying that the exempt consent process will disclose the following: Penn State affiliation; name and contact information for the researcher and advisor (if the researcher is a student); the activities involve research; the procedures to be performed; participation is voluntary; that there are adequate provisions to maintain the privacy interests of subjects and the confidentiality of the data.  
+[x] Exempt Research: If you believe that the research activities outlined meet one or more of the criteria outlined in [“HRP-312- Worksheet- Exemption Determination”](https://irb.psu.edu/IRB/sd/Doc/0/TCBLIPLVD21415RLO7UO3JQ19A/HRP-312%20-%20WORKSHEET%20-%20Exemption%20Determination.docx), check this box. By checking this box, you are verifying that the exempt consent process will disclose the following: Penn State affiliation; name and contact information for the researcher and advisor (if the researcher is a student); the activities involve research; the procedures to be performed; participation is voluntary; that there are adequate provisions to maintain the privacy interests of subjects and the confidentiality of the data.  
 
 **If the research includes the use of student educational records include the following language in this section**: The parent or eligible student will provide a signed and dated written consent that discloses: the records that may be disclosed; the purpose of the disclosure; the party or class of parties to whom the disclosure may be made; if a parent or adult student requests, the school will provide him or her with a copy of the records disclosed; if the parent of a student who is not an adult so requests, the school will provide the student with a copy of the records disclosed.
 
@@ -43,7 +43,7 @@ Check all applicable boxes below:
 
 ### Consent Process
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe where and when the consent process will take place.
 
@@ -54,10 +54,8 @@ They will be able to read information about consent prior to participating. Part
 
 ### Coercion or Undue Influence during Consent
 
-::: {.instr_box}
-
+::: {.instr_box .rmdnote}
 Describe the steps that will be taken to minimize the possibility of coercion or undue influence in the consent process.
-
 :::
 
 Participation is completely voluntary.
@@ -79,10 +77,8 @@ OR
 
 [ ] If the subjects or legally authorized representatives are members of a distinct cultural group or community in which signing forms is not the norm, that the research presents no more than minimal risk of harm to subjects and provided there is an appropriate alternative mechanism for documenting that informed consent was obtained. (Note: This condition is not applicable for FDA-regulated research.) 
 
-::: {.instr_box}
-
+::: {.instr_box .rmdnote}
 For distinct cultural groups, describe the alternative mechanism for documenting that informed consent was obtained.
-
 :::
 
 Not applicable.
@@ -93,10 +89,8 @@ The recruiting email and the header for the survey will inform participants abou
 
 ## Informed consent will be sought but some of the elements of informed consent will be omitted or altered (e.g., deception) {#altered-consent}
 
-::: {.instr_box}
-
+::: {.instr_box .rmdnote}
 Review “HRP-410-Checklist -Waiver or Alteration of Consent Process” to ensure that you have provided sufficient information.
-
 :::
 
 ### Indicate the elements of informed consent to be omitted or altered.
@@ -121,15 +115,13 @@ Not applicable.
 
 ### Debriefing
 
-::: {.instr_box}
-
+::: {.instr_box .rmdnote}
 Explain whether and how subjects will be debriefed after participation in the study. If subjects will not be debriefed, provide a justification for not doing so. Add any debriefing materials to the study in CATS IRB.
-
 :::
 
 ## Informed consent will not be obtained – request to completely waive the informed consent requirement {#no-consent}
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Review “HRP-410-Checklist -Waiver or Alteration of Consent Process” to ensure that you have provided sufficient information.
 
@@ -163,7 +155,7 @@ Not applicable.
 
 ### Non-English-Speaking Subjects
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Indicate what language(s) other than English are understood by prospective subjects or representatives.
 
@@ -177,7 +169,7 @@ Not applicable.
 
 ### Cognitively Impaired Adults
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Refer to “HRP-417 -CHECKLIST- Cognitively Impaired Adults” for information about research involving cognitively impaired adults as subjects.
 
@@ -185,7 +177,7 @@ Refer to “HRP-417 -CHECKLIST- Cognitively Impaired Adults” for information a
 
 #### Capability of Providing Consent
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe the process to determine whether an individual is capable of consent.
 
@@ -195,7 +187,7 @@ Not applicable.
 
 #### Adults Unable to Consent
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe whether and how informed consent will be obtained from the legally authorized representative. Describe who will be allowed to provide informed consent. Describe the process used to determine these individual’s authority to consent to research.
 
@@ -209,7 +201,7 @@ Not applicable.
 
 #### Assent of Adults Unable to Consent
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe the process for assent of the subjects. Indicate whether assent will be required of all, some, or none of the subjects. If some, indicate which subjects will be required to assent and which will not. 
 
@@ -225,7 +217,7 @@ Not applicable.
 
 #### Parental Permission
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Describe whether and how parental permission will be obtained. If permission will  be obtained from individuals other than parents, describe who will be allowed to provide permission. Describe the process used to determine these individual’s authority to consent to each child’s general medical care.
 
@@ -239,7 +231,7 @@ Not applicable.
 
 #### Assent of subjects who are not yet adults
 
-::: {.instr_box}
+::: {.instr_box .rmdnote}
 
 Indicate whether assent will be obtained from all, some, or none of the children. If assent will be obtained from some children, indicate which children will be required to assent.
 When assent of children is obtained describe whether and how it will be documented.

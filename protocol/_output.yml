@@ -18,10 +18,19 @@ bookdown::gitbook:
       vk: false
       whatsapp: false
       all: ['github']
+
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+
 bookdown::epub_book: default
+
+bookdown::bs4_book:
+  css: include/css/style.css
+  theme:
+    primary: "#096B72"
+  repo: 'https://github.com/penn-state-open-science/survey-fall-2022'
+

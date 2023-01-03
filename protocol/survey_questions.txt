@@ -9,7 +9,7 @@ How important to you is sharing data from active projects with research collabor
 How convenient is it for you to share data from active projects with research collaborators at Penn State or outside of Penn State?
 What are the main barriers to sharing data from active projects with research collaborators?
 How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?
-Which of the following obstacles make sharing data with the research community harder for you?
+Which of the following obstacles make sharing data with the research community harder for you? Mark all that apply.
 Do research sponsors/funders in your field require data sharing?
 Do journals in your field require data sharing?
 If you have shared data with the research community, where have you shared it?

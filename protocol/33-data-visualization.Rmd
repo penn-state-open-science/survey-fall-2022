@@ -3,5 +3,346 @@
 This is a placeholder for our eventual data visualization code and commentary.
 
 ::: {.rmdtip}
+
 **TODO** Add question by question visualizations.
+
 :::
+
+## Penn State campus {-}
+
+```{r, fig.cap="What Penn State campus do you represent?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(campus) +
+  ggplot2::geom_bar()
+```
+## Primary department or unit {-}
+
+::: {.rmdtip}
+
+**TODO** Normalize these before plotting.
+
+:::
+
+## Position {-}
+
+```{r, fig.cap="What is your position at Penn State?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(position) +
+  ggplot2::geom_bar()
+```
+
+## Highest post-secondary degree {-}
+
+```{r, fig.cap="What is the highest post-secondary degree you have earned?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(highest_degree_earned) +
+  ggplot2::geom_bar()
+```
+
+## Years since highest degree {-}
+
+```{r, fig.cap="How many years have passed since you completed that degree?"}
+survey %>%
+  dplyr::mutate(., years_since_degree = factor(years_since_degree, c("< 2 years", "2-5 years", "5-10 years", "10+"), ordered = TRUE)) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(years_since_degree) +
+  ggplot2::geom_bar()
+```
+
+## Primary types of data {-}
+
+::: {.rmdtip}
+
+**TODO** Recode these in data gathering and cleaning.
+
+:::
+
+## Restricted data {-}
+
+::: {.rmdtip}
+
+**TODO** Recode these in data gathering and cleaning.
+
+:::
+
+```{r, fig.cap="Do you collect data that have legal or ethical restrictions governing who may access it or how it may be used?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(restricted_data) +
+  ggplot2::geom_bar()
+```
+
+## Where store data for active projects? {-}
+
+::: {.rmdtip}
+
+**TODO** Recode these in data gathering and cleaning.
+
+:::
+
+## Importance of sharing with research collaborators {-}
+
+```{r, fig.cap="How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?"}
+survey %>%
+  dplyr::mutate(., importance_sharing_collab = factor(importance_sharing_collab, 
+                                                      c("Not Important", "Slightly important", 
+                                                        "Moderately important", "Important", "Very important"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(importance_sharing_collab) +
+  ggplot2::geom_bar()
+```
+
+## Convenience of sharing with research collaborators {-}
+
+```{r}
+survey %>%
+  dplyr::mutate(., convenience_sharing_collab = factor(convenience_sharing_collab, 
+                                                      c("Very inconvenient", "Inconvenient", 
+                                                        "Neither convenient or inconvenient", "Convenient", "Very convenient", "Not applicable"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(convenience_sharing_collab) +
+  ggplot2::geom_bar()
+```
+
+## Importance of sharing with research community {-}
+
+```{r, fig.cap="How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?"}
+survey %>%
+  dplyr::mutate(., importance_share_community = factor(importance_share_community, 
+                                                      c("Not Important", "Slightly important", 
+                                                        "Moderately important", "Important", "Very important"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(importance_share_community) +
+  ggplot2::geom_bar()
+```
+
+## Obstacles to sharing more broadly {-}
+
+::: {.rmdtip}
+
+**TODO** Recode these in data gathering and cleaning.
+
+:::
+
+## Requirements for data sharing from funders {-}
+
+```{r, fig.cap="Do research sponsors/funders in your field require data sharing?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(funders_require_data_sharing) +
+  ggplot2::geom_bar()
+```
+
+## Requirements for data sharing from journals {-}
+
+```{r, fig.cap="Do journals in your field require data sharing?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(journals_require_data_sharing) +
+  ggplot2::geom_bar()
+```
+
+## Where has data been shared? {-}
+
+::: {.rmdtip}
+
+**TODO** Recode these in data gathering and cleaning.
+
+:::
+
+## How well-equipped are we to meet data management and sharing requirements? {-}
+
+```{r, fig.cap="How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?"}
+survey %>%
+  dplyr::mutate(., equipped_data_mgmt_sharing = factor(equipped_data_mgmt_sharing, 
+                                                      c("Not equipped at all", "Slightly equipped", 
+                                                        "Moderately equipped", "Equipped", "Very well equipped"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(equipped_data_mgmt_sharing) +
+  ggplot2::geom_bar()
+```
+
+## Frequency of code generation {-}
+
+```{r, fig.cap="How often do you create computer scripts or data analysis code in the conduct of your research?"}
+survey %>%
+  dplyr::mutate(., create_analysis_code = factor(create_analysis_code, 
+                                                      c("Never", "Rarely", 
+                                                        "Sometimes", "Often", "Always"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(create_analysis_code) +
+  ggplot2::geom_bar()
+```
+
+## Frequency of code sharing with collaborators {-}
+
+```{r, fig.cap = "How often do you share computer scripts or data analysis code with direct research collaborators ?"}
+survey %>%
+  dplyr::mutate(., share_analysis_code_collab = factor(share_analysis_code_collab, 
+                                                      c("Never", "Rarely", 
+                                                        "Sometimes", "Often", "Always"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(share_analysis_code_collab) +
+  ggplot2::geom_bar()
+```
+## Frequency of use of open source code-sharing tools {-}
+
+```{r, fig.cap="How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?"}
+survey %>%
+  dplyr::mutate(., use_code_sharing_tools = factor(use_code_sharing_tools, 
+                                                      c("Never", "Rarely", 
+                                                        "Sometimes", "Often", "Always"))) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(use_code_sharing_tools) +
+  ggplot2::geom_bar()
+```
+
+## Frequency of open code sharing {-}
+
+```{r, fig.cap="How often do you share computer scripts or data analysis code openly?"}
+survey %>%
+  dplyr::mutate(.,
+                share_analysis_code_community = factor(
+                  share_analysis_code_community,
+                  c("Never", "Rarely",
+                    "Sometimes", "Often", "Always")
+                )) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(share_analysis_code_community) +
+  ggplot2::geom_bar()
+```
+
+## Creation of other types of software {-}
+
+```{r, fig.cap="Do you create other kinds of software in the conduct of your research?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(create_other_code) +
+  ggplot2::geom_bar()
+```
+
+## Requirements for code sharing from funders {-}
+
+```{r, fig.cap="Do sponsors/funders in your field require code sharing?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(funders_require_code_sharing) +
+  ggplot2::geom_bar()
+```
+
+## Requirements for code sharing from journals {-}
+
+```{r, fig.cap="Do journals in your field require code sharing?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(journals_require_code_sharing) +
+  ggplot2::geom_bar()
+```
+
+## Experience/Knowledge of Open Science {-}
+
+::: {.rmdtip}
+
+**TODO** Recode these.
+
+:::
+
+```{r, fig.cap="What is your experience with/knowledge of open science practices?"}
+survey %>%
+  dplyr::mutate(.,
+                knowledge_open_science = factor(
+                  knowledge_open_science,
+                  c("No experience/knowledge", "Limited experience/knowledge",
+                    "Some experience/knowledge", "Considerable experience/knowledge", "Extensive experience/knowledge")
+                )) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(knowledge_open_science) +
+  ggplot2::geom_bar()
+```
+
+## Awareness of FAIR principles {-}
+
+```{r, fig.cap="Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data."}
+survey %>%
+  dplyr::mutate(.,
+                awareness_FAIR = factor(
+                  awareness_FAIR,
+                  c("No awareness", "Limited awareness",
+                    "Some awareness", "Considerable awareness", "Extensive awareness")
+                )) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(awareness_FAIR) +
+  ggplot2::geom_bar()
+```
+
+## Application of FAIR principles in your own work {-}
+
+```{r, fig.cap="Do you apply FAIR principles in your own data management and sharing practices?"}
+survey %>%
+  dplyr::mutate(.,
+                apply_FAIR = factor(
+                  apply_FAIR,
+                  c("Never", "Rarely",
+                    "Sometimes", "Often", "Always", "Not applicable")
+                )) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(apply_FAIR) +
+  ggplot2::geom_bar()
+```
+
+## Heard of reproducibility crisis? {-}
+
+```{r, fig.cap="Have you heard of the 'reproducibility crisis' in science?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(heardof_reproducibility_crisis) +
+  ggplot2::geom_bar()
+```
+
+## Is there a crisis in your area? {-}
+
+```{r, fig.cap="Is there a reproducibility crisis in your area of research?"}
+survey %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(my_area_reproducibility_crisis) +
+  ggplot2::geom_bar()
+```
+
+## Benefit from PSU center
+
+```{r, fig.cap="How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?"}
+
+survey %>%
+  dplyr::mutate(.,
+                benefit_psu_center = factor(
+                  benefit_psu_center,
+                  c("No benefit", "Minimal benefit",
+                    "Some benefit", "Considerable benefit", "Extensive benefit", "Not applicable")
+                )) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(benefit_psu_center) +
+  ggplot2::geom_bar()
+
+```
+
+## Services from PSU Center
+
+
+::: {.rmdtip}
+
+**TODO** Create plot.
+
+:::
+
+## Comments
+
+```{r}
+survey %>%
+  dplyr::filter(., !is.na(comments)) %>%
+  dplyr::select(., comments) %>%
+  knitr::kable(format = 'html')
+```
+

@@ -30,26 +30,26 @@ googledrive::drive_auth()
 ```
 
 ```{r}
-# if (!dir.exists('csv')) {
-#   dir.create('csv')
-# }
-# 
-# if (!file.exists(params$csv_fn)) {
-#   no_current_csv <- TRUE
-#   csv_fn <- "csv/open-science-survey-2022-fall.csv"
-# } else {
-#   csv_fn <- params$csv_fn
-#   no_current_csv <- FALSE
-# }
-# 
-# if (params$update_google_sheet || no_current_csv) {
-#   googledrive::drive_download(
-#     file = google_sheet_fn,
-#     path = csv_fn,
-#     type = 'csv',
-#     overwrite = TRUE
-#   )
-# }
+if (!dir.exists('csv')) {
+  dir.create('csv')
+}
+
+if (!file.exists(params$csv_fn)) {
+  no_current_csv <- TRUE
+  csv_fn <- "csv/open-science-survey-2022-fall.csv"
+} else {
+  csv_fn <- params$csv_fn
+  no_current_csv <- FALSE
+}
+
+if (params$update_google_sheet || no_current_csv) {
+  googledrive::drive_download(
+    file = google_sheet_fn,
+    path = csv_fn,
+    type = 'csv',
+    overwrite = TRUE
+  )
+}
 ```
 
 ## Load data {-}
@@ -64,6 +64,8 @@ if (file.exists(params$csv_fn)) {
   survey <- NULL
 }
 ```
+
+There are $n=$ `r dim(survey)[1]` responses.
 
 ## Clean data {-}
 
@@ -338,6 +340,53 @@ survey <- survey %>%
   dplyr::mutate(.,
                 share_consortia = stringr::str_detect(where_shared_community,
                                                       "Research consortia"))
+```
+
+### Modify `service_psu_center`
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(
+    .,
+    help_data_review_qa = stringr::str_detect(service_psu_center,
+                                          "Data review and quality")
+  ) %>%
+  dplyr::mutate(
+    .,
+    help_data_mgmt_plan = stringr::str_detect(service_psu_center,
+                                          "Data management plan")
+  ) %>%
+  dplyr::mutate(
+    .,
+    help_data_doc = stringr::str_detect(service_psu_center,
+                                          "Data documentation")
+  ) %>%
+  dplyr::mutate(
+    .,
+    help_data_analysis_verif = stringr::str_detect(service_psu_center,
+                                          "Third party verification")
+  ) %>%  
+  dplyr::mutate(
+    .,
+    help_student_staff_train = stringr::str_detect(service_psu_center,
+                                          "Training and technical assistance")
+  )  %>%
+  dplyr::mutate(
+    .,
+    help_data_deidentif = stringr::str_detect(service_psu_center,
+                                          "De-identification or anonymization")
+  ) %>%
+  dplyr::mutate(
+    .,
+    help_funder_compliance = stringr::str_detect(service_psu_center,
+                                          "Ensuring compliance with funding")
+  ) %>%
+  dplyr::mutate(
+    .,
+    help_where_to_share = stringr::str_detect(service_psu_center,
+                                          "recommendation of suitable")
+  )
+ 
 ```
 
 ## Re-export cleaned data {-}

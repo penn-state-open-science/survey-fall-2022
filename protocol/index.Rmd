@@ -24,6 +24,13 @@ params:
   pi_dept: 'Psychology'
 ---
 
+```{r}
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.align = "center",
+                      fig.path = "include/img/")
+library(tidyverse)
+```
+
 # About {-}
 
 This is a research protocol for *`r params$irb_long_name`*, `r params$irb_id` (`r params$irb_short_name`) written in **Markdown**.

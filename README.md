@@ -2,6 +2,8 @@
 
 Materials related to a survey conducted in Fall 2022 by a group of Penn State researchers.
 
+These files generate a web site that can be viewed at: <https://penn-state-open-science.github.io/survey-fall-2022/>.
+
 ## Installation
 
 - Clone the repo from GitHub.

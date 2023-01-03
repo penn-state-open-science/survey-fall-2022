@@ -1,7 +1,9 @@
 # Data Management Plan {#data_mgmt_plan -}
 
-::: {.todo_box}
+::: {.rmdnote}
+
 **TODO**: Complete this DMP
+
 :::
 
 ## Project Information {-}

@@ -9,15 +9,15 @@
 <meta name="author" content="Frank Hillary">
 <meta name="author" content="Nicole Lazar">
 <meta name="author" content="Briana Wham">
-<meta name="description" content='Set-up We ensure that all package dependencies are installed. if (!require(tidyverse)) {  install.packages("tidyverse") } if (!require(googledrive)) {  install.packages("googledrive") } ## Loading...'>
+<meta name="description" content='Set-up We ensure that all package dependencies are installed. if (!require(tidyverse)) {  install.packages("tidyverse") } if (!require(googledrive)) {  install.packages("googledrive") }...'>
 <meta name="generator" content="bookdown 0.29 with bs4_book()">
 <meta property="og:title" content="Data Gathering and Cleaning | Open Science at Penn State">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/penn-state-open-science/survey-fall-2022/data-gathering-and-cleaning.html">
-<meta property="og:description" content='Set-up We ensure that all package dependencies are installed. if (!require(tidyverse)) {  install.packages("tidyverse") } if (!require(googledrive)) {  install.packages("googledrive") } ## Loading...'>
+<meta property="og:description" content='Set-up We ensure that all package dependencies are installed. if (!require(tidyverse)) {  install.packages("tidyverse") } if (!require(googledrive)) {  install.packages("googledrive") }...'>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Data Gathering and Cleaning | Open Science at Penn State">
-<meta name="twitter:description" content='Set-up We ensure that all package dependencies are installed. if (!require(tidyverse)) {  install.packages("tidyverse") } if (!require(googledrive)) {  install.packages("googledrive") } ## Loading...'>
+<meta name="twitter:description" content='Set-up We ensure that all package dependencies are installed. if (!require(tidyverse)) {  install.packages("tidyverse") } if (!require(googledrive)) {  install.packages("googledrive") }...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -93,16 +93,15 @@
 <h2>Set-up<a class="anchor" aria-label="anchor" href="#set-up"><i class="fas fa-link"></i></a>
 </h2>
 <p>We ensure that all package dependencies are installed.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://googledrive.tidyverse.org">googledrive</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"googledrive"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
-<pre><code>## Loading required package: googledrive</code></pre>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span><span class="op">)</span> <span class="co"># for pipe %&gt;%</span></span></code></pre></div>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span><span class="op">)</span> <span class="co"># for pipe %&gt;%</span></span></code></pre></div>
 </div>
 <div id="download-data" class="section level2 unnumbered">
 <h2>Download data<a class="anchor" aria-label="anchor" href="#download-data"><i class="fas fa-link"></i></a>
@@ -112,9 +111,9 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <p>We first download the data file from the spreadsheet generated by the Google Form into a comma-separated value (CSV) file in a local directory called <code>csv/</code>.</p>
 <p>To do so, we must authenticate to Google.
 For the time being, you must run <code>googledrive:drive_auth()</code> at the console, separate from rendering the protocol via <code><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html">bookdown::render_book()</a></code>.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">googledrive</span><span class="fu">::</span><span class="fu"><a href="https://googledrive.tidyverse.org/reference/drive_auth.html">drive_auth</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.exists</a></span><span class="op">(</span><span class="st">'csv'</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">'csv'</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
@@ -140,7 +139,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <h2>Load data<a class="anchor" aria-label="anchor" href="#load-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>Load the data file.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="va">params</span><span class="op">$</span><span class="va">csv_fn</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">params</span><span class="op">$</span><span class="va">csv_fn</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
@@ -153,7 +152,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <h2>Clean data<a class="anchor" aria-label="anchor" href="#clean-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>Examine the variable names.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/warning.html">warning</a></span><span class="op">(</span><span class="st">"Error loading data file"</span><span class="op">)</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
@@ -195,7 +194,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 ## [34] "What is the highest post-secondary degree you have earned?"                                                                                                                                               
 ## [35] "How often do you share computer scripts or data analysis code openly?"</code></pre>
 <p>Let’s rename them.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_questions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">short_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
@@ -246,7 +245,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <h3>Modify <code>campus</code><a class="anchor" aria-label="anchor" href="#modify-campus"><i class="fas fa-link"></i></a>
 </h3>
 <p>Make all campus locations lowercase and replace white space with underscores.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, campus <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">campus</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, campus <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace</a></span><span class="op">(</span><span class="va">campus</span>, <span class="st">" "</span>, <span class="st">"_"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -258,7 +257,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div class="rmdtip">
 <p><strong>TODO</strong>: Fix spelling errors.</p>
 </div>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, campus <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">campus</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">)</span></span></code></pre></div>
@@ -267,7 +266,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <h3>Modify <code>position</code><a class="anchor" aria-label="anchor" href="#modify-position"><i class="fas fa-link"></i></a>
 </h3>
 <p>Make lowercase, replace spaces and dash with underscore.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">position</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, position <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace_all</a></span><span class="op">(</span><span class="va">position</span>, <span class="st">"[ -]"</span>, <span class="st">"_"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -282,7 +281,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div id="modify-data_types" class="section level3 unnumbered">
 <h3>Modify <code>data_types</code><a class="anchor" aria-label="anchor" href="#modify-data_types"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, collect_audio <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">data_types</span>, <span class="st">"Audio files"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, collect_video <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">data_types</span>, <span class="st">"Video files"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -334,9 +333,12 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div id="modify-restricted_data" class="section level3 unnumbered">
 <h3>Modify <code>restricted_data</code><a class="anchor" aria-label="anchor" href="#modify-restricted_data"><i class="fas fa-link"></i></a>
 </h3>
-<div class="rmdtip">
-<p><strong>TODO</strong>: Recode values</p>
-</div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, restricted_ethical <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">restricted_data</span>, <span class="st">"ethical concerns"</span><span class="op">)</span>,</span>
+<span>                restricted_legal_ip <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">restricted_data</span>, <span class="st">"legal/intellectual"</span><span class="op">)</span>,</span>
+<span>                restricted_sponsor <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">restricted_data</span>, <span class="st">"contractual restrictions"</span><span class="op">)</span>,</span>
+<span>                restricted_none <span class="op">=</span> <span class="st">"No; My data are not restricted"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="modify-storage_active_projects" class="section level3 unnumbered">
 <h3>Modify <code>storage_active_projects</code><a class="anchor" aria-label="anchor" href="#modify-storage_active_projects"><i class="fas fa-link"></i></a>
@@ -344,7 +346,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div class="rmdtip">
 <p><strong>TODO</strong>: Handle other options</p>
 </div>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
 <span>                store_usb <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
@@ -380,7 +382,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div class="rmdtip">
 <p><strong>TODO</strong>: Handle “other” cases.</p>
 </div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    <span class="va">.</span>,</span>
@@ -419,7 +421,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div id="modify-where_shared_community" class="section level3 unnumbered">
 <h3>Modify <code>where_shared_community</code><a class="anchor" aria-label="anchor" href="#modify-where_shared_community"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    <span class="va">.</span>,</span>
@@ -452,7 +454,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <h3>
 <span class="header-section-number">22.14.8</span> Modify <code>service_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-service_psu_center"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    <span class="va">.</span>,</span>
@@ -499,7 +501,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <div id="re-export-cleaned-data" class="section level2 unnumbered">
 <h2>Re-export cleaned data<a class="anchor" aria-label="anchor" href="#re-export-cleaned-data"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">survey</span>, <span class="st">"csv/open-science-survey-2022-fall-clean.csv"</span><span class="op">)</span></span></code></pre></div>
 
 </div>

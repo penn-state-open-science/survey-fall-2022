@@ -226,14 +226,20 @@ survey <- survey %>%
 
 ### Modify `restricted_data` {-}
 
-::: {.rmdtip}
-**TODO**: Recode values
-:::
+```{r}
+survey <- survey %>%
+  dplyr::mutate(., restricted_ethical = stringr::str_detect(restricted_data, "ethical concerns"),
+                restricted_legal_ip = stringr::str_detect(restricted_data, "legal/intellectual"),
+                restricted_sponsor = stringr::str_detect(restricted_data, "contractual restrictions"),
+                restricted_none = "No; My data are not restricted")
+```
 
 ### Modify `storage_active_projects` {-}
 
 ::: {.rmdtip}
+
 **TODO**: Handle other options
+
 :::
 
 ```{r}

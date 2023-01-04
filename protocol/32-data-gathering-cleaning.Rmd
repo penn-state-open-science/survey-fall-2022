@@ -44,7 +44,7 @@ if (!file.exists(params$csv_fn)) {
 
 if (params$update_google_sheet || no_current_csv) {
   googledrive::drive_download(
-    file = google_sheet_fn,
+    file = params$google_sheet_fn,
     path = csv_fn,
     type = 'csv',
     overwrite = TRUE

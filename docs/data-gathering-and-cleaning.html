@@ -376,6 +376,14 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, store_box <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
 <span>                                                   <span class="st">"Box"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
+<div id="modify-barriers_sharing_collab" class="section level3" number="22.14.8">
+<h3>
+<span class="header-section-number">22.14.8</span> Modify <code>barriers_sharing_collab</code><a class="anchor" aria-label="anchor" href="#modify-barriers_sharing_collab"><i class="fas fa-link"></i></a>
+</h3>
+<div class="rmdtip">
+<p><strong>TODO</strong>: Clean these.</p>
+</div>
+</div>
 <div id="modify-barriers_share_community" class="section level3 unnumbered">
 <h3>Modify <code>barriers_share_community</code><a class="anchor" aria-label="anchor" href="#modify-barriers_share_community"><i class="fas fa-link"></i></a>
 </h3>
@@ -450,9 +458,9 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <span>                share_consortia <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">where_shared_community</span>,</span>
 <span>                                                      <span class="st">"Research consortia"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="modify-service_psu_center" class="section level3" number="22.14.8">
+<div id="modify-service_psu_center" class="section level3" number="22.14.9">
 <h3>
-<span class="header-section-number">22.14.8</span> Modify <code>service_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-service_psu_center"><i class="fas fa-link"></i></a>
+<span class="header-section-number">22.14.9</span> Modify <code>service_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-service_psu_center"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -525,9 +533,10 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <li><a class="nav-link" href="#modify-data_types">Modify data_types</a></li>
 <li><a class="nav-link" href="#modify-restricted_data">Modify restricted_data</a></li>
 <li><a class="nav-link" href="#modify-storage_active_projects">Modify storage_active_projects</a></li>
+<li><a class="nav-link" href="#modify-barriers_sharing_collab"><span class="header-section-number">22.14.8</span> Modify barriers_sharing_collab</a></li>
 <li><a class="nav-link" href="#modify-barriers_share_community">Modify barriers_share_community</a></li>
 <li><a class="nav-link" href="#modify-where_shared_community">Modify where_shared_community</a></li>
-<li><a class="nav-link" href="#modify-service_psu_center"><span class="header-section-number">22.14.8</span> Modify service_psu_center</a></li>
+<li><a class="nav-link" href="#modify-service_psu_center"><span class="header-section-number">22.14.9</span> Modify service_psu_center</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#re-export-cleaned-data">Re-export cleaned data</a></li>
@@ -547,7 +556,7 @@ For the time being, you must run <code>googledrive:drive_auth()</code> at the co
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-03.</p>
+    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

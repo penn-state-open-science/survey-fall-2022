@@ -45,17 +45,23 @@ survey <- readr::read_csv("csv/open-science-survey-2022-fall.csv")
 # Drop the Timestamp since it is provided by Google Forms automatically
 survey_questions <- names(survey)[2:dim(survey)[2]]
 
-survey_questions %>%
+survey_qs_df <- tibble::tibble(q_num = seq_along(survey_questions), question = survey_questions)
+
+survey_qs_df %>%
   kableExtra::kbl(.) %>%
   kableExtra::kable_classic(.)
 ```
 
 Let's export these questions for transparency and to use as an attachment for IRB submissions:
 
-```{r}
+```{r export-qs}
+# Write as text file
 fileConn3 <- file("survey_questions.txt")
 writeLines(survey_questions, fileConn3)
 close(fileConn3)
+
+# Save as CSV
+readr::write_csv(survey_qs_df, "csv/open-science-survey-2022-fall-questions.csv")
 ```
 
 ::: {.rmdtip}

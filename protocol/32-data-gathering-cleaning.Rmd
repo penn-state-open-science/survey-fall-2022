@@ -168,7 +168,9 @@ survey <- survey %>%
 ### Modify `years_since_degree` {-}
 
 ::: {.rmdtip}
+
 **TODO**: Make ordinal
+
 :::
 
 ### Modify `data_types` {-}
@@ -273,10 +275,20 @@ survey <- survey %>%
                                                    "Box"))
 ```
 
+### Modify `barriers_sharing_collab`
+
+::: {.rmdtip}
+
+**TODO**: Clean these.
+
+:::
+
 ### Modify `barriers_share_community` {-}
 
 ::: {.rmdtip}
+
 **TODO**: Handle "other" cases.
+
 :::
 
 ```{r}

@@ -135,9 +135,9 @@
 <span><span class="co"># Read local copy of survey</span></span>
 <span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"csv/open-science-survey-2022-fall.csv"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Rows: 11 Columns: 35
-## ── Column specification ───────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────
 ## Delimiter: ","
-## chr (35): Timestamp, What Penn State campus do you represent?, What is your primary department/...
+## chr (35): Timestamp, What Penn State campus do you represent?, What is your primary depa...
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
@@ -145,182 +145,289 @@
 <code class="sourceCode R"><span><span class="co"># Drop the Timestamp since it is provided by Google Forms automatically</span></span>
 <span><span class="va">survey_questions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
 <span></span>
-<span><span class="va">survey_questions</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="va">survey_qs_df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>q_num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_along</a></span><span class="op">(</span><span class="va">survey_questions</span><span class="op">)</span>, question <span class="op">=</span> <span class="va">survey_questions</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">survey_qs_df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_classic.html">kable_classic</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <thead><tr>
+<th style="text-align:right;">
+q_num
+</th>
 <th style="text-align:left;">
-x
+question
 </th>
 </tr></thead>
 <tbody>
 <tr>
+<td style="text-align:right;">
+1
+</td>
 <td style="text-align:left;">
 What Penn State campus do you represent?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+2
+</td>
 <td style="text-align:left;">
 What is your primary department/unit?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+3
+</td>
 <td style="text-align:left;">
 What is your position at Penn State?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+4
+</td>
 <td style="text-align:left;">
 How many years have passed since you completed that degree?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+5
+</td>
 <td style="text-align:left;">
 What are the primary types of digital data that are used in your research? (choose all that apply)
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+6
+</td>
 <td style="text-align:left;">
 Do you collect data that have legal or ethical restrictions governing who may access it or how it may be used?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+7
+</td>
 <td style="text-align:left;">
 Where do you store data for active projects where data collection and analysis is still ongoing?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+8
+</td>
 <td style="text-align:left;">
 How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+9
+</td>
 <td style="text-align:left;">
 How convenient is it for you to share data from active projects with research collaborators at Penn State or outside of Penn State?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+10
+</td>
 <td style="text-align:left;">
 What are the main barriers to sharing data from active projects with research collaborators?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+11
+</td>
 <td style="text-align:left;">
 How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+12
+</td>
 <td style="text-align:left;">
 Which of the following obstacles make sharing data with the research community harder for you? Mark all that apply.
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+13
+</td>
 <td style="text-align:left;">
 Do research sponsors/funders in your field require data sharing?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+14
+</td>
 <td style="text-align:left;">
 Do journals in your field require data sharing?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+15
+</td>
 <td style="text-align:left;">
 If you have shared data with the research community, where have you shared it?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+16
+</td>
 <td style="text-align:left;">
 How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+17
+</td>
 <td style="text-align:left;">
 How often do you create computer scripts or data analysis code in the conduct of your research?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+18
+</td>
 <td style="text-align:left;">
 How often do you share computer scripts or data analysis code with direct research collaborators ?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+19
+</td>
 <td style="text-align:left;">
 Do you create other kinds of software in the conduct of your research?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+20
+</td>
 <td style="text-align:left;">
 How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+21
+</td>
 <td style="text-align:left;">
 Do sponsors/funders in your field require code sharing?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+22
+</td>
 <td style="text-align:left;">
 Do journals in your field require code sharing?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+23
+</td>
 <td style="text-align:left;">
 How often do you openly share other materials related to your research (protocols, reagents, samples, apparatus, designs, etc.) with other researchers?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+24
+</td>
 <td style="text-align:left;">
 What is your experience with/knowledge of open science practices?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+25
+</td>
 <td style="text-align:left;">
 Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+26
+</td>
 <td style="text-align:left;">
 Do you apply FAIR principles in your own data management and sharing practices?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+27
+</td>
 <td style="text-align:left;">
 Have you heard of the “reproducibility crisis” in science?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+28
+</td>
 <td style="text-align:left;">
 Is there a reproducibility crisis in your area of research?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+29
+</td>
 <td style="text-align:left;">
 How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+30
+</td>
 <td style="text-align:left;">
 Select the services that would most benefit your research if offered by such a center.
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+31
+</td>
 <td style="text-align:left;">
 Any final comments about data management, data sharing, and open science?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+32
+</td>
 <td style="text-align:left;">
 (Optional) Provide us with your contact information if you would like us to follow up.
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+33
+</td>
 <td style="text-align:left;">
 What is the highest post-secondary degree you have earned?
 </td>
 </tr>
 <tr>
+<td style="text-align:right;">
+34
+</td>
 <td style="text-align:left;">
 How often do you share computer scripts or data analysis code openly?
 </td>
@@ -329,9 +436,13 @@ How often do you share computer scripts or data analysis code openly?
 </table></div>
 <p>Let’s export these questions for transparency and to use as an attachment for IRB submissions:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">fileConn3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">file</a></span><span class="op">(</span><span class="st">"survey_questions.txt"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># Write as text file</span></span>
+<span><span class="va">fileConn3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">file</a></span><span class="op">(</span><span class="st">"survey_questions.txt"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="va">survey_questions</span>, <span class="va">fileConn3</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/connections.html">close</a></span><span class="op">(</span><span class="va">fileConn3</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/connections.html">close</a></span><span class="op">(</span><span class="va">fileConn3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Save as CSV</span></span>
+<span><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">survey_qs_df</span>, <span class="st">"csv/open-science-survey-2022-fall-questions.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="rmdtip">
 <p><strong>TODO</strong>: Use the Google API to upload and download questions.</p>
 </div>
@@ -364,7 +475,7 @@ How often do you share computer scripts or data analysis code openly?
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-03.</p>
+    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

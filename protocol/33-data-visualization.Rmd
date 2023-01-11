@@ -2,6 +2,15 @@
 
 The following shows simple visualizations of the survey data.
 
+## Filter "test" responses {-}
+
+The responses prior to 2022-12-22 were used to test the survey, and aren't really data.
+
+```{r}
+survey <- survey %>%
+  dplyr::filter(., timestamp > as_date("2022-12-22"))
+```
+
 There are $n=$ `r dim(survey_qs_df)[1]` questions in total.
 
 As of `r Sys.Date()`, we have had $n$= `r dim(survey)[1]` responses.
@@ -12,6 +21,7 @@ As of `r Sys.Date()`, we have had $n$= `r dim(survey)[1]` responses.
 
 ```{r fig-campus, fig.cap="What Penn State campus do you represent?"}
 survey %>%
+  dplyr::filter(., !is.na(campus)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(campus) +
   ggplot2::geom_bar()
@@ -43,6 +53,7 @@ survey %>%
 
 ```{r fig-highest-degree, fig.cap="What is the highest post-secondary degree you have earned?"}
 survey %>%
+  dplyr::filter(., !is.na(highest_degree_earned)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(highest_degree_earned) +
   ggplot2::geom_bar()
@@ -59,6 +70,7 @@ survey %>%
     c("< 2 years", "2-5 years", "5-10 years", "10+"),
     ordered = TRUE
   )) %>%
+  dplyr::filter(., !is.na(years_since_degree)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(years_since_degree) +
   ggplot2::geom_bar()

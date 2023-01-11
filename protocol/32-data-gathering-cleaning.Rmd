@@ -131,6 +131,15 @@ if (length(short_names) == length(names(survey))) {
 
 Some of the variables have values that are easy to parse, while others are more challenging, `data_types` for example.
 
+### Modify `timestamp` {-}
+
+Make a standard date_time format.
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(., timestamp = lubridate::mdy_hms(timestamp, tz = "America/New_York"))
+```
+
 ### Modify `campus` {-}
 
 Make all campus locations lowercase and replace white space with underscores.

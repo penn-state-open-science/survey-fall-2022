@@ -8,7 +8,7 @@ The responses prior to 2022-12-22 were used to test the survey, and aren't reall
 
 ```{r}
 survey <- survey %>%
-  dplyr::filter(., timestamp > as_date("2022-12-22"))
+  dplyr::filter(., timestamp > lubridate::as_date("2022-12-22"))
 ```
 
 There are $n=$ `r dim(survey_qs_df)[1]` questions in total.
@@ -90,28 +90,47 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[6], ": ", survey_qs_df$question[6])` 
 
-```{r fig-restricted-ethical, fig.cap="Data about human participants that are subject to restrictions due to ethical concerns"}
+```{r restricted-data-preprocess, fig.cap="Respondents who collect restricted data of varied types"}
+restricted <- survey %>%
+  dplyr::select(., -restricted_data) %>%
+  tidyr::pivot_longer(., cols = contains("restricted"), 
+                      names_to = "restricted_data_types", 
+                      values_to = "restricted_data_vals") %>%
+  dplyr::mutate(., restricted_data_types = str_remove(restricted_data_types, "restricted_"))
+
+restricted %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(restricted_data_types,
+               as.numeric(restricted_data_vals)) +
+  ggplot2::geom_col() +
+  scale_y_continuous(name = "N responses",
+                     breaks = c(0:sum(restricted$restricted_data_vals))) +
+  xlab("Types of restrictions") +
+  coord_flip()
+```
+
+```{r fig-restricted-ethical, fig.cap="Data about human participants that are subject to restrictions due to ethical concerns", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_ethical) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-restricted-legal-ip, fig.cap="Data subject to legal/intellectual property restrictions"}
+```{r fig-restricted-legal-ip, fig.cap="Data subject to legal/intellectual property restrictions", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_legal_ip) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-restricted-sponsor, fig.cap="Data subject to contractual restrictions from a sponsor or provider"}
+```{r fig-restricted-sponsor, fig.cap="Data subject to contractual restrictions from a sponsor or provider", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_sponsor) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-restricted-none, fig.cap="My data are not restricted in these ways"}
+```{r fig-restricted-none, fig.cap="My data are not restricted in these ways", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_none) +
@@ -122,35 +141,55 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[7], ": ", survey_qs_df$question[7])` 
 
-```{r fig-store-usb, fig.cap="External USB or flash drive"}
+```{r fig-data-storage-places, fig.cap="Locations for storing active research data"}
+storage_active <- survey %>%
+  dplyr::select(., -storage_active_projects) %>%
+  tidyr::pivot_longer(., cols = contains("store"), 
+                      names_to = "store_where", 
+                      values_to = "store_where_vals") %>%
+  dplyr::mutate(., store_where = str_remove(store_where, "store_"))
+
+storage_active %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(store_where,
+               as.numeric(store_where_vals)) +
+  ggplot2::geom_col() +
+  scale_y_continuous(name = "N responses",
+                     breaks = c(0:length(storage_active$store_where_vals))) +
+  xlab("Where data is stored") +
+  coord_flip()
+```
+
+
+```{r fig-store-usb, fig.cap="External USB or flash drive", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_usb) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-lab, fig.cap="Personal/lab computer"}
+```{r fig-store-lab, fig.cap="Personal/lab computer", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_lab) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-server, fig.cap="Departmental/college server"}
+```{r fig-store-server, fig.cap="Departmental/college server", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_server) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-icds, fig.cap="ICDS/ROAR allocation"}
+```{r fig-store-icds, fig.cap="ICDS/ROAR allocation", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_icds) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-onedrive, fig.cap="Microsoft OneDrive/SharePoint"}
+```{r fig-store-onedrive, fig.cap="Microsoft OneDrive/SharePoint", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_onedrive) +
@@ -171,7 +210,7 @@ survey %>%
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-box, fig.cap="Box"}
+```{r fig-store-box, fig.cap="Box", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_box) +
@@ -264,39 +303,63 @@ survey %>%
   ggplot2::geom_bar()
 ```
 
-## Obstacles to sharing with research collaborators {-}
+## Obstacles to sharing with research community {-}
 
 > `r paste0("Question ", survey_qs_df$q_num[12], ": ", survey_qs_df$question[12])` 
 
-```{r fig-barriers-security, fig.cap="Ensuring security/restricting access"}
+```{r fig-obstacles-to-sharing-w-comm, fig.cap="Obstacles to sharing with research community"}
+sharing_comm_obstacles <- survey %>%
+  dplyr::select(.,-barriers_share_community,-barriers_sharing_collab) %>%
+  tidyr::pivot_longer(
+    .,
+    cols = contains("barriers"),
+    names_to = "barriers_comm_what",
+    values_to = "barriers_comm_vals"
+  ) %>%
+  dplyr::mutate(., barriers_comm_what = str_remove(barriers_comm_what, "barriers_sharing_"))
+
+sharing_comm_obstacles %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(barriers_comm_what,
+               as.numeric(barriers_comm_vals)) +
+  ggplot2::geom_col() +
+  scale_y_continuous(name = "N responses",
+                     breaks = c(0:length(
+                       sharing_comm_obstacles$barriers_comm_vals
+                     ))) +
+  xlab("Barriers to sharing with the research community") +
+  coord_flip()
+```
+
+```{r fig-barriers-security, fig.cap="Ensuring security/restricting access", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_security) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-barriers-curation, fig.cap="Taking time to curate, organize, document data"}
+```{r fig-barriers-curation, fig.cap="Taking time to curate, organize, document data", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_curation) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-barriers-altering-data, fig.cap="Altering data to make it suitable to share"}
+```{r fig-barriers-altering-data, fig.cap="Altering data to make it suitable to share", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
-  ggplot2::aes(barriers_sharing_alter) +
+  ggplot2::aes(barriers_sharing_alter_before_share) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-barriers-resources, fig.cap="Insufficient resources for sharing"}
+```{r fig-barriers-resources, fig.cap="Insufficient resources for sharing", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_resources) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-barriers-staff, fig.cap="Lack of available or knowledgeable staff"}
+```{r fig-barriers-staff, fig.cap="Lack of available or knowledgeable staff", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_staff) +
@@ -306,7 +369,6 @@ survey %>%
 ## Requirements for data sharing from funders {-}
 
 > `r paste0("Question ", survey_qs_df$q_num[13], ": ", survey_qs_df$question[13])` 
-
 
 ```{r fig-funders-require-data-sharing, fig.cap="Do research sponsors/funders in your field require data sharing?"}
 survey %>%
@@ -330,42 +392,67 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[15], ": ", survey_qs_df$question[15])` 
 
-```{r fig-where-share-inst-repo, fig.cap="Share via institutional repository"}
+```{r fig-where-data-shared, fig.cap="Where data has been shared"}
+sharing_where <- survey %>%
+  dplyr::select(.,-where_shared_community, -share_analysis_code_collab, -share_analysis_code_community) %>%
+  tidyr::pivot_longer(
+    .,
+    cols = c('share_inst_repo', 'share_journal_suppl', 'share_lab_web', 'share_ext_repo',
+             'share_govt_repo', 'share_consortia'),
+    names_to = "share_where_target",
+    values_to = "share_where_vals"
+  ) %>%
+  dplyr::mutate(., share_where_target = str_remove(share_where_target, "share_"))
+
+sharing_where %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(share_where_target,
+               as.numeric(share_where_vals)) +
+  ggplot2::geom_col() +
+  scale_y_continuous(name = "N responses",
+                     breaks = c(0:length(
+                       sharing_where$share_where_vals
+                     ))) +
+  xlab("Where data are shared") +
+  coord_flip()
+```
+
+```{r fig-where-share-inst-repo, fig.cap="Share via institutional repository", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_inst_repo) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-where-share-journal-suppl, fig.cap="Share via journal supplement"}
+```{r fig-where-share-journal-suppl, fig.cap="Share via journal supplement", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_journal_suppl) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-where-share-lab-web, fig.cap="Share via lab website"}
+```{r fig-where-share-lab-web, fig.cap="Share via lab website", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_lab_web) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-where-share-ext-repo, fig.cap="Share via external data repository"}
+```{r fig-where-share-ext-repo, fig.cap="Share via external data repository", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_ext_repo) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-where-share-govt-repo, fig.cap="Share via government data repository"}
+```{r fig-where-share-govt-repo, fig.cap="Share via government data repository", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_govt_repo) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-where-share-consortia, fig.cap="Share via research consortium"}
+```{r fig-where-share-consortia, fig.cap="Share via research consortium", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_consortia) +

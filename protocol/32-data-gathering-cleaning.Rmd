@@ -152,16 +152,25 @@ survey <- survey %>%
 
 ### Modify `department` {-}
 
-Make lowercase.
-
-::: {.rmdtip}
-**TODO**: Fix spelling errors.
-:::
-
 ```{r}
 survey <- survey %>%
-  dplyr::mutate(., campus = tolower(campus)) %>%
-  dplyr::mutate(., )
+  dplyr::mutate(
+    .,
+    department = recode(
+      department,
+      `pscyhology` = "Psychology",
+      `CLA Economics` = "Economics",
+      `SOCIOLOGY` = "Sociology",
+      `Soc/Crim` = "Sociology",
+      `Political Science / Liberal Arts` = "Political Science",
+      `GSLL` = "Germanic and Slavic Languages",
+      `School of Labor and Employment Relations` = "Labor and Employment Relations",
+      `PLSC` = "Political Science",
+      `Spanish, Italian & Portuguese` = "Spanish, Italian, and Portuguese",
+      `You’ve said we can choose to omit items. What` = "Liberal Arts"
+    )
+  ) %>%
+  dplyr::mutate(., department = tolower(department))
 ```
 
 ### Modify `position` {-}

@@ -1,4 +1,5 @@
 fig:fig-campus
+fig:fig-dept-unit
 fig:fig-position
 fig:fig-highest-degree
 fig:fig-yrs-since-degree

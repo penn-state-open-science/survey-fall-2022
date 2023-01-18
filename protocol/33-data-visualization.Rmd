@@ -31,11 +31,14 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[2], ": ", survey_qs_df$question[2])` 
 
-::: {.rmdtip}
-
-**TODO** Normalize these before plotting.
-
-:::
+```{r fig-dept-unit, fig.cap="What is your primary department or unit?"}
+survey %>%
+  dplyr::filter(., !is.na(department)) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(department) +
+  ggplot2::geom_bar() +
+  coord_flip()
+```
 
 ## Position {-}
 

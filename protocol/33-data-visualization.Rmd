@@ -26,6 +26,7 @@ survey %>%
   ggplot2::aes(campus) +
   ggplot2::geom_bar()
 ```
+
 ## Primary department or unit {-}
 
 > `r paste0("Question ", survey_qs_df$q_num[2], ": ", survey_qs_df$question[2])` 
@@ -196,14 +197,14 @@ survey %>%
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-googledrive, fig.cap="Google Drive"}
+```{r fig-store-googledrive, fig.cap="Google Drive", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_googledrive) +
   ggplot2::geom_bar()
 ```
 
-```{r fig-store-dropbox, fig.cap="Dropbox"}
+```{r fig-store-dropbox, fig.cap="Dropbox", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_dropbox) +
@@ -257,7 +258,7 @@ survey %>%
                   c(
                     "Very inconvenient",
                     "Inconvenient",
-                    "Neither convenient or inconvenient",
+                    "Neither",
                     "Convenient",
                     "Very convenient",
                     "Not applicable"
@@ -275,7 +276,7 @@ survey %>%
 
 ```{r}
 survey %>%
-  dplyr::filter(., !is.na(comments)) %>%
+  dplyr::filter(., !is.na(barriers_sharing_collab)) %>%
   dplyr::select(., barriers_sharing_collab) %>%
   knitr::kable(format = 'html')
 ```
@@ -551,6 +552,7 @@ survey %>%
 
 ```{r fig-funders-require-code-sharing, fig.cap="Do sponsors/funders in your field require code sharing?"}
 survey %>%
+  dplyr::filter(., !is.na(funders_require_code_sharing)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(funders_require_code_sharing) +
   ggplot2::geom_bar()
@@ -562,6 +564,7 @@ survey %>%
 
 ```{r fig-journals-require-code-sharing, fig.cap="Do journals in your field require code sharing?"}
 survey %>%
+  dplyr::filter(., !is.na(funders_require_code_sharing)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(journals_require_code_sharing) +
   ggplot2::geom_bar()
@@ -615,6 +618,7 @@ survey %>%
                   c("No experience/knowledge", "Limited experience/knowledge",
                     "Some experience/knowledge", "Considerable experience/knowledge", "Extensive experience/knowledge")
                 )) %>%
+  dplyr::filter(., !is.na(knowledge_open_science)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(knowledge_open_science) +
   ggplot2::geom_bar()
@@ -624,6 +628,12 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[25], ": ", survey_qs_df$question[25])` 
 
+::: {.rmdtip}
+
+**TODO**: Recode these.
+
+:::
+
 ```{r fig-awareness-FAIR, fig.cap="Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data."}
 survey %>%
   dplyr::mutate(.,
@@ -632,6 +642,7 @@ survey %>%
                   c("No awareness", "Limited awareness",
                     "Some awareness", "Considerable awareness", "Extensive awareness")
                 )) %>%
+  dplyr::filter(., !is.na(awareness_FAIR)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(awareness_FAIR) +
   ggplot2::geom_bar()
@@ -649,6 +660,7 @@ survey %>%
                   c("Never", "Rarely",
                     "Sometimes", "Often", "Always", "Not applicable")
                 )) %>%
+  dplyr::filter(., !is.na(apply_FAIR)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(apply_FAIR) +
   ggplot2::geom_bar()
@@ -661,6 +673,7 @@ survey %>%
 
 ```{r fig-heard-of-repro-crisis, fig.cap="Have you heard of the 'reproducibility crisis' in science?"}
 survey %>%
+  dplyr::filter(., !is.na(heardof_reproducibility_crisis)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(heardof_reproducibility_crisis) +
   ggplot2::geom_bar()
@@ -672,6 +685,7 @@ survey %>%
 
 ```{r fig-repro-crisis-your-area, fig.cap="Is there a reproducibility crisis in your area of research?"}
 survey %>%
+  dplyr::filter(., !is.na(my_area_reproducibility_crisis)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(my_area_reproducibility_crisis) +
   ggplot2::geom_bar()
@@ -687,14 +701,19 @@ survey %>%
   dplyr::mutate(.,
                 benefit_psu_center = factor(
                   benefit_psu_center,
-                  c("No benefit", "Minimal benefit",
-                    "Some benefit", "Considerable benefit", "Extensive benefit", "Not applicable")
+                  levels = c(
+                    "No benefit",
+                    "Minimal benefit",
+                    "Some benefit",
+                    "Considerable benefit",
+                    "Extensive benefit",
+                    "Not applicable"
+                  )
                 )) %>%
   dplyr::filter(., !is.na(benefit_psu_center)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(benefit_psu_center) +
   ggplot2::geom_bar()
-
 ```
 
 ## Services from PSU Center {-}

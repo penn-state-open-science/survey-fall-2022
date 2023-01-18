@@ -4,8 +4,6 @@ fig:fig-highest-degree
 fig:fig-yrs-since-degree
 fig:restricted-data-preprocess
 fig:fig-data-storage-places
-fig:fig-store-googledrive
-fig:fig-store-dropbox
 fig:fig-import-share-collab
 fig:fig-import-share-community
 fig:fig-obstacles-to-sharing-w-comm

@@ -421,4 +421,3 @@ survey <- survey %>%
 ```{r}
 readr::write_csv(survey, "csv/open-science-survey-2022-fall-clean.csv")
 ```
-

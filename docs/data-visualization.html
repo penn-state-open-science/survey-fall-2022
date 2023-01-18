@@ -98,7 +98,7 @@
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">timestamp</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/as_date.html">as_date</a></span><span class="op">(</span><span class="st">"2022-12-22"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>There are <span class="math inline">\(n=\)</span> 34 questions in total.</p>
-<p>As of 2023-01-13, we have had <span class="math inline">\(n\)</span>= 9 responses.</p>
+<p>As of 2023-01-18, we have had <span class="math inline">\(n\)</span>= 40 responses.</p>
 </div>
 <div id="penn-state-campus" class="section level2 unnumbered">
 <h2>Penn State campus<a class="anchor" aria-label="anchor" href="#penn-state-campus"><i class="fas fa-link"></i></a>
@@ -259,28 +259,6 @@ Figure 22.5: Respondents who collect restricted data of varied types
 Figure 22.6: Locations for storing active research data
 </p>
 </div>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">store_googledrive</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:fig-store-googledrive"></span>
-<img src="include/img/fig-store-googledrive-1.png" alt="Google Drive" width="672"><p class="caption">
-Figure 22.7: Google Drive
-</p>
-</div>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">store_dropbox</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:fig-store-dropbox"></span>
-<img src="include/img/fig-store-dropbox-1.png" alt="Dropbox" width="672"><p class="caption">
-Figure 22.8: Dropbox
-</p>
-</div>
 <div class="rmdtip">
 <p><strong>TODO</strong> Recode these in data gathering and cleaning.</p>
 </div>
@@ -291,7 +269,7 @@ Figure 22.8: Dropbox
 <blockquote>
 <p>Question 8: How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?</p>
 </blockquote>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, importance_sharing_collab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span></span>
 <span>    <span class="va">importance_sharing_collab</span>,</span>
@@ -310,7 +288,7 @@ Figure 22.8: Dropbox
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-import-share-collab"></span>
 <img src="include/img/fig-import-share-collab-1.png" alt="How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?" width="672"><p class="caption">
-Figure 22.9: How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?
+Figure 22.7: How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?
 </p>
 </div>
 </div>
@@ -320,7 +298,7 @@ Figure 22.9: How important to you is sharing data from active projects with rese
 <blockquote>
 <p>Question 9: How convenient is it for you to share data from active projects with research collaborators at Penn State or outside of Penn State?</p>
 </blockquote>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
 <span>                convenience_sharing_collab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span></span>
@@ -328,7 +306,7 @@ Figure 22.9: How important to you is sharing data from active projects with rese
 <span>                  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>                    <span class="st">"Very inconvenient"</span>,</span>
 <span>                    <span class="st">"Inconvenient"</span>,</span>
-<span>                    <span class="st">"Neither convenient or inconvenient"</span>,</span>
+<span>                    <span class="st">"Neither"</span>,</span>
 <span>                    <span class="st">"Convenient"</span>,</span>
 <span>                    <span class="st">"Very convenient"</span>,</span>
 <span>                    <span class="st">"Not applicable"</span></span>
@@ -346,9 +324,9 @@ Figure 22.9: How important to you is sharing data from active projects with rese
 <blockquote>
 <p>Question 10: What are the main barriers to sharing data from active projects with research collaborators?</p>
 </blockquote>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">comments</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">barriers_sharing_collab</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">barriers_sharing_collab</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">'html'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -360,12 +338,137 @@ barriers_sharing_collab
 <tbody>
 <tr>
 <td style="text-align:left;">
+Different people use different ways of sharing/storing data (Box, Dropbox, Github, Drive, etc.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+getting access approved for external users
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 ensuring that users adhere to data security and the time required to prepare data sets for sharing
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Lots of different file types, collaborators not used to using file structure/naming structure
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I need to use dropbox since nobody has box or one drive at other institutions.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Onedrive has a bizarre sharing UI. I am starting to understand it but it is quite counterintuitive compared to google drive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Getting permissions correctly established on the ICDS system. Adding members on ICDS. Getting liberal arts computers to communicate with ICDS systems (i.e., mapping drives). For whatever reason this seems to take days-weeks, every time we have a new person.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Creating clean public use files and clear documentation.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Access to different platforms that might not allow colleagues at other universities to access the data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+No technological or legal barriers. But sharing is not always necessary or desirable prior to a project’s completion, so the barrier (if you could call it that) is one deliberately created by me as researcher.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+size
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+The ethical approvals required and the types of data that can be shared. I think things are getting better since we are learning how to share these types of data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+having a shared box outside people can access that is not a Google drive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+There are no barriers; my data is publicly available and if it goes missing / gets deleted I share the backups I make with collaborators.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sharing legal administrative data and PII are difficult
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+na
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Getting them on OneDrive if they are not already using it
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+None really.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N/A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+When my collaborators are outside of Penn State sometimes they have challenges to log in to OneDrive.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+No big barriers. Email etc. is fine when needed.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OneDrive can be confusing; sometimes hard to share with people outside of PSU
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Data organization - When you share a folder, the person who receives it is unable to organize that folder within their system in the place they want it to appear. So, I have a large list of shared folders, none of which are organized in a way that makes sense to me.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+File size and collaborators’ lack of access to/use of OneDrive
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+That PSU changes from Box to One Drive to Fill-In-The-Blank on a semi-frequent basis.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IRB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tools that make it easy. We fight with Globus (and it doesn’t work for some other partner Universities) and using NCBI SRA database is clunky, with limited metadata entry that can occur.
 </td>
 </tr>
 </tbody>
@@ -377,7 +480,7 @@ Lots of different file types, collaborators not used to using file structure/nam
 <blockquote>
 <p>Question 11: How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?</p>
 </blockquote>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
 <span>                importance_share_community <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span></span>
@@ -397,7 +500,7 @@ Lots of different file types, collaborators not used to using file structure/nam
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-import-share-community"></span>
 <img src="include/img/fig-import-share-community-1.png" alt="How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?" width="672"><p class="caption">
-Figure 22.10: How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?
+Figure 22.8: How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?
 </p>
 </div>
 </div>
@@ -407,7 +510,7 @@ Figure 22.10: How important to you is sharing data from completed projects with 
 <blockquote>
 <p>Question 12: Which of the following obstacles make sharing data with the research community harder for you? Mark all that apply.</p>
 </blockquote>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sharing_comm_obstacles</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>,<span class="op">-</span><span class="va">barriers_share_community</span>,<span class="op">-</span><span class="va">barriers_sharing_collab</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span></span>
@@ -429,10 +532,12 @@ Figure 22.10: How important to you is sharing data from completed projects with 
 <span>                     <span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Barriers to sharing with the research community"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: Removed 10 rows containing missing values
+## (`position_stack()`).</code></pre>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-obstacles-to-sharing-w-comm"></span>
 <img src="include/img/fig-obstacles-to-sharing-w-comm-1.png" alt="Obstacles to sharing with research community" width="672"><p class="caption">
-Figure 22.11: Obstacles to sharing with research community
+Figure 22.9: Obstacles to sharing with research community
 </p>
 </div>
 </div>
@@ -442,7 +547,7 @@ Figure 22.11: Obstacles to sharing with research community
 <blockquote>
 <p>Question 13: Do research funders in your field require data sharing?</p>
 </blockquote>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">funders_require_data_sharing</span><span class="op">)</span> <span class="op">+</span></span>
@@ -450,7 +555,7 @@ Figure 22.11: Obstacles to sharing with research community
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-funders-require-data-sharing"></span>
 <img src="include/img/fig-funders-require-data-sharing-1.png" alt="Do research sponsors/funders in your field require data sharing?" width="672"><p class="caption">
-Figure 22.12: Do research sponsors/funders in your field require data sharing?
+Figure 22.10: Do research sponsors/funders in your field require data sharing?
 </p>
 </div>
 </div>
@@ -460,7 +565,7 @@ Figure 22.12: Do research sponsors/funders in your field require data sharing?
 <blockquote>
 <p>Question 14: Do journals in your field require data sharing?</p>
 </blockquote>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">journals_require_data_sharing</span><span class="op">)</span> <span class="op">+</span></span>
@@ -468,7 +573,7 @@ Figure 22.12: Do research sponsors/funders in your field require data sharing?
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-journals-require-data-sharing"></span>
 <img src="include/img/fig-journals-require-data-sharing-1.png" alt="Do journals in your field require data sharing?" width="672"><p class="caption">
-Figure 22.13: Do journals in your field require data sharing?
+Figure 22.11: Do journals in your field require data sharing?
 </p>
 </div>
 </div>
@@ -478,7 +583,7 @@ Figure 22.13: Do journals in your field require data sharing?
 <blockquote>
 <p>Question 15: If you have shared data with the research community, where have you shared it?</p>
 </blockquote>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sharing_where</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>,<span class="op">-</span><span class="va">where_shared_community</span>, <span class="op">-</span><span class="va">share_analysis_code_collab</span>, <span class="op">-</span><span class="va">share_analysis_code_community</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span></span>
@@ -501,10 +606,12 @@ Figure 22.13: Do journals in your field require data sharing?
 <span>                     <span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Where data are shared"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: Removed 36 rows containing missing values
+## (`position_stack()`).</code></pre>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-where-data-shared"></span>
 <img src="include/img/fig-where-data-shared-1.png" alt="Where data has been shared" width="672"><p class="caption">
-Figure 22.14: Where data has been shared
+Figure 22.12: Where data has been shared
 </p>
 </div>
 </div>
@@ -534,7 +641,7 @@ Figure 22.14: Where data has been shared
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-equipped-for-new-reqmts"></span>
 <img src="include/img/fig-equipped-for-new-reqmts-1.png" alt="How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?" width="672"><p class="caption">
-Figure 22.15: How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?
+Figure 22.13: How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?
 </p>
 </div>
 <hr>
@@ -559,7 +666,7 @@ Figure 22.15: How well-equipped do you feel you, your colleagues, and trainees a
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-how-often-generate-code"></span>
 <img src="include/img/fig-how-often-generate-code-1.png" alt="How often do you create computer scripts or data analysis code in the conduct of your research?" width="672"><p class="caption">
-Figure 22.16: How often do you create computer scripts or data analysis code in the conduct of your research?
+Figure 22.14: How often do you create computer scripts or data analysis code in the conduct of your research?
 </p>
 </div>
 </div>
@@ -584,7 +691,7 @@ Figure 22.16: How often do you create computer scripts or data analysis code in 
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-how-often-share-code"></span>
 <img src="include/img/fig-how-often-share-code-1.png" alt="How often do you share computer scripts or data analysis code with direct research collaborators ?" width="672"><p class="caption">
-Figure 22.17: How often do you share computer scripts or data analysis code with direct research collaborators ?
+Figure 22.15: How often do you share computer scripts or data analysis code with direct research collaborators ?
 </p>
 </div>
 </div>
@@ -602,7 +709,7 @@ Figure 22.17: How often do you share computer scripts or data analysis code with
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-create-other-software"></span>
 <img src="include/img/fig-create-other-software-1.png" alt="Do you create other kinds of software in the conduct of your research?" width="672"><p class="caption">
-Figure 22.18: Do you create other kinds of software in the conduct of your research?
+Figure 22.16: Do you create other kinds of software in the conduct of your research?
 </p>
 </div>
 </div>
@@ -624,7 +731,7 @@ Figure 22.18: Do you create other kinds of software in the conduct of your resea
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-how-often-code-sharing-tools"></span>
 <img src="include/img/fig-how-often-code-sharing-tools-1.png" alt="How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?" width="672"><p class="caption">
-Figure 22.19: How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?
+Figure 22.17: How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?
 </p>
 </div>
 </div>
@@ -636,13 +743,14 @@ Figure 22.19: How often do you use open source code sharing tools (e.g., GitHub,
 </blockquote>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">funders_require_code_sharing</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">funders_require_code_sharing</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-funders-require-code-sharing"></span>
 <img src="include/img/fig-funders-require-code-sharing-1.png" alt="Do sponsors/funders in your field require code sharing?" width="672"><p class="caption">
-Figure 22.20: Do sponsors/funders in your field require code sharing?
+Figure 22.18: Do sponsors/funders in your field require code sharing?
 </p>
 </div>
 </div>
@@ -654,13 +762,14 @@ Figure 22.20: Do sponsors/funders in your field require code sharing?
 </blockquote>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">funders_require_code_sharing</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">journals_require_code_sharing</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-journals-require-code-sharing"></span>
 <img src="include/img/fig-journals-require-code-sharing-1.png" alt="Do journals in your field require code sharing?" width="672"><p class="caption">
-Figure 22.21: Do journals in your field require code sharing?
+Figure 22.19: Do journals in your field require code sharing?
 </p>
 </div>
 </div>
@@ -685,7 +794,7 @@ Figure 22.21: Do journals in your field require code sharing?
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-how-often-share-code-openly"></span>
 <img src="include/img/fig-how-often-share-code-openly-1.png" alt="How often do you share computer scripts or data analysis code openly?" width="672"><p class="caption">
-Figure 22.22: How often do you share computer scripts or data analysis code openly?
+Figure 22.20: How often do you share computer scripts or data analysis code openly?
 </p>
 </div>
 </div>
@@ -717,13 +826,14 @@ Figure 22.22: How often do you share computer scripts or data analysis code open
 <span>                  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No experience/knowledge"</span>, <span class="st">"Limited experience/knowledge"</span>,</span>
 <span>                    <span class="st">"Some experience/knowledge"</span>, <span class="st">"Considerable experience/knowledge"</span>, <span class="st">"Extensive experience/knowledge"</span><span class="op">)</span></span>
 <span>                <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">knowledge_open_science</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">knowledge_open_science</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-experience-w-open-science"></span>
 <img src="include/img/fig-experience-w-open-science-1.png" alt="What is your experience with/knowledge of open science practices?" width="672"><p class="caption">
-Figure 22.23: What is your experience with/knowledge of open science practices?
+Figure 22.21: What is your experience with/knowledge of open science practices?
 </p>
 </div>
 </div>
@@ -733,6 +843,9 @@ Figure 22.23: What is your experience with/knowledge of open science practices?
 <blockquote>
 <p>Question 25: Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.</p>
 </blockquote>
+<div class="rmdtip">
+<p><strong>TODO</strong>: Recode these.</p>
+</div>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
@@ -741,13 +854,14 @@ Figure 22.23: What is your experience with/knowledge of open science practices?
 <span>                  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No awareness"</span>, <span class="st">"Limited awareness"</span>,</span>
 <span>                    <span class="st">"Some awareness"</span>, <span class="st">"Considerable awareness"</span>, <span class="st">"Extensive awareness"</span><span class="op">)</span></span>
 <span>                <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">awareness_FAIR</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">awareness_FAIR</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-awareness-FAIR"></span>
 <img src="include/img/fig-awareness-FAIR-1.png" alt="Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data." width="672"><p class="caption">
-Figure 22.24: Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.
+Figure 22.22: Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data.
 </p>
 </div>
 </div>
@@ -765,13 +879,14 @@ Figure 22.24: Describe your awareness of the FAIR (findable, accessible, interop
 <span>                  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Never"</span>, <span class="st">"Rarely"</span>,</span>
 <span>                    <span class="st">"Sometimes"</span>, <span class="st">"Often"</span>, <span class="st">"Always"</span>, <span class="st">"Not applicable"</span><span class="op">)</span></span>
 <span>                <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">apply_FAIR</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">apply_FAIR</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-apply-FAIR-own-research"></span>
 <img src="include/img/fig-apply-FAIR-own-research-1.png" alt="Do you apply FAIR principles in your own data management and sharing practices?" width="672"><p class="caption">
-Figure 22.25: Do you apply FAIR principles in your own data management and sharing practices?
+Figure 22.23: Do you apply FAIR principles in your own data management and sharing practices?
 </p>
 </div>
 </div>
@@ -783,13 +898,14 @@ Figure 22.25: Do you apply FAIR principles in your own data management and shari
 </blockquote>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">heardof_reproducibility_crisis</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">heardof_reproducibility_crisis</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-heard-of-repro-crisis"></span>
 <img src="include/img/fig-heard-of-repro-crisis-1.png" alt="Have you heard of the 'reproducibility crisis' in science?" width="672"><p class="caption">
-Figure 22.26: Have you heard of the ‘reproducibility crisis’ in science?
+Figure 22.24: Have you heard of the ‘reproducibility crisis’ in science?
 </p>
 </div>
 </div>
@@ -801,13 +917,14 @@ Figure 22.26: Have you heard of the ‘reproducibility crisis’ in science?
 </blockquote>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">my_area_reproducibility_crisis</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">my_area_reproducibility_crisis</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-repro-crisis-your-area"></span>
 <img src="include/img/fig-repro-crisis-your-area-1.png" alt="Is there a reproducibility crisis in your area of research?" width="672"><p class="caption">
-Figure 22.27: Is there a reproducibility crisis in your area of research?
+Figure 22.25: Is there a reproducibility crisis in your area of research?
 </p>
 </div>
 </div>
@@ -822,8 +939,14 @@ Figure 22.27: Is there a reproducibility crisis in your area of research?
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
 <span>                benefit_psu_center <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span></span>
 <span>                  <span class="va">benefit_psu_center</span>,</span>
-<span>                  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No benefit"</span>, <span class="st">"Minimal benefit"</span>,</span>
-<span>                    <span class="st">"Some benefit"</span>, <span class="st">"Considerable benefit"</span>, <span class="st">"Extensive benefit"</span>, <span class="st">"Not applicable"</span><span class="op">)</span></span>
+<span>                  levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>                    <span class="st">"No benefit"</span>,</span>
+<span>                    <span class="st">"Minimal benefit"</span>,</span>
+<span>                    <span class="st">"Some benefit"</span>,</span>
+<span>                    <span class="st">"Considerable benefit"</span>,</span>
+<span>                    <span class="st">"Extensive benefit"</span>,</span>
+<span>                    <span class="st">"Not applicable"</span></span>
+<span>                  <span class="op">)</span></span>
 <span>                <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">benefit_psu_center</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -832,7 +955,7 @@ Figure 22.27: Is there a reproducibility crisis in your area of research?
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-benefit-from-psu-ctr"></span>
 <img src="include/img/fig-benefit-from-psu-ctr-1.png" alt="How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?" width="672"><p class="caption">
-Figure 22.28: How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?
+Figure 22.26: How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?
 </p>
 </div>
 </div>
@@ -872,6 +995,46 @@ I think that this is a particularly challenging problem for longitudinal researc
 <tr>
 <td style="text-align:left;">
 The practices of data and materials sharing is very important to me! I think in most cases this training should be a required part of advanced degrees in fields dealing with data. This center would be a huge step in that direction.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+The Assoc Dean for Research in the College of Liberal Arts asked the college’s faculty to complete this survey, but neither its concepts and language nor its goals and purpose fit what humanities faculty do. "Open science" or "open access" concepts are not usefully applicable to the humanities. In fact, they undermine the very foundations of the international system of research and publication that sustains our scholarship. If such concepts were imposed upon the humanities, all its disciplines would be rapidly be destroyed.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+I work in the areas on open science, specifically on the (reproducibility and) replicability of research and in linguistics this is a major concern for the field. Progress is slow, but you can see movement. I incorporate open science initiatives into my graduate teaching training because I think a lot of this has to do with education (e.g., why preregister, why share materials/data, questionable research practices)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+In my field I have to create new data and I can not rely on the quality of data that others say they use or have. It is usually not up to the standards that I feel are needed for accurate social science research that addresses historic questions.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+none
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+How would this work for the Humanities?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A center at Penn State would be great, but especially if they could provide actual direct help in terms of time and work with the data. Open Science is a great goal, but the amount of time and energy it can take to make things accessible is a major barrier since it’s ON TOP of all the other tasks of research which have not changed.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+My field requires sharing code and data for virtually all journals, so this isn’t an issue for me. 5-10 years ago it was a problem.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Knowledge about resources, especially here at Penn State but also more broadly, would be really useful.
 </td>
 </tr>
 </tbody>
@@ -944,7 +1107,7 @@ The practices of data and materials sharing is very important to me! I think in 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-13.</p>
+    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

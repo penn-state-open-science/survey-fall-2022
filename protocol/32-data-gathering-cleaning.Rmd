@@ -369,6 +369,58 @@ survey <- survey %>%
                                                       "Research consortia"))
 ```
 
+### Modify `knowledge_open_science`
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(
+    .,
+    knowledge_open_science = recode(
+      knowledge_open_science,
+      `No experience/knowledge` = "None",
+      `Limited experience/knowledge` = "Limited",
+      `Some experience/knowledge` = "Some",
+      `Considerable experience/knowledge` = "Considerable",
+      `Extensive experience/knowledge` = "Extensive"
+    )
+  )
+```
+
+### Modify `awareness_FAIR`
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(
+    .,
+    awareness_FAIR = recode(
+      knowledge_open_science,
+      `No awareness` = "None",
+      `Limited awareness` = "Limited",
+      `Some awareness` = "Some",
+      `Considerable awareness` = "Considerable",
+      `Extensive awareness` = "Extensive"
+    )
+  )
+```
+
+### Modify `benefit_psu_center`
+
+```{r}
+survey <- survey %>%
+  dplyr::mutate(
+    .,
+    awareness_FAIR = recode(
+      knowledge_open_science,
+      `No benefit` = "None",
+      `Minimal benefit` = "Minimal",
+      `Some benefit` = "Some",
+      `Considerable benefit` = "Considerable",
+      `Extensive benefit` = "Extensive"
+    )
+  )
+```
+
+
 ### Modify `service_psu_center`
 
 ```{r}

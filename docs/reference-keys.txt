@@ -24,6 +24,7 @@ fig:fig-apply-FAIR-own-research
 fig:fig-heard-of-repro-crisis
 fig:fig-repro-crisis-your-area
 fig:fig-benefit-from-psu-ctr
+fig:fig-services-from-center
 objectives
 study-objectives
 primary-study-endpoints
@@ -190,4 +191,7 @@ specimens-being-transferred-or-disclosed-to-penn-state
 specimens-being-transferred-or-disclosed-from-penn-state
 if-transferring-dataspecimens-with-identifiers-to-or-from-penn-state-which-of-the-following-identifiers-will-be-included-with-the-dataspecimens-check-all-that-apply
 modify-barriers_sharing_collab
+modify-knowledge_open_science
+modify-awareness_fair
+modify-benefit_psu_center
 modify-service_psu_center

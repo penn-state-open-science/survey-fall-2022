@@ -13,7 +13,7 @@ survey <- survey %>%
 
 There are $n=$ `r dim(survey_qs_df)[1]` questions in total.
 
-As of `r Sys.Date()`, we have had $n$= `r dim(survey)[1]` responses.
+As of `r Sys.time()`, we have had $n$= `r dim(survey)[1]` responses.
 
 ## Penn State campus {-}
 
@@ -217,12 +217,6 @@ survey %>%
   ggplot2::aes(store_box) +
   ggplot2::geom_bar()
 ```
-
-::: {.rmdtip}
-
-**TODO** Recode these in data gathering and cleaning.
-
-:::
 
 ## Importance of sharing with research collaborators {-}
 
@@ -604,21 +598,14 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[24], ": ", survey_qs_df$question[24])` 
 
-::: {.rmdtip}
-
-**TODO**: Recode these.
-
-:::
-
 ```{r fig-experience-w-open-science, fig.cap="What is your experience with/knowledge of open science practices?"}
 survey %>%
-  dplyr::mutate(.,
-                knowledge_open_science = factor(
-                  knowledge_open_science,
-                  c("No experience/knowledge", "Limited experience/knowledge",
-                    "Some experience/knowledge", "Considerable experience/knowledge", "Extensive experience/knowledge")
-                )) %>%
-  dplyr::filter(., !is.na(knowledge_open_science)) %>%
+  dplyr::mutate(., knowledge_open_science = factor(
+    knowledge_open_science,
+    c("None", "Limited",
+      "Some", "Considerable", "Extensive")
+  )) %>%
+  dplyr::filter(.,!is.na(knowledge_open_science)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(knowledge_open_science) +
   ggplot2::geom_bar()
@@ -628,21 +615,15 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[25], ": ", survey_qs_df$question[25])` 
 
-::: {.rmdtip}
-
-**TODO**: Recode these.
-
-:::
-
 ```{r fig-awareness-FAIR, fig.cap="Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data."}
 survey %>%
   dplyr::mutate(.,
                 awareness_FAIR = factor(
                   awareness_FAIR,
-                  c("No awareness", "Limited awareness",
-                    "Some awareness", "Considerable awareness", "Extensive awareness")
+                  c("None", "Limited",
+                    "Some", "Considerable", "Extensive")
                 )) %>%
-  dplyr::filter(., !is.na(awareness_FAIR)) %>%
+  dplyr::filter(.,!is.na(awareness_FAIR)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(awareness_FAIR) +
   ggplot2::geom_bar()
@@ -685,6 +666,10 @@ survey %>%
 
 ```{r fig-repro-crisis-your-area, fig.cap="Is there a reproducibility crisis in your area of research?"}
 survey %>%
+  dplyr::mutate(., my_area_reproducibility_crisis = factor(
+    my_area_reproducibility_crisis,
+    c("Don't know", "No, there is no crisis", "Yes, a slight crisis", "Yes, a significant crisis")
+  )) %>%
   dplyr::filter(., !is.na(my_area_reproducibility_crisis)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(my_area_reproducibility_crisis) +
@@ -720,11 +705,37 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[30], ": ", survey_qs_df$question[30])` 
 
-::: {.rmdtip}
+```{r fig-services-from-center, fig.cap="Select the services that would most benefit your research if offered by such a center."}
 
-**TODO** Create plot.
+services_center <- survey %>%
+  dplyr::select(., contains("help_")) %>%
+  tidyr::pivot_longer(
+    .,
+    cols = c(
+      'help_data_review_qa',
+      'help_data_mgmt_plan',
+      'help_data_doc',
+      'help_data_analysis_verif',
+      'help_student_staff_train',
+      'help_data_deidentif',
+      'help_funder_compliance',
+      'help_where_to_share'
+    ),
+    names_to = "center_services_types",
+    values_to = "center_services_vals"
+  ) %>%
+  dplyr::mutate(., center_services_types = str_remove(center_services_types, "help_"))
 
-:::
+services_center %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(center_services_types,
+               as.numeric(center_services_vals)) +
+  ggplot2::geom_col() +
+  scale_y_continuous(name = "N responses",
+                     breaks = c(0:length(services_center$center_services_vals))) +
+  xlab("Services that would benefit research") +
+  coord_flip()
+```
 
 ## Comments {-}
 

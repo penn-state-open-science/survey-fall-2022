@@ -482,3 +482,13 @@ survey <- survey %>%
 ```{r}
 readr::write_csv(survey, "csv/open-science-survey-2022-fall-clean.csv")
 ```
+
+## Select and export contact data for follow-up
+
+```{r}
+contact_info <- survey %>%
+  dplyr::select(., contact_info) %>%
+  dplyr::filter(., !is.na(contact_info))
+
+readr::write_csv(contact_info, "csv/open-science-survey-2022-fall-contact-info.csv")
+```

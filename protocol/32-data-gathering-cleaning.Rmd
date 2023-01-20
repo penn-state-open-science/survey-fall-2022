@@ -167,7 +167,8 @@ survey <- survey %>%
       `School of Labor and Employment Relations` = "Labor and Employment Relations",
       `PLSC` = "Political Science",
       `Spanish, Italian & Portuguese` = "Spanish, Italian, and Portuguese",
-      `You’ve said we can choose to omit items. What` = "Liberal Arts"
+      `You’ve said we can choose to omit items. What` = "Liberal Arts",
+      `Telecommunications & Women's, Gender, and Sexuality Studies` = "Women's, Gender, and Sexuality Studies"
     )
   ) %>%
   dplyr::mutate(., department = tolower(department))
@@ -402,7 +403,7 @@ survey <- survey %>%
   dplyr::mutate(
     .,
     awareness_FAIR = recode(
-      knowledge_open_science,
+      awareness_FAIR,
       `No awareness` = "None",
       `Limited awareness` = "Limited",
       `Some awareness` = "Some",
@@ -418,8 +419,8 @@ survey <- survey %>%
 survey <- survey %>%
   dplyr::mutate(
     .,
-    awareness_FAIR = recode(
-      knowledge_open_science,
+    benefit_psu_center = recode(
+      benefit_psu_center,
       `No benefit` = "None",
       `Minimal benefit` = "Minimal",
       `Some benefit` = "Some",
@@ -428,7 +429,6 @@ survey <- survey %>%
     )
   )
 ```
-
 
 ### Modify `service_psu_center`
 

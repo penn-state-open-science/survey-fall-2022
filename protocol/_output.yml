@@ -1,3 +1,9 @@
+bookdown::bs4_book:
+  css: include/css/style.css
+  theme:
+    primary: "#096B72"
+  repo: 'https://github.com/penn-state-open-science/survey-fall-2022'
+
 bookdown::gitbook:
   css: css/style.css
   config:
@@ -6,7 +12,7 @@ bookdown::gitbook:
         <li><a href="./">Penn State Open Science Survey Protocol</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
+    edit: https://github.com/penn-state-open-science/survey-fall-2022/edit/main/protocol/%s
     download: ["pdf", "epub"]
     sharing:
       facebook: false
@@ -28,9 +34,4 @@ bookdown::pdf_book:
 
 bookdown::epub_book: default
 
-bookdown::bs4_book:
-  css: include/css/style.css
-  theme:
-    primary: "#096B72"
-  repo: 'https://github.com/penn-state-open-science/survey-fall-2022'
 

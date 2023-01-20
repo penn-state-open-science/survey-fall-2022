@@ -3,6 +3,7 @@ fig:fig-dept-unit
 fig:fig-position
 fig:fig-highest-degree
 fig:fig-yrs-since-degree
+fig:fig-primary-data-types
 fig:restricted-data-preprocess
 fig:fig-data-storage-places
 fig:fig-import-share-collab
@@ -19,6 +20,7 @@ fig:fig-how-often-code-sharing-tools
 fig:fig-funders-require-code-sharing
 fig:fig-journals-require-code-sharing
 fig:fig-how-often-share-code-openly
+fig:fig-share-materials-community
 fig:fig-experience-w-open-science
 fig:fig-awareness-FAIR
 fig:fig-apply-FAIR-own-research

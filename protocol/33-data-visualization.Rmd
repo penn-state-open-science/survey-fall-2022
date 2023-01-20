@@ -7,6 +7,8 @@ The following shows simple visualizations of the survey data.
 The responses prior to 2022-12-22 were used to test the survey, and aren't really data.
 
 ```{r}
+survey <- readr::read_csv("csv/open-science-survey-2022-fall-clean.csv", show_col_types = FALSE)
+
 survey <- survey %>%
   dplyr::filter(., timestamp > lubridate::as_date("2022-12-22"))
 ```
@@ -84,11 +86,49 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[5], ": ", survey_qs_df$question[5])` 
 
-::: {.rmdnote}
+```{r fig-primary-data-types, fig.cap="What are the primary types of digital data that are used in your research?"}
+data_types <- survey %>%
+  dplyr::select(., contains("collect_")) %>%
+  tidyr::pivot_longer(
+    .,
+    cols = c(
+      'collect_audio',
+      'collect_video',
+      'collect_photos',
+      'collect_computer_data',
+      'collect_sensor',
+      'collect_docs',
+      'collect_models',
+      'collect_obs',
+      'collect_sims',
+      'collect_procedures',
+      'collect_txt',
+      'collect_genomic',
+      'collect_image',
+      'collect_surveys',
+      'collect_spreadsheets',
+      'collect_interviews',
+      'collect_gis',
+      'collect_sketches',
+      'collect_vr',
+      'collect_xml_json',
+      'collect_web_social'
+    ),
+    names_to = "data_collect_types",
+    values_to = "data_collect_vals"
+  ) %>%
+  dplyr::mutate(., data_collect_types = str_remove(data_collect_types, "collect_"))
 
-**TODO:** Create plots
-
-:::
+data_types %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(data_collect_types,
+               as.numeric(data_collect_vals)) +
+  ggplot2::geom_col() +
+  scale_y_continuous(name = "N responses",
+                     breaks = c(0:length(data_types$data_collect_vals))) +
+  xlab("Types of data collected") +
+  coord_flip()
+```
 
 ## Restricted data {-}
 
@@ -589,11 +629,25 @@ survey %>%
 
 > `r paste0("Question ", survey_qs_df$q_num[23], ": ", survey_qs_df$question[23])` 
 
-::: {.rmdtip}
-
-**TODO**: Create graphs.
-
-:::
+```{r fig-share-materials-community, fig.cap="How often do you openly share other materials related to your research (protocols, reagents, samples, apparatus, designs, etc.) with other researchers?"}
+survey %>%
+  dplyr::mutate(.,
+                share_materials_community = factor(
+                  share_materials_community,
+                  c(
+                    "Never",
+                    "Rarely",
+                    "Sometimes",
+                    "Often",
+                    "Always",
+                    "Not applicable"
+                  )
+                )) %>%
+  dplyr::filter(.,!is.na(share_materials_community)) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(share_materials_community) +
+  ggplot2::geom_bar()
+```
 
 ---
 
@@ -690,11 +744,11 @@ survey %>%
                 benefit_psu_center = factor(
                   benefit_psu_center,
                   levels = c(
-                    "No benefit",
-                    "Minimal benefit",
-                    "Some benefit",
-                    "Considerable benefit",
-                    "Extensive benefit",
+                    "None",
+                    "Minimal",
+                    "Some",
+                    "Considerable",
+                    "Extensive",
                     "Not applicable"
                   )
                 )) %>%

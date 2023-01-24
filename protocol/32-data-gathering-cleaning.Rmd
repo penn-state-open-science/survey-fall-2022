@@ -167,8 +167,15 @@ survey <- survey %>%
       `School of Labor and Employment Relations` = "Labor and Employment Relations",
       `PLSC` = "Political Science",
       `Spanish, Italian & Portuguese` = "Spanish, Italian, and Portuguese",
-      `You’ve said we can choose to omit items. What` = "Liberal Arts",
-      `Telecommunications & Women's, Gender, and Sexuality Studies` = "Women's, Gender, and Sexuality Studies"
+      `You’ve said we can choose to omit items. What` = "College of the Liberal Arts",
+      `Telecommunications & Women's, Gender, and Sexuality Studies` = "Women's, Gender, and Sexuality Studies",
+      `Curriculum and Instruction (College of Education)` = "curriculum & instruction",
+      `Department of Curriculum and Instruction` = "curriculum & instruction",
+      `Education Policy Studies (College of Education)` = "education policy studies",
+      `Department of Educational Psychology, Counseling, and Special Education` = "educational psychology, counseling, and special education",
+      `EPCSE` = "educational psychology, counseling, and special education",
+      `Educational Psychology` = "educational psychology, counseling, and special education",
+      `Education` = "college of education"
     )
   ) %>%
   dplyr::mutate(., department = tolower(department))

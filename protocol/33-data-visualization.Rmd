@@ -7,6 +7,8 @@ The following shows simple visualizations of the survey data.
 The responses prior to 2022-12-22 were used to test the survey, and aren't really data.
 
 ```{r}
+message("Reimporting clean data file: `", "csv/open-science-survey-2022-fall-clean.csv`")
+
 survey <- readr::read_csv("csv/open-science-survey-2022-fall-clean.csv", show_col_types = FALSE)
 
 survey <- survey %>%

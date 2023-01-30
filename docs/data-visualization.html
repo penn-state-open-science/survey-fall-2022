@@ -9,15 +9,15 @@
 <meta name="author" content="Frank Hillary">
 <meta name="author" content="Nicole Lazar">
 <meta name="author" content="Briana Wham">
-<meta name="description" content='The following shows simple visualizations of the survey data. Filter “test” responses The responses prior to 2022-12-22 were used to test the survey, and aren’t really data. message("Reimporting...'>
+<meta name="description" content="The following shows some simple visualizations of the survey data. Filter “test” responses The responses prior to 2022-12-22 were used to test the survey, and aren’t really data....">
 <meta name="generator" content="bookdown 0.29 with bs4_book()">
 <meta property="og:title" content="Data Visualization | Open Science at Penn State">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/penn-state-open-science/survey-fall-2022/data-visualization.html">
-<meta property="og:description" content='The following shows simple visualizations of the survey data. Filter “test” responses The responses prior to 2022-12-22 were used to test the survey, and aren’t really data. message("Reimporting...'>
+<meta property="og:description" content="The following shows some simple visualizations of the survey data. Filter “test” responses The responses prior to 2022-12-22 were used to test the survey, and aren’t really data....">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Data Visualization | Open Science at Penn State">
-<meta name="twitter:description" content='The following shows simple visualizations of the survey data. Filter “test” responses The responses prior to 2022-12-22 were used to test the survey, and aren’t really data. message("Reimporting...'>
+<meta name="twitter:description" content="The following shows some simple visualizations of the survey data. Filter “test” responses The responses prior to 2022-12-22 were used to test the survey, and aren’t really data....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -89,13 +89,15 @@
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-visualization" class="section level1 unnumbered">
 <h1>Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization"><i class="fas fa-link"></i></a>
 </h1>
-<p>The following shows simple visualizations of the survey data.</p>
+<p>The following shows some simple visualizations of the survey data.</p>
 <div id="filter-test-responses" class="section level2 unnumbered">
 <h2>Filter “test” responses<a class="anchor" aria-label="anchor" href="#filter-test-responses"><i class="fas fa-link"></i></a>
 </h2>
 <p>The responses prior to 2022-12-22 were used to test the survey, and aren’t really data.</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Reimporting clean data file: `"</span>, <span class="st">"csv/open-science-survey-2022-fall-clean.csv`"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Reimporting clean data file: `"</span>, <span class="st">"csv/open-science-survey-2022-fall-clean.csv`"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Reimporting clean data file: `csv/open-science-survey-2022-fall-clean.csv`</code></pre>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"csv/open-science-survey-2022-fall-clean.csv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -103,7 +105,7 @@
 <span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">timestamp</span> <span class="op">&gt;</span> <span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/as_date.html">as_date</a></span><span class="op">(</span><span class="st">"2022-12-22"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>There are <span class="math inline">\(n=\)</span> 34 questions in total.</p>
-<p>As of 2023-01-24 13:00:26, we have had <span class="math inline">\(n\)</span>= 64 responses.</p>
+<p>As of 2023-01-30 09:50:46, we have had <span class="math inline">\(n\)</span>= 64 responses.</p>
 </div>
 <div id="penn-state-campus" class="section level2 unnumbered">
 <h2>Penn State campus<a class="anchor" aria-label="anchor" href="#penn-state-campus"><i class="fas fa-link"></i></a>
@@ -249,9 +251,8 @@ Figure 22.5: How many years have passed since you completed that degree?
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">data_collect_types</span>,</span>
 <span>               <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">data_collect_vals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"N responses"</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">data_types</span><span class="op">$</span><span class="va">data_collect_vals</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Types of data collected"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"N responses"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-primary-data-types"></span>
@@ -279,9 +280,8 @@ Figure 22.6: What are the primary types of digital data that are used in your re
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">restricted_data_types</span>,</span>
 <span>               <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">restricted_data_vals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"N responses"</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">restricted</span><span class="op">$</span><span class="va">restricted_data_vals</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Types of restrictions"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"N responses"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:restricted-data-preprocess"></span>
@@ -309,9 +309,10 @@ Figure 22.7: Respondents who collect restricted data of varied types
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">store_where</span>,</span>
 <span>               <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">store_where_vals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"N responses"</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">storage_active</span><span class="op">$</span><span class="va">store_where_vals</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="co"># scale_y_continuous(name = "N responses",</span></span>
+<span>  <span class="co">#                    breaks = c(0:length(storage_active$store_where_vals))) +</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Where data is stored"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"N responses"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-data-storage-places"></span>
@@ -668,13 +669,11 @@ Figure 22.10: How important to you is sharing data from completed projects with 
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">barriers_comm_what</span>,</span>
 <span>               <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">barriers_comm_vals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"N responses"</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span></span>
-<span>                       <span class="va">sharing_comm_obstacles</span><span class="op">$</span><span class="va">barriers_comm_vals</span></span>
-<span>                     <span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Barriers to sharing with the research community"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"N responses"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 25 rows containing missing values (`position_stack()`).</code></pre>
+<pre><code>## Warning: Removed 25 rows containing missing values
+## (`position_stack()`).</code></pre>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-obstacles-to-sharing-w-comm"></span>
 <img src="include/img/fig-obstacles-to-sharing-w-comm-1.png" alt="Obstacles to sharing with research community" width="672"><p class="caption">
@@ -741,13 +740,11 @@ Figure 22.13: Do journals in your field require data sharing?
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">share_where_target</span>,</span>
 <span>               <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">share_where_vals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"N responses"</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span></span>
-<span>                       <span class="va">sharing_where</span><span class="op">$</span><span class="va">share_where_vals</span></span>
-<span>                     <span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Where data are shared"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"N responses"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 78 rows containing missing values (`position_stack()`).</code></pre>
+<pre><code>## Warning: Removed 78 rows containing missing values
+## (`position_stack()`).</code></pre>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-where-data-shared"></span>
 <img src="include/img/fig-where-data-shared-1.png" alt="Where data has been shared" width="672"><p class="caption">
@@ -1148,11 +1145,11 @@ Figure 22.29: How much benefit would you derive from a center at Penn State focu
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">center_services_types</span>,</span>
 <span>               <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">center_services_vals</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"N responses"</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">services_center</span><span class="op">$</span><span class="va">center_services_vals</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Services that would benefit research"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"N responses"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 48 rows containing missing values (`position_stack()`).</code></pre>
+<pre><code>## Warning: Removed 48 rows containing missing values
+## (`position_stack()`).</code></pre>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-services-from-center"></span>
 <img src="include/img/fig-services-from-center-1.png" alt="Select the services that would most benefit your research if offered by such a center." width="672"><p class="caption">
@@ -1333,7 +1330,7 @@ need funding for open access
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-24.</p>
+    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-01-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

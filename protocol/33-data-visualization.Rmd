@@ -1,12 +1,14 @@
 # Data Visualization {-}
 
-The following shows simple visualizations of the survey data.
+The following shows some simple visualizations of the survey data.
 
 ## Filter "test" responses {-}
 
 The responses prior to 2022-12-22 were used to test the survey, and aren't really data.
 
 ```{r}
+suppressPackageStartupMessages(library(tidyverse))
+
 message("Reimporting clean data file: `", "csv/open-science-survey-2022-fall-clean.csv`")
 
 survey <- readr::read_csv("csv/open-science-survey-2022-fall-clean.csv", show_col_types = FALSE)
@@ -126,9 +128,8 @@ data_types %>%
   ggplot2::aes(data_collect_types,
                as.numeric(data_collect_vals)) +
   ggplot2::geom_col() +
-  scale_y_continuous(name = "N responses",
-                     breaks = c(0:length(data_types$data_collect_vals))) +
   xlab("Types of data collected") +
+  ylab("N responses") +
   coord_flip()
 ```
 
@@ -149,9 +150,8 @@ restricted %>%
   ggplot2::aes(restricted_data_types,
                as.numeric(restricted_data_vals)) +
   ggplot2::geom_col() +
-  scale_y_continuous(name = "N responses",
-                     breaks = c(0:sum(restricted$restricted_data_vals))) +
   xlab("Types of restrictions") +
+  ylab("N responses") +
   coord_flip()
 ```
 
@@ -200,9 +200,10 @@ storage_active %>%
   ggplot2::aes(store_where,
                as.numeric(store_where_vals)) +
   ggplot2::geom_col() +
-  scale_y_continuous(name = "N responses",
-                     breaks = c(0:length(storage_active$store_where_vals))) +
+  # scale_y_continuous(name = "N responses",
+  #                    breaks = c(0:length(storage_active$store_where_vals))) +
   xlab("Where data is stored") +
+  ylab("N responses") +
   coord_flip()
 ```
 
@@ -363,11 +364,8 @@ sharing_comm_obstacles %>%
   ggplot2::aes(barriers_comm_what,
                as.numeric(barriers_comm_vals)) +
   ggplot2::geom_col() +
-  scale_y_continuous(name = "N responses",
-                     breaks = c(0:length(
-                       sharing_comm_obstacles$barriers_comm_vals
-                     ))) +
   xlab("Barriers to sharing with the research community") +
+  ylab("N responses") +
   coord_flip()
 ```
 
@@ -449,11 +447,8 @@ sharing_where %>%
   ggplot2::aes(share_where_target,
                as.numeric(share_where_vals)) +
   ggplot2::geom_col() +
-  scale_y_continuous(name = "N responses",
-                     breaks = c(0:length(
-                       sharing_where$share_where_vals
-                     ))) +
   xlab("Where data are shared") +
+  ylab("N responses") +
   coord_flip()
 ```
 
@@ -790,9 +785,8 @@ services_center %>%
   ggplot2::aes(center_services_types,
                as.numeric(center_services_vals)) +
   ggplot2::geom_col() +
-  scale_y_continuous(name = "N responses",
-                     breaks = c(0:length(services_center$center_services_vals))) +
   xlab("Services that would benefit research") +
+  ylab("N responses") +
   coord_flip()
 ```
 

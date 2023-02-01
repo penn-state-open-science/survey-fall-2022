@@ -30,7 +30,8 @@ survey %>%
   dplyr::filter(., !is.na(campus)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(campus) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Primary department or unit {-}
@@ -43,7 +44,9 @@ survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(department) +
   ggplot2::geom_bar() +
-  coord_flip()
+  labs(x = NULL, y = "N responses") +
+  coord_flip() +
+  theme_light()
 ```
 
 ## Position {-}
@@ -54,7 +57,10 @@ survey %>%
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(position) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  labs(x = NULL, y = "N responses") +
+  coord_flip() +
+  theme_light()
 ```
 
 ## Highest post-secondary degree {-}
@@ -66,7 +72,10 @@ survey %>%
   dplyr::filter(., !is.na(highest_degree_earned)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(highest_degree_earned) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  labs(x = NULL, y = "N responses") +
+  coord_flip() +
+  theme_light()
 ```
 
 ## Years since highest degree {-}
@@ -83,7 +92,10 @@ survey %>%
   dplyr::filter(., !is.na(years_since_degree)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(years_since_degree) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  labs(x = NULL, y = "N responses") +
+  coord_flip() +
+  theme_light()
 ```
 
 ## Primary types of data {-}
@@ -130,7 +142,8 @@ data_types %>%
   ggplot2::geom_col() +
   xlab("Types of data collected") +
   ylab("N responses") +
-  coord_flip()
+  coord_flip() +
+  theme_light()
 ```
 
 ## Restricted data {-}
@@ -152,35 +165,40 @@ restricted %>%
   ggplot2::geom_col() +
   xlab("Types of restrictions") +
   ylab("N responses") +
-  coord_flip()
+  coord_flip() +
+  theme_light()
 ```
 
 ```{r fig-restricted-ethical, fig.cap="Data about human participants that are subject to restrictions due to ethical concerns", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_ethical) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-restricted-legal-ip, fig.cap="Data subject to legal/intellectual property restrictions", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_legal_ip) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-restricted-sponsor, fig.cap="Data subject to contractual restrictions from a sponsor or provider", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_sponsor) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-restricted-none, fig.cap="My data are not restricted in these ways", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(restricted_none) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Where store data for active projects? {-}
@@ -204,7 +222,8 @@ storage_active %>%
   #                    breaks = c(0:length(storage_active$store_where_vals))) +
   xlab("Where data is stored") +
   ylab("N responses") +
-  coord_flip()
+  coord_flip() +
+  theme_light()
 ```
 
 
@@ -212,56 +231,64 @@ storage_active %>%
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_usb) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-lab, fig.cap="Personal/lab computer", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_lab) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-server, fig.cap="Departmental/college server", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_server) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-icds, fig.cap="ICDS/ROAR allocation", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_icds) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-onedrive, fig.cap="Microsoft OneDrive/SharePoint", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_onedrive) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-googledrive, fig.cap="Google Drive", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_googledrive) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-dropbox, fig.cap="Dropbox", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_dropbox) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-store-box, fig.cap="Box", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(store_box) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Importance of sharing with research collaborators {-}
@@ -283,7 +310,8 @@ survey %>%
   dplyr::filter(., !is.na(importance_sharing_collab)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(importance_sharing_collab) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Convenience of sharing with research collaborators {-}
@@ -307,7 +335,8 @@ survey %>%
   dplyr::filter(., !is.na(convenience_sharing_collab)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(convenience_sharing_collab) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Barriers to sharing with research collaborators {-}
@@ -341,7 +370,8 @@ survey %>%
   dplyr::filter(., !is.na(importance_share_community)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(importance_share_community) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Obstacles to sharing with research community {-}
@@ -366,42 +396,49 @@ sharing_comm_obstacles %>%
   ggplot2::geom_col() +
   xlab("Barriers to sharing with the research community") +
   ylab("N responses") +
-  coord_flip()
+  coord_flip() +
+  theme_light()
 ```
 
 ```{r fig-barriers-security, fig.cap="Ensuring security/restricting access", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_security) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-barriers-curation, fig.cap="Taking time to curate, organize, document data", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_curation) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-barriers-altering-data, fig.cap="Altering data to make it suitable to share", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_alter_before_share) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light() +
+  theme_light()
 ```
 
 ```{r fig-barriers-resources, fig.cap="Insufficient resources for sharing", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_resources) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-barriers-staff, fig.cap="Lack of available or knowledgeable staff", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_staff) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Requirements for data sharing from funders {-}
@@ -412,7 +449,8 @@ survey %>%
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(funders_require_data_sharing) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Requirements for data sharing from journals {-}
@@ -423,7 +461,8 @@ survey %>%
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(journals_require_data_sharing) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Where has data been shared? {-}
@@ -449,49 +488,56 @@ sharing_where %>%
   ggplot2::geom_col() +
   xlab("Where data are shared") +
   ylab("N responses") +
-  coord_flip()
+  coord_flip() +
+  theme_light()
 ```
 
 ```{r fig-where-share-inst-repo, fig.cap="Share via institutional repository", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_inst_repo) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-where-share-journal-suppl, fig.cap="Share via journal supplement", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_journal_suppl) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-where-share-lab-web, fig.cap="Share via lab website", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_lab_web) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-where-share-ext-repo, fig.cap="Share via external data repository", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_ext_repo) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-where-share-govt-repo, fig.cap="Share via government data repository", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_govt_repo) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ```{r fig-where-share-consortia, fig.cap="Share via research consortium", include=FALSE}
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_consortia) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## How well-equipped are we to meet data management and sharing requirements? {-}
@@ -514,7 +560,8 @@ survey %>%
   dplyr::filter(., !is.na(equipped_data_mgmt_sharing)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(equipped_data_mgmt_sharing) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ---
@@ -533,7 +580,8 @@ survey %>%
   dplyr::filter(., !is.na(create_analysis_code)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(create_analysis_code) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Frequency of code sharing with collaborators {-}
@@ -551,7 +599,8 @@ survey %>%
   dplyr::filter(., !is.na(share_analysis_code_collab)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_analysis_code_collab) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Creation of other types of software {-}
@@ -562,7 +611,8 @@ survey %>%
 survey %>%
   ggplot2::ggplot() +
   ggplot2::aes(create_other_code) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Frequency of use of open source code-sharing tools {-}
@@ -577,7 +627,8 @@ survey %>%
   dplyr::filter(., !is.na(use_code_sharing_tools)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(use_code_sharing_tools) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Requirements for code sharing from funders {-}
@@ -589,7 +640,8 @@ survey %>%
   dplyr::filter(., !is.na(funders_require_code_sharing)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(funders_require_code_sharing) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Requirements for code sharing from journals {-}
@@ -601,7 +653,8 @@ survey %>%
   dplyr::filter(., !is.na(funders_require_code_sharing)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(journals_require_code_sharing) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Frequency of open code sharing {-}
@@ -619,7 +672,8 @@ survey %>%
   dplyr::filter(., !is.na(share_analysis_code_community)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_analysis_code_community) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Share other materials {-}
@@ -643,7 +697,8 @@ survey %>%
   dplyr::filter(.,!is.na(share_materials_community)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(share_materials_community) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ---
@@ -662,7 +717,8 @@ survey %>%
   dplyr::filter(.,!is.na(knowledge_open_science)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(knowledge_open_science) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Awareness of FAIR principles {-}
@@ -680,7 +736,8 @@ survey %>%
   dplyr::filter(.,!is.na(awareness_FAIR)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(awareness_FAIR) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Application of FAIR principles in your own work {-}
@@ -698,7 +755,8 @@ survey %>%
   dplyr::filter(., !is.na(apply_FAIR)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(apply_FAIR) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Heard of reproducibility crisis? {-}
@@ -711,7 +769,8 @@ survey %>%
   dplyr::filter(., !is.na(heardof_reproducibility_crisis)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(heardof_reproducibility_crisis) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Is there a crisis in your area? {-}
@@ -727,7 +786,8 @@ survey %>%
   dplyr::filter(., !is.na(my_area_reproducibility_crisis)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(my_area_reproducibility_crisis) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Benefit from PSU center {-}
@@ -752,7 +812,8 @@ survey %>%
   dplyr::filter(., !is.na(benefit_psu_center)) %>%
   ggplot2::ggplot() +
   ggplot2::aes(benefit_psu_center) +
-  ggplot2::geom_bar()
+  ggplot2::geom_bar() +
+  theme_light()
 ```
 
 ## Services from PSU Center {-}
@@ -787,7 +848,8 @@ services_center %>%
   ggplot2::geom_col() +
   xlab("Services that would benefit research") +
   ylab("N responses") +
-  coord_flip()
+  coord_flip() +
+  theme_light()
 ```
 
 ## Comments {-}

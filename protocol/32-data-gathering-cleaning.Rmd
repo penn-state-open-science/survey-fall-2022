@@ -175,7 +175,8 @@ survey <- survey %>%
       `Department of Educational Psychology, Counseling, and Special Education` = "educational psychology, counseling, and special education",
       `EPCSE` = "educational psychology, counseling, and special education",
       `Educational Psychology` = "educational psychology, counseling, and special education",
-      `Education` = "college of education"
+      `Education` = "college of education",
+      `HDFS` = "Human Development and Family Studies"
     )
   ) %>%
   dplyr::mutate(., department = tolower(department))

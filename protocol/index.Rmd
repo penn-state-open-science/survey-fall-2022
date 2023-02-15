@@ -42,7 +42,7 @@ These materials may be copied and reused by anyone.
 
 By default, we do *not* update the data from Google Drive (`params$update_google_sheet==FALSE`).
 
-```{r update-data, include=FALSE}
+```{r update-data, include=FALSE, eval=FALSE}
 if (!file.exists(params$csv_fn)) {
   no_current_csv <- TRUE
   csv_fn <- "csv/open-science-survey-2022-fall.csv"

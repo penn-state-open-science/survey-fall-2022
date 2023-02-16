@@ -26,7 +26,6 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
-<link rel="stylesheet" href="include/css/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -83,7 +82,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/penn-state-open-science/survey-fall-2022">View book source <i class="fab fa-github"></i></a></p>
+          
         </div>
       </nav>
 </div>
@@ -111,12 +110,13 @@
 The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" class="uri">https://forms.gle/oT2ekzCsw7KVU8YU8</a>.</p>
 <p>We have separated the data update process from the generation of this report since some manual cleaning of the department names must be done first. So, the typical workflow is to run the following at the console:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">'protocol/R/functions.R'</span><span class="op">)</span></span>
-<span><span class="fu">update_data_from_google</span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">'R/functions.R'</span><span class="op">)</span></span>
+<span><span class="fu">update_data</span><span class="op">(</span>force_update <span class="op">=</span> <span class="cn">TRUE</span>, google_credentials <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"GMAIL_ROG"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">open_survey</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">clean_names</span><span class="op">(</span><span class="va">survey</span><span class="op">)</span></span>
-<span><span class="fu">show_unique_units</span><span class="op">(</span><span class="va">survey</span><span class="op">)</span></span></code></pre></div>
-<p>The results of <code>show_unique_units(survey)</code> can then be compared to the <a href="data-gathering-and-cleaning.html#modify_dept">code below</a>, and updates made, as needed, to handle various edge cases.</p>
+<span></span>
+<span><span class="fu">clean_names</span><span class="op">(</span><span class="va">survey</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">show_unique_depts</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>The results of <code>show_unique_depts(survey)</code> can then be compared to the <a href="data-gathering-and-cleaning.html#modify_dept">code below</a>, and updates made, as needed, to handle various edge cases.</p>
 <div class="rmdnote">
 <p>This workflow could be improved.</p>
 <p>One idea would be to use the <a href="https://docs.ropensci.org/targets/">targets</a> package to update the data at specified intervals and then trigger the data cleaning operations.</p>
@@ -133,7 +133,7 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"File not found: "</span>, <span class="st">"csv/open-science-survey-2022-fall.csv"</span><span class="op">)</span></span>
 <span>  <span class="va">survey</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p>There are <span class="math inline">\(n=\)</span> 77 responses.</p>
+<p>There are <span class="math inline">\(n=\)</span> 79 responses.</p>
 </div>
 <div id="clean-data" class="section level2 unnumbered">
 <h2>Clean data<a class="anchor" aria-label="anchor" href="#clean-data"><i class="fas fa-link"></i></a>
@@ -249,36 +249,7 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <h3>Modify <code>department</code><a class="anchor" aria-label="anchor" href="#modify_dept"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    <span class="va">.</span>,</span>
-<span>    department <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode</a></span><span class="op">(</span></span>
-<span>      <span class="va">department</span>,</span>
-<span>      `Curriculum and Instruction (College of Education)` <span class="op">=</span> <span class="st">"curriculum &amp; instruction"</span>,</span>
-<span>      `CLA Economics` <span class="op">=</span> <span class="st">"Economics"</span>,</span>
-<span>      `Department of Curriculum and Instruction` <span class="op">=</span> <span class="st">"curriculum &amp; instruction"</span>,</span>
-<span>      `Department of Educational Psychology, Counseling, and Special Education` <span class="op">=</span> <span class="st">"educational psychology, counseling, and special education"</span>,</span>
-<span>      `Education Policy Studies (College of Education)` <span class="op">=</span> <span class="st">"education policy studies"</span>,</span>
-<span>      `EPCSE` <span class="op">=</span> <span class="st">"educational psychology, counseling, and special education"</span>,</span>
-<span>      `Educational Psychology` <span class="op">=</span> <span class="st">"educational psychology, counseling, and special education"</span>,</span>
-<span>      `Education` <span class="op">=</span> <span class="st">"college of education"</span>,</span>
-<span>      `GSLL` <span class="op">=</span> <span class="st">"Germanic and Slavic Languages"</span>,</span>
-<span>      `HDFS` <span class="op">=</span> <span class="st">"Human Development and Family Studies"</span>,</span>
-<span>      `Human Develoment &amp; Family Studies` <span class="op">=</span> <span class="st">"Human Development and Family Studies"</span>,</span>
-<span>      `Liberal Arts` <span class="op">=</span> <span class="st">"College of the Liberal Arts"</span>,</span>
-<span>      `pscyhology` <span class="op">=</span> <span class="st">"Psychology"</span>,</span>
-<span>      `SOCIOLOGY` <span class="op">=</span> <span class="st">"Sociology"</span>,</span>
-<span>      `Soc/Crim` <span class="op">=</span> <span class="st">"Sociology"</span>,</span>
-<span>      `PLSC` <span class="op">=</span> <span class="st">"Political Science"</span>,</span>
-<span>      `Political Science / Liberal Arts` <span class="op">=</span> <span class="st">"Political Science"</span>,</span>
-<span>      `School of Labor and Employment Relations` <span class="op">=</span> <span class="st">"Labor and Employment Relations"</span>,</span>
-<span>      `Spanish, Italian &amp; Portuguese` <span class="op">=</span> <span class="st">"Spanish, Italian, and Portuguese"</span>,</span>
-<span>      `You’ve said we can choose to omit items. What` <span class="op">=</span> <span class="st">"College of the Liberal Arts"</span>,</span>
-<span>      `Telecommunications &amp; Women's, Gender, and Sexuality Studies` <span class="op">=</span> <span class="st">"Women's, Gender, and Sexuality Studies"</span>,</span>
-<span>      `Underwater basket-weaving` <span class="op">=</span> <span class="st">"None"</span></span>
-<span>    <span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, department <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">department</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">clean_depts</span><span class="op">(</span><span class="va">survey</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="modify-position" class="section level3 unnumbered">
 <h3>Modify <code>position</code><a class="anchor" aria-label="anchor" href="#modify-position"><i class="fas fa-link"></i></a>
@@ -394,9 +365,8 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>, store_box <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
 <span>                                                   <span class="st">"Box"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="modify-barriers_sharing_collab" class="section level3" number="22.14.8">
-<h3>
-<span class="header-section-number">22.14.8</span> Modify <code>barriers_sharing_collab</code><a class="anchor" aria-label="anchor" href="#modify-barriers_sharing_collab"><i class="fas fa-link"></i></a>
+<div id="modify-barriers_sharing_collab" class="section level3 unnumbered">
+<h3>Modify <code>barriers_sharing_collab</code><a class="anchor" aria-label="anchor" href="#modify-barriers_sharing_collab"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdtip">
 <p><strong>TODO</strong>: Clean these.</p>
@@ -476,9 +446,8 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>                share_consortia <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">where_shared_community</span>,</span>
 <span>                                                      <span class="st">"Research consortia"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="modify-knowledge_open_science" class="section level3" number="22.14.9">
-<h3>
-<span class="header-section-number">22.14.9</span> Modify <code>knowledge_open_science</code><a class="anchor" aria-label="anchor" href="#modify-knowledge_open_science"><i class="fas fa-link"></i></a>
+<div id="modify-knowledge_open_science" class="section level3 unnumbered">
+<h3>Modify <code>knowledge_open_science</code><a class="anchor" aria-label="anchor" href="#modify-knowledge_open_science"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -494,9 +463,8 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 </div>
-<div id="modify-awareness_fair" class="section level3" number="22.14.10">
-<h3>
-<span class="header-section-number">22.14.10</span> Modify <code>awareness_FAIR</code><a class="anchor" aria-label="anchor" href="#modify-awareness_fair"><i class="fas fa-link"></i></a>
+<div id="modify-awareness_fair" class="section level3 unnumbered">
+<h3>Modify <code>awareness_FAIR</code><a class="anchor" aria-label="anchor" href="#modify-awareness_fair"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -512,9 +480,8 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 </div>
-<div id="modify-benefit_psu_center" class="section level3" number="22.14.11">
-<h3>
-<span class="header-section-number">22.14.11</span> Modify <code>benefit_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-benefit_psu_center"><i class="fas fa-link"></i></a>
+<div id="modify-benefit_psu_center" class="section level3 unnumbered">
+<h3>Modify <code>benefit_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-benefit_psu_center"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -530,9 +497,8 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 </div>
-<div id="modify-service_psu_center" class="section level3" number="22.14.12">
-<h3>
-<span class="header-section-number">22.14.12</span> Modify <code>service_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-service_psu_center"><i class="fas fa-link"></i></a>
+<div id="modify-service_psu_center" class="section level3 unnumbered">
+<h3>Modify <code>service_psu_center</code><a class="anchor" aria-label="anchor" href="#modify-service_psu_center"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -584,9 +550,8 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">survey</span>, <span class="st">"csv/open-science-survey-2022-fall-clean.csv"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="select-and-export-contact-data-for-follow-up" class="section level2" number="22.15">
-<h2>
-<span class="header-section-number">22.15</span> Select and export contact data for follow-up<a class="anchor" aria-label="anchor" href="#select-and-export-contact-data-for-follow-up"><i class="fas fa-link"></i></a>
+<div id="select-and-export-contact-data-for-follow-up" class="section level2 unnumbered">
+<h2>Select and export contact data for follow-up<a class="anchor" aria-label="anchor" href="#select-and-export-contact-data-for-follow-up"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">contact_info</span> <span class="op">&lt;-</span> <span class="va">survey</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -617,23 +582,22 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <li><a class="nav-link" href="#modify-data_types">Modify data_types</a></li>
 <li><a class="nav-link" href="#modify-restricted_data">Modify restricted_data</a></li>
 <li><a class="nav-link" href="#modify-storage_active_projects">Modify storage_active_projects</a></li>
-<li><a class="nav-link" href="#modify-barriers_sharing_collab"><span class="header-section-number">22.14.8</span> Modify barriers_sharing_collab</a></li>
+<li><a class="nav-link" href="#modify-barriers_sharing_collab">Modify barriers_sharing_collab</a></li>
 <li><a class="nav-link" href="#modify-barriers_share_community">Modify barriers_share_community</a></li>
 <li><a class="nav-link" href="#modify-where_shared_community">Modify where_shared_community</a></li>
-<li><a class="nav-link" href="#modify-knowledge_open_science"><span class="header-section-number">22.14.9</span> Modify knowledge_open_science</a></li>
-<li><a class="nav-link" href="#modify-awareness_fair"><span class="header-section-number">22.14.10</span> Modify awareness_FAIR</a></li>
-<li><a class="nav-link" href="#modify-benefit_psu_center"><span class="header-section-number">22.14.11</span> Modify benefit_psu_center</a></li>
-<li><a class="nav-link" href="#modify-service_psu_center"><span class="header-section-number">22.14.12</span> Modify service_psu_center</a></li>
+<li><a class="nav-link" href="#modify-knowledge_open_science">Modify knowledge_open_science</a></li>
+<li><a class="nav-link" href="#modify-awareness_fair">Modify awareness_FAIR</a></li>
+<li><a class="nav-link" href="#modify-benefit_psu_center">Modify benefit_psu_center</a></li>
+<li><a class="nav-link" href="#modify-service_psu_center">Modify service_psu_center</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#re-export-cleaned-data">Re-export cleaned data</a></li>
-<li><a class="nav-link" href="#select-and-export-contact-data-for-follow-up"><span class="header-section-number">22.15</span> Select and export contact data for follow-up</a></li>
+<li><a class="nav-link" href="#select-and-export-contact-data-for-follow-up">Select and export contact data for follow-up</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/penn-state-open-science/survey-fall-2022/blob/master/32-data-gathering-cleaning.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/penn-state-open-science/survey-fall-2022/edit/master/32-data-gathering-cleaning.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>
@@ -645,7 +609,7 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-02-15.</p>
+    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-02-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

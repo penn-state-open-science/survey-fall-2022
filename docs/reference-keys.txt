@@ -193,9 +193,3 @@ data-being-transferred-or-disclosed-from-penn-state
 specimens-being-transferred-or-disclosed-to-penn-state
 specimens-being-transferred-or-disclosed-from-penn-state
 if-transferring-dataspecimens-with-identifiers-to-or-from-penn-state-which-of-the-following-identifiers-will-be-included-with-the-dataspecimens-check-all-that-apply
-modify-barriers_sharing_collab
-modify-knowledge_open_science
-modify-awareness_fair
-modify-benefit_psu_center
-modify-service_psu_center
-select-and-export-contact-data-for-follow-up

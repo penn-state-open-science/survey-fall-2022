@@ -23,14 +23,15 @@ The survey questions are here: <https://forms.gle/oT2ekzCsw7KVU8YU8>.
 We have separated the data update process from the generation of this report since some manual cleaning of the department names must be done first. So, the typical workflow is to run the following at the console:
 
 ```{r, eval=FALSE}
-source('protocol/R/functions.R')
-update_data_from_google()
+source('R/functions.R')
+update_data(force_update = TRUE, google_credentials = Sys.getenv("GMAIL_ROG"))
 survey <- open_survey()
-survey <- clean_names(survey)
-show_unique_units(survey)
+
+clean_names(survey) |>
+  show_unique_depts()
 ```
 
-The results of `show_unique_units(survey)` can then be compared to the [code below ](#modify_dept), and updates made, as needed, to handle various edge cases.
+The results of `show_unique_depts(survey)` can then be compared to the [code below ](#modify_dept), and updates made, as needed, to handle various edge cases.
 
 ::: {.rmdnote}
 
@@ -141,36 +142,7 @@ survey <- survey %>%
 ### Modify `department` {- #modify_dept}
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(
-    .,
-    department = recode(
-      department,
-      `Curriculum and Instruction (College of Education)` = "curriculum & instruction",
-      `CLA Economics` = "Economics",
-      `Department of Curriculum and Instruction` = "curriculum & instruction",
-      `Department of Educational Psychology, Counseling, and Special Education` = "educational psychology, counseling, and special education",
-      `Education Policy Studies (College of Education)` = "education policy studies",
-      `EPCSE` = "educational psychology, counseling, and special education",
-      `Educational Psychology` = "educational psychology, counseling, and special education",
-      `Education` = "college of education",
-      `GSLL` = "Germanic and Slavic Languages",
-      `HDFS` = "Human Development and Family Studies",
-      `Human Develoment & Family Studies` = "Human Development and Family Studies",
-      `Liberal Arts` = "College of the Liberal Arts",
-      `pscyhology` = "Psychology",
-      `SOCIOLOGY` = "Sociology",
-      `Soc/Crim` = "Sociology",
-      `PLSC` = "Political Science",
-      `Political Science / Liberal Arts` = "Political Science",
-      `School of Labor and Employment Relations` = "Labor and Employment Relations",
-      `Spanish, Italian & Portuguese` = "Spanish, Italian, and Portuguese",
-      `You’ve said we can choose to omit items. What` = "College of the Liberal Arts",
-      `Telecommunications & Women's, Gender, and Sexuality Studies` = "Women's, Gender, and Sexuality Studies",
-      `Underwater basket-weaving` = "None"
-    )
-  ) %>%
-  dplyr::mutate(., department = tolower(department))
+survey <- clean_depts(survey)
 ```
 
 ### Modify `position` {-}
@@ -293,7 +265,7 @@ survey <- survey %>%
                                                    "Box"))
 ```
 
-### Modify `barriers_sharing_collab`
+### Modify `barriers_sharing_collab`  {-}
 
 ::: {.rmdtip}
 
@@ -378,7 +350,7 @@ survey <- survey %>%
                                                       "Research consortia"))
 ```
 
-### Modify `knowledge_open_science`
+### Modify `knowledge_open_science` {-}
 
 ```{r}
 survey <- survey %>%
@@ -395,7 +367,7 @@ survey <- survey %>%
   )
 ```
 
-### Modify `awareness_FAIR`
+### Modify `awareness_FAIR` {-}
 
 ```{r}
 survey <- survey %>%
@@ -412,7 +384,7 @@ survey <- survey %>%
   )
 ```
 
-### Modify `benefit_psu_center`
+### Modify `benefit_psu_center` {-}
 
 ```{r}
 survey <- survey %>%
@@ -429,7 +401,7 @@ survey <- survey %>%
   )
 ```
 
-### Modify `service_psu_center`
+### Modify `service_psu_center` {-}
 
 ```{r}
 survey <- survey %>%
@@ -482,7 +454,7 @@ survey <- survey %>%
 readr::write_csv(survey, "csv/open-science-survey-2022-fall-clean.csv")
 ```
 
-## Select and export contact data for follow-up
+## Select and export contact data for follow-up {-}
 
 ```{r}
 contact_info <- survey %>%

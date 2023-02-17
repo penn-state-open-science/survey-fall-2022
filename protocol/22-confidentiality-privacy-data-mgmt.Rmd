@@ -221,7 +221,7 @@ The survey does not collect any identifying information unless the respondent vo
 ### Describe how the research team will access the data once data collection is complete.
 
 Data will be downloaded to one of the investigator's computers from the password-protected Google Sheet linked to the survey.
-We may use Penn State's password-protected RStudio Server for data visualization and analysis.
+We may use Penn State's password-protected RStudio Server or RStudio on password-protected personal or institutional computers for data visualization and analysis.
 
 ### If the research involves online surveys, list the name(s) of the service provider(s) that will be used for the survey(s) (e.g., REDCap, Penn State licensed Qualtrics, Survey Monkey, Zoomerang)? (Note: The IRB strongly recommends the use of REDCap for online surveys that obtain sensitive identifiable human subjects data.)
 

@@ -147,6 +147,7 @@ clean_depts <- function(df) {
         `Human Develoment & Family Studies` = "Human Development and Family Studies",
         `Liberal Arts` = "College of the Liberal Arts",
         `pscyhology` = "Psychology",
+        `Psych` = "Psychology",
         `SOCIOLOGY` = "Sociology",
         `Soc/Crim` = "Sociology",
         `PLSC` = "Political Science",
@@ -164,6 +165,7 @@ clean_depts <- function(df) {
 
 ###############################################################################
 open_clean_depts_show_unique <- function() {
+  require(tidyverse)
   open_survey() |>
     clean_names() |>
     clean_depts() |>

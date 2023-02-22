@@ -15,3 +15,8 @@ render_protocol_gitbook <- function(output_dir = 'docs') {
   bookdown::render_book('protocol')
   
 }
+
+render_book_open <- function() {
+  render_protocol_bootstrap4()
+  browseURL("docs/data-visualization.html")
+}

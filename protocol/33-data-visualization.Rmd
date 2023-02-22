@@ -9,25 +9,41 @@ The responses prior to 2022-12-22 were used to test the survey, and aren't reall
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
 
-message("Reimporting clean data file: `", "csv/open-science-survey-2022-fall-clean.csv`")
+message("Reimporting clean data file: `",
+        "csv/open-science-survey-2022-fall-clean.csv`")
 
-survey <- readr::read_csv("csv/open-science-survey-2022-fall-clean.csv", show_col_types = FALSE)
+survey <-
+  readr::read_csv("csv/open-science-survey-2022-fall-clean.csv",
+                  show_col_types = FALSE)
 
-survey <- survey %>%
-  dplyr::filter(., timestamp > lubridate::as_date("2022-12-22"))
+survey <- survey |>
+  dplyr::filter(timestamp > lubridate::as_date("2022-12-22"))
 ```
 
 There are $n=$ `r dim(survey_qs_df)[1]` questions in total.
 
 As of `r Sys.time()`, we have had $n$= `r dim(survey)[1]` responses.
 
+## Time series of response date {-}
+
+```{r response-time-series, fig.cap="Time series of responses"}
+survey <- survey |>
+  mutate(resp_index = seq_along(timestamp))
+
+survey |>
+  ggplot() +
+  aes(timestamp, resp_index) +
+  geom_point() +
+  geom_line()
+```
+
 ## Penn State campus {-}
 
 > `r paste0("Question ", survey_qs_df$q_num[1], ": ", survey_qs_df$question[1])` 
 
 ```{r fig-campus, fig.cap="What Penn State campus do you represent?"}
-survey %>%
-  dplyr::filter(., !is.na(campus)) %>%
+survey |>
+  dplyr::filter(!is.na(campus)) |>
   ggplot2::ggplot() +
   ggplot2::aes(campus) +
   ggplot2::geom_bar() +
@@ -39,8 +55,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[2], ": ", survey_qs_df$question[2])` 
 
 ```{r fig-dept-unit, fig.cap="What is your primary department or unit?"}
-survey %>%
-  dplyr::filter(., !is.na(department)) %>%
+survey |>
+  dplyr::filter(!is.na(department)) |>
   ggplot2::ggplot() +
   ggplot2::aes(department) +
   ggplot2::geom_bar() +
@@ -54,7 +70,7 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[3], ": ", survey_qs_df$question[3])` 
 
 ```{r fig-position, fig.cap="What is your position at Penn State?"}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(position) +
   ggplot2::geom_bar() +
@@ -68,8 +84,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[33], ": ", survey_qs_df$question[33])` 
 
 ```{r fig-highest-degree, fig.cap="What is the highest post-secondary degree you have earned?"}
-survey %>%
-  dplyr::filter(., !is.na(highest_degree_earned)) %>%
+survey |>
+  dplyr::filter(!is.na(highest_degree_earned)) |>
   ggplot2::ggplot() +
   ggplot2::aes(highest_degree_earned) +
   ggplot2::geom_bar() +
@@ -83,13 +99,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[4], ": ", survey_qs_df$question[4])` 
 
 ```{r fig-yrs-since-degree, fig.cap="How many years have passed since you completed that degree?"}
-survey %>%
-  dplyr::mutate(., years_since_degree = factor(
+survey |>
+  dplyr::mutate(years_since_degree = factor(
     years_since_degree,
     c("< 2 years", "2-5 years", "5-10 years", "10+"),
     ordered = TRUE
-  )) %>%
-  dplyr::filter(., !is.na(years_since_degree)) %>%
+  )) |>
+  dplyr::filter(!is.na(years_since_degree)) |>
   ggplot2::ggplot() +
   ggplot2::aes(years_since_degree) +
   ggplot2::geom_bar() +
@@ -103,10 +119,9 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[5], ": ", survey_qs_df$question[5])` 
 
 ```{r fig-primary-data-types, fig.cap="What are the primary types of digital data that are used in your research?"}
-data_types <- survey %>%
-  dplyr::select(., contains("collect_")) %>%
+data_types <- survey |>
+  dplyr::select(contains("collect_")) |>
   tidyr::pivot_longer(
-    .,
     cols = c(
       'collect_audio',
       'collect_video',
@@ -132,10 +147,10 @@ data_types <- survey %>%
     ),
     names_to = "data_collect_types",
     values_to = "data_collect_vals"
-  ) %>%
-  dplyr::mutate(., data_collect_types = str_remove(data_collect_types, "collect_"))
+  ) |>
+  dplyr::mutate(data_collect_types = str_remove(data_collect_types, "collect_"))
 
-data_types %>%
+data_types |>
   ggplot2::ggplot() +
   ggplot2::aes(data_collect_types,
                as.numeric(data_collect_vals)) +
@@ -151,14 +166,16 @@ data_types %>%
 > `r paste0("Question ", survey_qs_df$q_num[6], ": ", survey_qs_df$question[6])` 
 
 ```{r restricted-data-preprocess, fig.cap="Respondents who collect restricted data of varied types"}
-restricted <- survey %>%
-  dplyr::select(., -restricted_data) %>%
-  tidyr::pivot_longer(., cols = contains("restricted"), 
-                      names_to = "restricted_data_types", 
-                      values_to = "restricted_data_vals") %>%
-  dplyr::mutate(., restricted_data_types = str_remove(restricted_data_types, "restricted_"))
+restricted <- survey |>
+  dplyr::select(-restricted_data) |>
+  tidyr::pivot_longer(
+    cols = contains("restricted"),
+    names_to = "restricted_data_types",
+    values_to = "restricted_data_vals"
+  ) |>
+  dplyr::mutate(restricted_data_types = str_remove(restricted_data_types, "restricted_"))
 
-restricted %>%
+restricted |>
   ggplot2::ggplot() +
   ggplot2::aes(restricted_data_types,
                as.numeric(restricted_data_vals)) +
@@ -170,7 +187,7 @@ restricted %>%
 ```
 
 ```{r fig-restricted-ethical, fig.cap="Data about human participants that are subject to restrictions due to ethical concerns", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(restricted_ethical) +
   ggplot2::geom_bar() +
@@ -178,7 +195,7 @@ survey %>%
 ```
 
 ```{r fig-restricted-legal-ip, fig.cap="Data subject to legal/intellectual property restrictions", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(restricted_legal_ip) +
   ggplot2::geom_bar() +
@@ -186,7 +203,7 @@ survey %>%
 ```
 
 ```{r fig-restricted-sponsor, fig.cap="Data subject to contractual restrictions from a sponsor or provider", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(restricted_sponsor) +
   ggplot2::geom_bar() +
@@ -194,7 +211,7 @@ survey %>%
 ```
 
 ```{r fig-restricted-none, fig.cap="My data are not restricted in these ways", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(restricted_none) +
   ggplot2::geom_bar() +
@@ -206,14 +223,14 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[7], ": ", survey_qs_df$question[7])` 
 
 ```{r fig-data-storage-places, fig.cap="Locations for storing active research data"}
-storage_active <- survey %>%
-  dplyr::select(., -storage_active_projects) %>%
-  tidyr::pivot_longer(., cols = contains("store"), 
-                      names_to = "store_where", 
-                      values_to = "store_where_vals") %>%
-  dplyr::mutate(., store_where = str_remove(store_where, "store_"))
+storage_active <- survey |>
+  dplyr::select(-storage_active_projects) |>
+  tidyr::pivot_longer(cols = contains("store"),
+                      names_to = "store_where",
+                      values_to = "store_where_vals") |>
+  dplyr::mutate(store_where = str_remove(store_where, "store_"))
 
-storage_active %>%
+storage_active |>
   ggplot2::ggplot() +
   ggplot2::aes(store_where,
                as.numeric(store_where_vals)) +
@@ -228,7 +245,7 @@ storage_active %>%
 
 
 ```{r fig-store-usb, fig.cap="External USB or flash drive", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_usb) +
   ggplot2::geom_bar() +
@@ -236,7 +253,7 @@ survey %>%
 ```
 
 ```{r fig-store-lab, fig.cap="Personal/lab computer", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_lab) +
   ggplot2::geom_bar() +
@@ -244,7 +261,7 @@ survey %>%
 ```
 
 ```{r fig-store-server, fig.cap="Departmental/college server", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_server) +
   ggplot2::geom_bar() +
@@ -252,7 +269,7 @@ survey %>%
 ```
 
 ```{r fig-store-icds, fig.cap="ICDS/ROAR allocation", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_icds) +
   ggplot2::geom_bar() +
@@ -260,7 +277,7 @@ survey %>%
 ```
 
 ```{r fig-store-onedrive, fig.cap="Microsoft OneDrive/SharePoint", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_onedrive) +
   ggplot2::geom_bar() +
@@ -268,7 +285,7 @@ survey %>%
 ```
 
 ```{r fig-store-googledrive, fig.cap="Google Drive", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_googledrive) +
   ggplot2::geom_bar() +
@@ -276,7 +293,7 @@ survey %>%
 ```
 
 ```{r fig-store-dropbox, fig.cap="Dropbox", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_dropbox) +
   ggplot2::geom_bar() +
@@ -284,7 +301,7 @@ survey %>%
 ```
 
 ```{r fig-store-box, fig.cap="Box", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(store_box) +
   ggplot2::geom_bar() +
@@ -296,8 +313,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[8], ": ", survey_qs_df$question[8])` 
 
 ```{r fig-import-share-collab, fig.cap="How important to you is sharing data from active projects with research collaborators at Penn State or outside of Penn State?"}
-survey %>%
-  dplyr::mutate(., importance_sharing_collab = factor(
+survey |>
+  dplyr::mutate(importance_sharing_collab = factor(
     importance_sharing_collab,
     c(
       "Not Important",
@@ -306,8 +323,8 @@ survey %>%
       "Important",
       "Very important"
     )
-  )) %>%
-  dplyr::filter(., !is.na(importance_sharing_collab)) %>%
+  )) |>
+  dplyr::filter(!is.na(importance_sharing_collab)) |>
   ggplot2::ggplot() +
   ggplot2::aes(importance_sharing_collab) +
   ggplot2::geom_bar() +
@@ -319,20 +336,19 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[9], ": ", survey_qs_df$question[9])` 
 
 ```{r fig-convenient-share-collab}
-survey %>%
-  dplyr::mutate(.,
-                convenience_sharing_collab = factor(
-                  convenience_sharing_collab,
-                  c(
-                    "Very inconvenient",
-                    "Inconvenient",
-                    "Neither",
-                    "Convenient",
-                    "Very convenient",
-                    "Not applicable"
-                  )
-                )) %>%
-  dplyr::filter(., !is.na(convenience_sharing_collab)) %>%
+survey |>
+  dplyr::mutate(convenience_sharing_collab = factor(
+    convenience_sharing_collab,
+    c(
+      "Very inconvenient",
+      "Inconvenient",
+      "Neither",
+      "Convenient",
+      "Very convenient",
+      "Not applicable"
+    )
+  )) |>
+  dplyr::filter(!is.na(convenience_sharing_collab)) |>
   ggplot2::ggplot() +
   ggplot2::aes(convenience_sharing_collab) +
   ggplot2::geom_bar() +
@@ -344,9 +360,9 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[10], ": ", survey_qs_df$question[10])` 
 
 ```{r}
-survey %>%
-  dplyr::filter(., !is.na(barriers_sharing_collab)) %>%
-  dplyr::select(., barriers_sharing_collab) %>%
+survey |>
+  dplyr::filter(!is.na(barriers_sharing_collab)) |>
+  dplyr::select(barriers_sharing_collab) |>
   knitr::kable(format = 'html')
 ```
 
@@ -355,19 +371,18 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[11], ": ", survey_qs_df$question[11])` 
 
 ```{r fig-import-share-community, fig.cap="How important to you is sharing data from completed projects with the broader research community (i.e., not direct collaborators)?"}
-survey %>%
-  dplyr::mutate(.,
-                importance_share_community = factor(
-                  importance_share_community,
-                  c(
-                    "Not Important",
-                    "Slightly important",
-                    "Moderately important",
-                    "Important",
-                    "Very important"
-                  )
-                )) %>%
-  dplyr::filter(., !is.na(importance_share_community)) %>%
+survey |>
+  dplyr::mutate(importance_share_community = factor(
+    importance_share_community,
+    c(
+      "Not Important",
+      "Slightly important",
+      "Moderately important",
+      "Important",
+      "Very important"
+    )
+  )) |>
+  dplyr::filter(!is.na(importance_share_community)) |>
   ggplot2::ggplot() +
   ggplot2::aes(importance_share_community) +
   ggplot2::geom_bar() +
@@ -379,17 +394,14 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[12], ": ", survey_qs_df$question[12])` 
 
 ```{r fig-obstacles-to-sharing-w-comm, fig.cap="Obstacles to sharing with research community"}
-sharing_comm_obstacles <- survey %>%
-  dplyr::select(.,-barriers_share_community,-barriers_sharing_collab) %>%
-  tidyr::pivot_longer(
-    .,
-    cols = contains("barriers"),
-    names_to = "barriers_comm_what",
-    values_to = "barriers_comm_vals"
-  ) %>%
-  dplyr::mutate(., barriers_comm_what = str_remove(barriers_comm_what, "barriers_sharing_"))
+sharing_comm_obstacles <- survey |>
+  dplyr::select(-barriers_share_community, -barriers_sharing_collab) |>
+  tidyr::pivot_longer(cols = contains("barriers"),
+                      names_to = "barriers_comm_what",
+                      values_to = "barriers_comm_vals") |>
+  dplyr::mutate(barriers_comm_what = str_remove(barriers_comm_what, "barriers_sharing_"))
 
-sharing_comm_obstacles %>%
+sharing_comm_obstacles |>
   ggplot2::ggplot() +
   ggplot2::aes(barriers_comm_what,
                as.numeric(barriers_comm_vals)) +
@@ -401,7 +413,7 @@ sharing_comm_obstacles %>%
 ```
 
 ```{r fig-barriers-security, fig.cap="Ensuring security/restricting access", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_security) +
   ggplot2::geom_bar() +
@@ -409,7 +421,7 @@ survey %>%
 ```
 
 ```{r fig-barriers-curation, fig.cap="Taking time to curate, organize, document data", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_curation) +
   ggplot2::geom_bar() +
@@ -417,7 +429,7 @@ survey %>%
 ```
 
 ```{r fig-barriers-altering-data, fig.cap="Altering data to make it suitable to share", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_alter_before_share) +
   ggplot2::geom_bar() +
@@ -426,7 +438,7 @@ survey %>%
 ```
 
 ```{r fig-barriers-resources, fig.cap="Insufficient resources for sharing", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_resources) +
   ggplot2::geom_bar() +
@@ -434,7 +446,7 @@ survey %>%
 ```
 
 ```{r fig-barriers-staff, fig.cap="Lack of available or knowledgeable staff", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(barriers_sharing_staff) +
   ggplot2::geom_bar() +
@@ -446,7 +458,7 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[13], ": ", survey_qs_df$question[13])` 
 
 ```{r fig-funders-require-data-sharing, fig.cap="Do research sponsors/funders in your field require data sharing?"}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(funders_require_data_sharing) +
   ggplot2::geom_bar() +
@@ -458,7 +470,7 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[14], ": ", survey_qs_df$question[14])` 
 
 ```{r fig-journals-require-data-sharing, fig.cap="Do journals in your field require data sharing?"}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(journals_require_data_sharing) +
   ggplot2::geom_bar() +
@@ -470,18 +482,27 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[15], ": ", survey_qs_df$question[15])` 
 
 ```{r fig-where-data-shared, fig.cap="Where data has been shared"}
-sharing_where <- survey %>%
-  dplyr::select(.,-where_shared_community, -share_analysis_code_collab, -share_analysis_code_community) %>%
+sharing_where <- survey |>
+  dplyr::select(
+    -where_shared_community,
+    -share_analysis_code_collab,
+    -share_analysis_code_community
+  ) |>
   tidyr::pivot_longer(
-    .,
-    cols = c('share_inst_repo', 'share_journal_suppl', 'share_lab_web', 'share_ext_repo',
-             'share_govt_repo', 'share_consortia'),
+    cols = c(
+      'share_inst_repo',
+      'share_journal_suppl',
+      'share_lab_web',
+      'share_ext_repo',
+      'share_govt_repo',
+      'share_consortia'
+    ),
     names_to = "share_where_target",
     values_to = "share_where_vals"
-  ) %>%
-  dplyr::mutate(., share_where_target = str_remove(share_where_target, "share_"))
+  ) |>
+  dplyr::mutate(share_where_target = str_remove(share_where_target, "share_"))
 
-sharing_where %>%
+sharing_where |>
   ggplot2::ggplot() +
   ggplot2::aes(share_where_target,
                as.numeric(share_where_vals)) +
@@ -493,7 +514,7 @@ sharing_where %>%
 ```
 
 ```{r fig-where-share-inst-repo, fig.cap="Share via institutional repository", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(share_inst_repo) +
   ggplot2::geom_bar() +
@@ -501,7 +522,7 @@ survey %>%
 ```
 
 ```{r fig-where-share-journal-suppl, fig.cap="Share via journal supplement", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(share_journal_suppl) +
   ggplot2::geom_bar() +
@@ -509,7 +530,7 @@ survey %>%
 ```
 
 ```{r fig-where-share-lab-web, fig.cap="Share via lab website", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(share_lab_web) +
   ggplot2::geom_bar() +
@@ -517,7 +538,7 @@ survey %>%
 ```
 
 ```{r fig-where-share-ext-repo, fig.cap="Share via external data repository", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(share_ext_repo) +
   ggplot2::geom_bar() +
@@ -525,7 +546,7 @@ survey %>%
 ```
 
 ```{r fig-where-share-govt-repo, fig.cap="Share via government data repository", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(share_govt_repo) +
   ggplot2::geom_bar() +
@@ -533,7 +554,7 @@ survey %>%
 ```
 
 ```{r fig-where-share-consortia, fig.cap="Share via research consortium", include=FALSE}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(share_consortia) +
   ggplot2::geom_bar() +
@@ -545,9 +566,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[16], ": ", survey_qs_df$question[16])` 
 
 ```{r fig-equipped-for-new-reqmts, fig.cap="How well-equipped do you feel you, your colleagues, and trainees are to meet data management and sharing requirements of sponsors/funders or journals?"}
-survey %>%
-  dplyr::mutate(.,
-                equipped_data_mgmt_sharing = factor(
+survey |>
+  dplyr::mutate(equipped_data_mgmt_sharing = factor(
                   equipped_data_mgmt_sharing,
                   c(
                     "Not equipped at all",
@@ -556,8 +576,8 @@ survey %>%
                     "Equipped",
                     "Very well equipped"
                   )
-                )) %>%
-  dplyr::filter(., !is.na(equipped_data_mgmt_sharing)) %>%
+                )) |>
+  dplyr::filter(!is.na(equipped_data_mgmt_sharing)) |>
   ggplot2::ggplot() +
   ggplot2::aes(equipped_data_mgmt_sharing) +
   ggplot2::geom_bar() +
@@ -571,13 +591,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[17], ": ", survey_qs_df$question[17])` 
 
 ```{r fig-how-often-generate-code, fig.cap="How often do you create computer scripts or data analysis code in the conduct of your research?"}
-survey %>%
-  dplyr::mutate(., create_analysis_code = factor(
+survey |>
+  dplyr::mutate(create_analysis_code = factor(
     create_analysis_code,
     c("Never", "Rarely",
       "Sometimes", "Often", "Always")
-  )) %>%
-  dplyr::filter(., !is.na(create_analysis_code)) %>%
+  )) |>
+  dplyr::filter(!is.na(create_analysis_code)) |>
   ggplot2::ggplot() +
   ggplot2::aes(create_analysis_code) +
   ggplot2::geom_bar() +
@@ -589,14 +609,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[18], ": ", survey_qs_df$question[18])` 
 
 ```{r fig-how-often-share-code, fig.cap = "How often do you share computer scripts or data analysis code with direct research collaborators ?"}
-survey %>%
-  dplyr::mutate(.,
-                share_analysis_code_collab = factor(
+survey |>
+  dplyr::mutate(share_analysis_code_collab = factor(
                   share_analysis_code_collab,
                   c("Never", "Rarely",
                     "Sometimes", "Often", "Always")
-                )) %>%
-  dplyr::filter(., !is.na(share_analysis_code_collab)) %>%
+                )) |>
+  dplyr::filter(!is.na(share_analysis_code_collab)) |>
   ggplot2::ggplot() +
   ggplot2::aes(share_analysis_code_collab) +
   ggplot2::geom_bar() +
@@ -608,7 +627,7 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[19], ": ", survey_qs_df$question[19])` 
 
 ```{r fig-create-other-software, fig.cap="Do you create other kinds of software in the conduct of your research?"}
-survey %>%
+survey |>
   ggplot2::ggplot() +
   ggplot2::aes(create_other_code) +
   ggplot2::geom_bar() +
@@ -620,11 +639,11 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[20], ": ", survey_qs_df$question[20])` 
 
 ```{r fig-how-often-code-sharing-tools, fig.cap="How often do you use open source code sharing tools (e.g., GitHub, GitLab, BitBucket)?"}
-survey %>%
-  dplyr::mutate(., use_code_sharing_tools = factor(use_code_sharing_tools, 
+survey |>
+  dplyr::mutate(use_code_sharing_tools = factor(use_code_sharing_tools, 
                                                       c("Never", "Rarely", 
-                                                        "Sometimes", "Often", "Always"))) %>%
-  dplyr::filter(., !is.na(use_code_sharing_tools)) %>%
+                                                        "Sometimes", "Often", "Always"))) |>
+  dplyr::filter(!is.na(use_code_sharing_tools)) |>
   ggplot2::ggplot() +
   ggplot2::aes(use_code_sharing_tools) +
   ggplot2::geom_bar() +
@@ -636,8 +655,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[21], ": ", survey_qs_df$question[21])` 
 
 ```{r fig-funders-require-code-sharing, fig.cap="Do sponsors/funders in your field require code sharing?"}
-survey %>%
-  dplyr::filter(., !is.na(funders_require_code_sharing)) %>%
+survey |>
+  dplyr::filter(!is.na(funders_require_code_sharing)) |>
   ggplot2::ggplot() +
   ggplot2::aes(funders_require_code_sharing) +
   ggplot2::geom_bar() +
@@ -649,8 +668,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[22], ": ", survey_qs_df$question[22])` 
 
 ```{r fig-journals-require-code-sharing, fig.cap="Do journals in your field require code sharing?"}
-survey %>%
-  dplyr::filter(., !is.na(funders_require_code_sharing)) %>%
+survey |>
+  dplyr::filter(!is.na(funders_require_code_sharing)) |>
   ggplot2::ggplot() +
   ggplot2::aes(journals_require_code_sharing) +
   ggplot2::geom_bar() +
@@ -662,14 +681,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[34], ": ", survey_qs_df$question[34])` 
 
 ```{r fig-how-often-share-code-openly, fig.cap="How often do you share computer scripts or data analysis code openly?"}
-survey %>%
-  dplyr::mutate(.,
-                share_analysis_code_community = factor(
+survey |>
+  dplyr::mutate(share_analysis_code_community = factor(
                   share_analysis_code_community,
                   c("Never", "Rarely",
                     "Sometimes", "Often", "Always")
-                )) %>%
-  dplyr::filter(., !is.na(share_analysis_code_community)) %>%
+                )) |>
+  dplyr::filter(!is.na(share_analysis_code_community)) |>
   ggplot2::ggplot() +
   ggplot2::aes(share_analysis_code_community) +
   ggplot2::geom_bar() +
@@ -681,9 +699,8 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[23], ": ", survey_qs_df$question[23])` 
 
 ```{r fig-share-materials-community, fig.cap="How often do you openly share other materials related to your research (protocols, reagents, samples, apparatus, designs, etc.) with other researchers?"}
-survey %>%
-  dplyr::mutate(.,
-                share_materials_community = factor(
+survey |>
+  dplyr::mutate(share_materials_community = factor(
                   share_materials_community,
                   c(
                     "Never",
@@ -693,8 +710,8 @@ survey %>%
                     "Always",
                     "Not applicable"
                   )
-                )) %>%
-  dplyr::filter(.,!is.na(share_materials_community)) %>%
+                )) |>
+  dplyr::filter(!is.na(share_materials_community)) |>
   ggplot2::ggplot() +
   ggplot2::aes(share_materials_community) +
   ggplot2::geom_bar() +
@@ -708,13 +725,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[24], ": ", survey_qs_df$question[24])` 
 
 ```{r fig-experience-w-open-science, fig.cap="What is your experience with/knowledge of open science practices?"}
-survey %>%
-  dplyr::mutate(., knowledge_open_science = factor(
+survey |>
+  dplyr::mutate(knowledge_open_science = factor(
     knowledge_open_science,
     c("None", "Limited",
       "Some", "Considerable", "Extensive")
-  )) %>%
-  dplyr::filter(.,!is.na(knowledge_open_science)) %>%
+  )) |>
+  dplyr::filter(!is.na(knowledge_open_science)) |>
   ggplot2::ggplot() +
   ggplot2::aes(knowledge_open_science) +
   ggplot2::geom_bar() +
@@ -726,14 +743,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[25], ": ", survey_qs_df$question[25])` 
 
 ```{r fig-awareness-FAIR, fig.cap="Describe your awareness of the FAIR (findable, accessible, interoperable, reusable) principles pertaining to research data."}
-survey %>%
-  dplyr::mutate(.,
-                awareness_FAIR = factor(
+survey |>
+  dplyr::mutate(awareness_FAIR = factor(
                   awareness_FAIR,
                   c("None", "Limited",
                     "Some", "Considerable", "Extensive")
-                )) %>%
-  dplyr::filter(.,!is.na(awareness_FAIR)) %>%
+                )) |>
+  dplyr::filter(!is.na(awareness_FAIR)) |>
   ggplot2::ggplot() +
   ggplot2::aes(awareness_FAIR) +
   ggplot2::geom_bar() +
@@ -745,14 +761,13 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[26], ": ", survey_qs_df$question[26])` 
 
 ```{r fig-apply-FAIR-own-research, fig.cap="Do you apply FAIR principles in your own data management and sharing practices?"}
-survey %>%
-  dplyr::mutate(.,
-                apply_FAIR = factor(
+survey |>
+  dplyr::mutate(apply_FAIR = factor(
                   apply_FAIR,
                   c("Never", "Rarely",
                     "Sometimes", "Often", "Always", "Not applicable")
-                )) %>%
-  dplyr::filter(., !is.na(apply_FAIR)) %>%
+                )) |>
+  dplyr::filter(!is.na(apply_FAIR)) |>
   ggplot2::ggplot() +
   ggplot2::aes(apply_FAIR) +
   ggplot2::geom_bar() +
@@ -765,8 +780,8 @@ survey %>%
 
 
 ```{r fig-heard-of-repro-crisis, fig.cap="Have you heard of the 'reproducibility crisis' in science?"}
-survey %>%
-  dplyr::filter(., !is.na(heardof_reproducibility_crisis)) %>%
+survey |>
+  dplyr::filter(!is.na(heardof_reproducibility_crisis)) |>
   ggplot2::ggplot() +
   ggplot2::aes(heardof_reproducibility_crisis) +
   ggplot2::geom_bar() +
@@ -778,12 +793,12 @@ survey %>%
 > `r paste0("Question ", survey_qs_df$q_num[28], ": ", survey_qs_df$question[28])` 
 
 ```{r fig-repro-crisis-your-area, fig.cap="Is there a reproducibility crisis in your area of research?"}
-survey %>%
-  dplyr::mutate(., my_area_reproducibility_crisis = factor(
+survey |>
+  dplyr::mutate(my_area_reproducibility_crisis = factor(
     my_area_reproducibility_crisis,
     c("Don't know", "No, there is no crisis", "Yes, a slight crisis", "Yes, a significant crisis")
-  )) %>%
-  dplyr::filter(., !is.na(my_area_reproducibility_crisis)) %>%
+  )) |>
+  dplyr::filter(!is.na(my_area_reproducibility_crisis)) |>
   ggplot2::ggplot() +
   ggplot2::aes(my_area_reproducibility_crisis) +
   ggplot2::geom_bar() +
@@ -796,9 +811,8 @@ survey %>%
 
 ```{r fig-benefit-from-psu-ctr, fig.cap="How much benefit would you derive from a center at Penn State focused on supporting the adoption of best practices in data management and sharing, code sharing, open science, and reproducible research?"}
 
-survey %>%
-  dplyr::mutate(.,
-                benefit_psu_center = factor(
+survey |>
+  dplyr::mutate(benefit_psu_center = factor(
                   benefit_psu_center,
                   levels = c(
                     "None",
@@ -808,8 +822,8 @@ survey %>%
                     "Extensive",
                     "Not applicable"
                   )
-                )) %>%
-  dplyr::filter(., !is.na(benefit_psu_center)) %>%
+                )) |>
+  dplyr::filter(!is.na(benefit_psu_center)) |>
   ggplot2::ggplot() +
   ggplot2::aes(benefit_psu_center) +
   ggplot2::geom_bar() +
@@ -822,10 +836,9 @@ survey %>%
 
 ```{r fig-services-from-center, fig.cap="Select the services that would most benefit your research if offered by such a center."}
 
-services_center <- survey %>%
-  dplyr::select(., contains("help_")) %>%
+services_center <- survey |>
+  dplyr::select(contains("help_")) |>
   tidyr::pivot_longer(
-    .,
     cols = c(
       'help_data_review_qa',
       'help_data_mgmt_plan',
@@ -838,10 +851,10 @@ services_center <- survey %>%
     ),
     names_to = "center_services_types",
     values_to = "center_services_vals"
-  ) %>%
-  dplyr::mutate(., center_services_types = str_remove(center_services_types, "help_"))
+  ) |>
+  dplyr::mutate(center_services_types = str_remove(center_services_types, "help_"))
 
-services_center %>%
+services_center |>
   ggplot2::ggplot() +
   ggplot2::aes(center_services_types,
                as.numeric(center_services_vals)) +
@@ -857,9 +870,9 @@ services_center %>%
 > `r paste0("Question ", survey_qs_df$q_num[31], ": ", survey_qs_df$question[31])` 
 
 ```{r fig-comments, fig.cap="Any final comments about data management, data sharing, and open science?"}
-survey %>%
-  dplyr::filter(., !is.na(comments)) %>%
-  dplyr::select(., comments) %>%
+survey |>
+  dplyr::filter(!is.na(comments)) |>
+  dplyr::select(comments) |>
   knitr::kable(format = 'html')
 ```
 

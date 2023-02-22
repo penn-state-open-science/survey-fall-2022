@@ -1,3 +1,4 @@
+fig:response-time-series
 fig:fig-campus
 fig:fig-dept-unit
 fig:fig-position

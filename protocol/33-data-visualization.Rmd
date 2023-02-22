@@ -24,7 +24,7 @@ There are $n=$ `r dim(survey_qs_df)[1]` questions in total.
 
 As of `r Sys.time()`, we have had $n$= `r dim(survey)[1]` responses.
 
-## Time series of response date {-}
+## Time series of responses by date {-}
 
 ```{r response-time-series, fig.cap="Time series of responses"}
 survey <- survey |>

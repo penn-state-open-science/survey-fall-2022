@@ -23,7 +23,7 @@ The survey questions are here: <https://forms.gle/oT2ekzCsw7KVU8YU8>.
 We have separated the data update process from the generation of this report since some manual cleaning of the department names must be done first. So, the typical workflow is to run the following at the console:
 
 ```{r, eval=FALSE}
-source('R/functions.R')
+source('../R/functions.R')
 update_data(force_update = TRUE, google_credentials = Sys.getenv("GMAIL_ROG"))
 survey <- open_survey()
 

@@ -128,10 +128,9 @@ show_unique_depts <- function(df) {
 
 ###############################################################################
 clean_depts <- function(df) {
-  df <- df %>%
+  df <- df |>
     dplyr::mutate(
-      .,
-      department = recode(
+      department = dplyr::recode(
         department,
         `Curriculum and Instruction (College of Education)` = "curriculum & instruction",
         `CLA Economics` = "Economics",
@@ -159,8 +158,8 @@ clean_depts <- function(df) {
         `Telecommunications & Women's, Gender, and Sexuality Studies` = "Women's, Gender, and Sexuality Studies",
         `Underwater basket-weaving` = "None"
       )
-    ) %>%
-    dplyr::mutate(., department = tolower(department))
+    ) |>
+    dplyr::mutate(department = tolower(department))
   df
 }
 

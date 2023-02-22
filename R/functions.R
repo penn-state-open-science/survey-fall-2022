@@ -145,6 +145,7 @@ clean_depts <- function(df) {
         `HDFS` = "Human Development and Family Studies",
         `HDFS/CMSN` = "Human Development and Family Studies",
         `Human Develoment & Family Studies` = "Human Development and Family Studies",
+        `IST` = "College of Information Sciences and Technology",
         `Liberal Arts` = "College of the Liberal Arts",
         `pscyhology` = "Psychology",
         `Psych` = "Psychology",

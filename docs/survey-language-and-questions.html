@@ -93,7 +93,7 @@
 <h2>Email to prospective participants<a class="anchor" aria-label="anchor" href="#email-to-participants"><i class="fas fa-link"></i></a>
 </h2>
 <p>Read the latest version of the recruiting email text (<code>survey_recruiting_email.txt</code>):</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey_recruiting_email</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_file.html">read_file</a></span><span class="op">(</span><span class="st">"survey_recruiting_email.txt"</span><span class="op">)</span></span></code></pre></div>
 <p>And then display it:</p>
 <p>Dear Penn Stater:</p>
@@ -114,7 +114,7 @@
 <h2>Survey introduction<a class="anchor" aria-label="anchor" href="#survey_intro"><i class="fas fa-link"></i></a>
 </h2>
 <p>Read the lastest version of the introduction to the survey (<code>survey_intro.txt</code>):</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">survey_intro</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_file.html">read_file</a></span><span class="op">(</span><span class="st">"survey_intro.txt"</span><span class="op">)</span></span></code></pre></div>
 <p>Display the survey intro:</p>
 <p>We are asking you to be in a research study. Whether or not you take part is up to you. You can choose not to take part. You can agree to take part and later change your mind. Your decision will not be held against you, and there will be no penalty.</p>
@@ -129,19 +129,19 @@
 <p><strong>Note</strong>: Here is a useful reference for what language to use for Likert scale questions <a href="https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf" class="uri">https://www.extension.iastate.edu/documents/anr/likertscaleexamplesforsurveys.pdf</a></p>
 </div>
 <p>Read the survey questions from the most recent copy of the downloaded dataset.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span><span class="op">)</span> <span class="co"># for pipe %&gt;% operator</span></span>
 <span></span>
 <span><span class="co"># Read local copy of survey</span></span>
 <span><span class="va">survey</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"csv/open-science-survey-2022-fall.csv"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Rows: 90 Columns: 35
-## ── Column specification ───────────────
+<pre><code>## Rows: 92 Columns: 35
+## ── Column specification ───────────────────────────────────────────
 ## Delimiter: ","
-## chr (35): Timestamp, What Penn Stat...
+## chr (35): Timestamp, What Penn State campus do you represent?, ...
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Drop the Timestamp since it is provided by Google Forms automatically</span></span>
 <span><span class="va">survey_questions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">survey</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
 <span></span>
@@ -435,7 +435,7 @@ How often do you share computer scripts or data analysis code openly?
 </tbody>
 </table></div>
 <p>Let’s export these questions for transparency and to use as an attachment for IRB submissions:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Write as text file</span></span>
 <span><span class="va">fileConn3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">file</a></span><span class="op">(</span><span class="st">"survey_questions.txt"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="va">survey_questions</span>, <span class="va">fileConn3</span><span class="op">)</span></span>

@@ -255,7 +255,7 @@ survey |>
 ```{r fig-store-lab, fig.cap="Personal/lab computer", include=FALSE}
 survey |>
   ggplot2::ggplot() +
-  ggplot2::aes(store_lab) +
+  ggplot2::aes(store_pc_lab) +
   ggplot2::geom_bar() +
   theme_light()
 ```
@@ -263,7 +263,7 @@ survey |>
 ```{r fig-store-server, fig.cap="Departmental/college server", include=FALSE}
 survey |>
   ggplot2::ggplot() +
-  ggplot2::aes(store_server) +
+  ggplot2::aes(store_dept_coll_server) +
   ggplot2::geom_bar() +
   theme_light()
 ```

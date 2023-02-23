@@ -240,12 +240,12 @@ survey <- survey %>%
                 store_usb = stringr::str_detect(storage_active_projects,
                                                 "External USB or flash drive")) %>%
   dplyr::mutate(.,
-                store_lab = stringr::str_detect(storage_active_projects,
-                                                "Personal/lab computer")) %>%
+                store_pc_lab = stringr::str_detect(storage_active_projects,
+                                                   "Personal/lab computer")) %>%
   dplyr::mutate(
     .,
-    store_server = stringr::str_detect(storage_active_projects,
-                                       "Departmental/college server")
+    store_dept_coll_server = stringr::str_detect(storage_active_projects,
+                                                 "Departmental/college server")
   ) %>%
   dplyr::mutate(.,
                 store_icds = stringr::str_detect(storage_active_projects,

@@ -341,12 +341,12 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <span>                store_usb <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
 <span>                                                <span class="st">"External USB or flash drive"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
-<span>                store_lab <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
-<span>                                                <span class="st">"Personal/lab computer"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                store_pc_lab <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
+<span>                                                   <span class="st">"Personal/lab computer"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    <span class="va">.</span>,</span>
-<span>    store_server <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
-<span>                                       <span class="st">"Departmental/college server"</span><span class="op">)</span></span>
+<span>    store_dept_coll_server <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
+<span>                                                 <span class="st">"Departmental/college server"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">.</span>,</span>
 <span>                store_icds <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">storage_active_projects</span>,</span>
@@ -609,7 +609,7 @@ The survey questions are here: <a href="https://forms.gle/oT2ekzCsw7KVU8YU8" cla
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-02-22.</p>
+    <p>"<strong>Open Science at Penn State</strong>" was written by Rick O. Gilmore, Frank Hillary, Nicole Lazar, Briana Wham. It was last built on 2023-02-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

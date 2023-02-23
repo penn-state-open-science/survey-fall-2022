@@ -173,6 +173,13 @@ open_clean_depts_show_unique <- function() {
 }
 
 ###############################################################################
+open_show_unique_depts <- function() {
+  open_survey() |>
+    clean_names() |>
+    show_unique_depts()
+}
+
+###############################################################################
 update_report <- function(rpt_url = "docs/index.html",
                           open_rpt = TRUE) {
   message("Updating data file")

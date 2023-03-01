@@ -139,6 +139,7 @@ clean_depts <- function(df) {
         `EPCSE` = "educational psychology, counseling, and special education",
         `Educational Psychology` = "educational psychology, counseling, and special education",
         `Education` = "college of education",
+        `EE` = "Electrical Engineering",
         `GSLL` = "Germanic and Slavic Languages",
         `HDFS` = "Human Development and Family Studies",
         `HDFS/CMSN` = "Human Development and Family Studies",
@@ -158,6 +159,7 @@ clean_depts <- function(df) {
         `Spanish, Italian & Portuguese` = "Spanish, Italian, and Portuguese",
         `You’ve said we can choose to omit items. What` = "College of the Liberal Arts",
         `Telecommunications & Women's, Gender, and Sexuality Studies` = "Women's, Gender, and Sexuality Studies",
+        `the department of energy and mineral engineering` = "Energy and Mineral Engineering",
         `Underwater basket-weaving` = "None"
       )
     ) |>

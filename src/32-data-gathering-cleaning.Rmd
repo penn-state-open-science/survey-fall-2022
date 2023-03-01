@@ -15,6 +15,12 @@ if (!require(googledrive)) {
 suppressPackageStartupMessages(library("tidyverse")) # for pipe %>%
 ```
 
+::: {.rmdnote}
+
+**TODO**: Convert code from `magrittr` pipe (`%>%`) to R pipe (`|>`).
+
+:::
+
 ## Download data {-}
 
 The survey was generated and data collected using Google Forms.

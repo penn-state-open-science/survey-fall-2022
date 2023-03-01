@@ -1,0 +1,21 @@
+# Rendering report {-}
+
+## Updating data {-}
+
+Since the survey results have come in over an extended time period, it has been necessary to update the data on a regular basis.
+
+Several functions in `R/functions.R` contribute to this.
+
+The `update_data()` function with the default parameters loads the locally saved CSV.
+However, `update_data(force_update = TRUE)` authenticates to Google and downloads a new CSV that replaces the old file in `src/csv/`.
+
+## Pre-cleaning data {-}
+
+Most of the cleaning occurs via the processes detailed in [Data Gathering and Cleaning].
+However, respondents report their departmental or unit affiliation using different conventions.
+So, `open_show_unique_depts()` is used to open the local CSV and show a sorted list of the unique department names.
+From that, specific name mappings can be added to the `clean_depts()` function, e.g., '`CLA Economics` = "Economics"' maps the user-provided term 'CLA Economics' to the preferred one 'Economics'.
+
+## Rendering the report {-}
+
+If `source("R/functions.R")` has been run, then `update_report()` forces a data update, re-renders the report, and opens the home page from `docs/index.html`.

@@ -1,28 +1,26 @@
 # functions.R
 
 ###############################################################################
-render_protocol_bootstrap4 <- function(input_dir = 'protocol', 
-                                       output_dir = 'docs') {
-  if (!dir.exists(output_dir)) {
-    stop("Output directory doesn't exist: ", output_dir)
-  }
+render_protocol_bootstrap4 <- function(input_dir = 'src') {
   
+  stopifnot(is.character(input_dir))
+  stopifnot(dir.exists(input_dir))
+
   bookdown::render_book(input_dir, 
                         output_format = bookdown::bs4_book())
 }
 
 ###############################################################################
-render_protocol_gitbook <- function(output_dir = 'docs') {
-  if (!dir.exists(output_dir)) {
-    stop("Output directory doesn't exist: ", output_dir)
-  }
+render_protocol_gitbook <- function(input_dir = 'src') {
+  stopifnot(is.character(input_dir))
+  stopifnot(dir.exists(input_dir))
   
-  bookdown::render_book('protocol')
-  
+  bookdown::render_book(input_dir,
+                        output_format = bookdown::gitbook())
 }
 
 ###############################################################################
-update_data <- function(csv_fn="protocol/csv/open-science-survey-2022-fall.csv",
+update_data <- function(csv_fn="src/csv/open-science-survey-2022-fall.csv",
                         google_sheet_fn = "C-ORR Survey 2022 Fall (Responses)",
                         force_update = FALSE,
                         google_credentials) {
@@ -30,10 +28,11 @@ update_data <- function(csv_fn="protocol/csv/open-science-survey-2022-fall.csv",
   stopifnot(is.character(csv_fn))
   stopifnot(is.character(google_sheet_fn))
   stopifnot(is.logical(force_update))
+  stopifnot(is.character(google_credentials))
   
   if (!file.exists(csv_fn)) {
     no_current_csv <- TRUE
-    csv_fn <- "protocol/csv/open-science-survey-2022-fall.csv"
+    csv_fn <- "src/csv/open-science-survey-2022-fall.csv"
   } else {
     no_current_csv <- FALSE
     message("File '", csv_fn, "' exists. No changes made.")
@@ -41,8 +40,8 @@ update_data <- function(csv_fn="protocol/csv/open-science-survey-2022-fall.csv",
   
   if (no_current_csv || force_update) {
     message("Forcing update. Downloading data from Google.")
-    if (!dir.exists('protocol/csv')) {
-      message("No `protocol/csv` directory found; creating.")
+    if (!dir.exists('src/csv')) {
+      message("No `src/csv` directory found; creating.")
       dir.create('protocol/csv')
     }
     
@@ -58,7 +57,7 @@ update_data <- function(csv_fn="protocol/csv/open-science-survey-2022-fall.csv",
 }
 
 ###############################################################################
-open_survey <- function(csv_fn = 'protocol/csv/open-science-survey-2022-fall.csv', 
+open_survey <- function(csv_fn = 'src/csv/open-science-survey-2022-fall.csv', 
                         vb = TRUE) {
   stopifnot(is.character(csv_fn))
   stopifnot(file.exists(csv_fn))

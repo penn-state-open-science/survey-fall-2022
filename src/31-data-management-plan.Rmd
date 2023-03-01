@@ -1,8 +1,8 @@
-# Data Management and Sharing Plan {#data_mgmt_plan -}
+# Data Management and Sharing Plan {#data-mgmt-plan -}
 
 ::: {.rmdnote}
 
-The following was generated on 2023-02-17. It is based on document OMB No. 0925-0001 and 0925-0002 (Rev. 07/2022 Approved Through TBD).
+The following was updated on 2023-03-01. It is based on document OMB No. 0925-0001 and 0925-0002 (Rev. 07/2022 Approved Through TBD).
 
 Note that the following contains some URLs provided by the user. These are prohibited in a document submitted to NIH. Since this document is not part of an NIH study, we provide them here for transparency.
 
@@ -24,7 +24,9 @@ This project will collect responses to surveys from approximately 100-500 studen
 
 *Describe which scientific data from the project will be preserved and shared and provide the rationale for this decision.*
 
-The Penn State Institutional Review Board determined that [the project was exempt](irb_submission_history.html). We will seek permission from the IRB to share non-identifiable data with the public.
+The Penn State Institutional Review Board determined that [the project was exempt](irb_submission_history.html). Summary results are shared publicly via the web. 
+
+At a later date, we may seek permission from the IRB to share non-identifiable case-level data with the public. But we did not request individual-level sharing permission from participants at the outset of the study.
 
 ### C. Metadata, other relevant data, and associated documentation: {-}
 
@@ -50,19 +52,19 @@ There are no consensus standards that apply to these data to our knowledge. Howe
 
 *Provide the name of the repository(ies) where scientific data and metadata arising from the project will be archived; see [Selecting a Data Repository](https://sharing.nih.gov/data-management-and-sharing-policy/sharing-scientific-data/selecting-a-data-repository).*
 
-When the project is complete and we receive permission to do so, the data will be archived on Databrary (<https://databrary.org>). Metadata and visualizations will be archived on GitHub, <https://penn-state-open-science.github.io/survey-fall-2022/>.
+When the project is complete and we receive permission to do so, the data may be archived on Databrary (<https://databrary.org>). Metadata and summary data/visualizations will be archived on GitHub, <https://penn-state-open-science.github.io/survey-fall-2022/>.
 
 ### B. How scientific data will be findable and identifiable:  {-}
 
 *Describe how the scientific data will be findable and identifiable, i.e., via a persistent unique identifier or other standard indexing tools.*
 
-When the project has been shared, Databrary will create a persistent identifier (e.g., DOI).
+If the project data are shared publicly, Databrary will create a persistent identifier (e.g., DOI).
 
 ### C. When and how long the scientific data will be made available: {-}
 
 *Describe when the scientific data will be made available to other users (i.e., no later than time of an associated publication or end of the performance period, whichever comes first) and for how long data will be available.*
 
-Data will be made immediately available to the public when they are shared.
+Summary data are available now. Individual-level data, if shared, will be made immediately available to the public.
 
 ## Element 5: Access, Distribution, or Reuse Considerations: {-}
 
@@ -70,7 +72,7 @@ Data will be made immediately available to the public when they are shared.
 
 *NIH expects that in drafting Plans, researchers maximize the appropriate sharing of scientific data. Describe and justify any applicable factors or data use limitations affecting subsequent access, distribution, or reuse of scientific data related to informed consent, privacy and confidentiality protections, and any other considerations that may limit the extent of data sharing. See [Frequently Asked Questions](https://sharing.nih.gov/faqs#/data-management-and-sharing-policy.htm) for examples of justifiable reasons for limiting sharing of data.*
 
-Some respondents elected to provide us contact information for follow-up discussions. Those data elements will be removed from the data before sharing.
+Some respondents elected to provide us contact information for follow-up discussions. Those data elements will be removed from the data before sharing. The identifying information (emails, names) are stored on a local, password-protected, computer that is used to render process the data and render the analyses.
 
 ### B. Whether access to scientific data will be controlled: {-}
 
@@ -84,7 +86,7 @@ Once shared, data from this project will be available to anyone.
 
 *If generating scientific data derived from humans, describe how the privacy, rights, and confidentiality of human research participants will be protected (e.g., through de-identification, Certificates of Confidentiality, and other protective measures).*
 
-We will remove names, phone numbers, and email addresses (if provided) before sharing data.
+We will remove names, phone numbers, and email addresses (if provided) before sharing any individual-level data.
 
 ## Element 6: Oversight of Data Management and Sharing: {-}
 

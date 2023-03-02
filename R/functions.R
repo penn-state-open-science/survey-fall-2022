@@ -131,6 +131,7 @@ clean_depts <- function(df) {
     dplyr::mutate(
       department = dplyr::recode(
         department,
+        `CAS` = "Communication Arts & Sciences",
         `Curriculum and Instruction (College of Education)` = "curriculum & instruction",
         `CLA Economics` = "Economics",
         `Department of Curriculum and Instruction` = "curriculum & instruction",

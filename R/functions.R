@@ -2,11 +2,10 @@
 
 ###############################################################################
 render_protocol_bootstrap4 <- function(input_dir = 'src') {
-  
   stopifnot(is.character(input_dir))
   stopifnot(dir.exists(input_dir))
-
-  bookdown::render_book(input_dir, 
+  
+  bookdown::render_book(input_dir,
                         output_format = bookdown::bs4_book())
 }
 
@@ -20,52 +19,54 @@ render_protocol_gitbook <- function(input_dir = 'src') {
 }
 
 ###############################################################################
-update_data <- function(csv_fn="src/csv/open-science-survey-2022-fall.csv",
-                        google_sheet_fn = "C-ORR Survey 2022 Fall (Responses)",
-                        force_update = FALSE,
-                        google_credentials) {
-  
-  stopifnot(is.character(csv_fn))
-  stopifnot(is.character(google_sheet_fn))
-  stopifnot(is.logical(force_update))
-  stopifnot(is.character(google_credentials))
-  
-  if (!file.exists(csv_fn)) {
-    no_current_csv <- TRUE
-    csv_fn <- "src/csv/open-science-survey-2022-fall.csv"
-  } else {
-    no_current_csv <- FALSE
-    message("File '", csv_fn, "' exists. No changes made.")
-  }
-  
-  if (no_current_csv || force_update) {
-    message("Forcing update. Downloading data from Google.")
-    if (!dir.exists('src/csv')) {
-      message("No `src/csv` directory found; creating.")
-      dir.create('protocol/csv')
+update_data <-
+  function(csv_fn = "src/csv/open-science-survey-2022-fall.csv",
+           google_sheet_fn = "C-ORR Survey 2022 Fall (Responses)",
+           force_update = FALSE,
+           google_credentials) {
+    stopifnot(is.character(csv_fn))
+    stopifnot(is.character(google_sheet_fn))
+    stopifnot(is.logical(force_update))
+    stopifnot(is.character(google_credentials))
+    
+    if (!file.exists(csv_fn)) {
+      no_current_csv <- TRUE
+      csv_fn <- "src/csv/open-science-survey-2022-fall.csv"
+    } else {
+      no_current_csv <- FALSE
+      message("File '", csv_fn, "' exists. No changes made.")
     }
     
-    googledrive::drive_auth(google_credentials)
-    
-    googledrive::drive_download(
-      file = google_sheet_fn,
-      path = csv_fn,
-      type = 'csv',
-      overwrite = TRUE
-    )  
+    if (no_current_csv || force_update) {
+      message("Forcing update. Downloading data from Google.")
+      if (!dir.exists('src/csv')) {
+        message("No `src/csv` directory found; creating.")
+        dir.create('protocol/csv')
+      }
+      
+      googledrive::drive_auth(google_credentials)
+      
+      googledrive::drive_download(
+        file = google_sheet_fn,
+        path = csv_fn,
+        type = 'csv',
+        overwrite = TRUE
+      )
+    }
   }
-}
 
 ###############################################################################
-open_survey <- function(csv_fn = 'src/csv/open-science-survey-2022-fall.csv', 
-                        vb = TRUE) {
-  stopifnot(is.character(csv_fn))
-  stopifnot(file.exists(csv_fn))
-  
-  df <- readr::read_csv(csv_fn, show_col_types = FALSE)
-  if (vb) message("There are n=", dim(df)[1], " responses.")
-  df
-}
+open_survey <-
+  function(csv_fn = 'src/csv/open-science-survey-2022-fall.csv',
+           vb = TRUE) {
+    stopifnot(is.character(csv_fn))
+    stopifnot(file.exists(csv_fn))
+    
+    df <- readr::read_csv(csv_fn, show_col_types = FALSE)
+    if (vb)
+      message("There are n=", dim(df)[1], " responses.")
+    df
+  }
 
 ###############################################################################
 clean_names <- function(df) {
@@ -114,7 +115,8 @@ clean_names <- function(df) {
   if (length(short_names) == length(names(df))) {
     names(df) <- short_names
   } else {
-    if (vb) message("Name vector lengths differ; no change made.")
+    if (vb)
+      message("Name vector lengths differ; no change made.")
   }
   df
 }
@@ -122,7 +124,7 @@ clean_names <- function(df) {
 ###############################################################################
 show_unique_depts <- function(df) {
   stopifnot(is.data.frame(df))
-  sort(unique(df$department)) 
+  sort(unique(df$department))
 }
 
 ###############################################################################
@@ -169,6 +171,15 @@ clean_depts <- function(df) {
 }
 
 ###############################################################################
+update_data_check_unique_depts <- function() {
+  message("Updating data file")
+  update_data(force_update = TRUE,
+              google_credentials = Sys.getenv("GMAIL_ROG"))
+  
+  open_show_unique_depts()
+}
+
+###############################################################################
 open_clean_depts_show_unique <- function() {
   require(tidyverse)
   open_survey() |>
@@ -188,10 +199,12 @@ open_show_unique_depts <- function() {
 update_report <- function(rpt_url = "docs/index.html",
                           open_rpt = TRUE) {
   message("Updating data file")
-  update_data(force_update = TRUE, google_credentials = Sys.getenv("GMAIL_ROG"))
+  update_data(force_update = TRUE,
+              google_credentials = Sys.getenv("GMAIL_ROG"))
   
   message("Rendering full report.")
   render_protocol_bootstrap4()
   
-  if (open_rpt) browseURL(rpt_url)
+  if (open_rpt)
+    browseURL(rpt_url)
 }

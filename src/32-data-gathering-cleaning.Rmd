@@ -12,7 +12,7 @@ if (!require(googledrive)) {
   install.packages("googledrive")
 }
 
-suppressPackageStartupMessages(library("tidyverse")) # for pipe %>%
+suppressPackageStartupMessages(library("tidyverse"))
 ```
 
 ::: {.rmdnote}
@@ -131,8 +131,8 @@ Some of the variables have values that are easy to parse, while others are more 
 Make a standard date_time format.
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(., timestamp = lubridate::mdy_hms(timestamp, tz = "America/New_York"))
+survey <- survey |>
+  dplyr::mutate(timestamp = lubridate::mdy_hms(timestamp, tz = "America/New_York"))
 ```
 
 ### Modify `campus` {-}
@@ -140,9 +140,9 @@ survey <- survey %>%
 Make all campus locations lowercase and replace white space with underscores.
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(., campus = tolower(campus)) %>%
-  dplyr::mutate(., campus = stringr::str_replace(campus, " ", "_"))
+survey <- survey |>
+  dplyr::mutate(campus = tolower(campus)) |>
+  dplyr::mutate(campus = stringr::str_replace(campus, " ", "_"))
 ```
 
 ### Modify `department` {- #modify_dept}
@@ -156,9 +156,9 @@ survey <- clean_depts(survey)
 Make lowercase, replace spaces and dash with underscore.
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(., position = tolower(position)) %>%
-  dplyr::mutate(., position = stringr::str_replace_all(position, "[ -]", "_"))
+survey <- survey |>
+  dplyr::mutate(position = tolower(position)) |>
+  dplyr::mutate(position = stringr::str_replace_all(position, "[ -]", "_"))
 ```
 
 ### Modify `years_since_degree` {-}
@@ -172,64 +172,47 @@ survey <- survey %>%
 ### Modify `data_types` {-}
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(., collect_audio = stringr::str_detect(data_types, "Audio files")) %>%
-  dplyr::mutate(., collect_video = stringr::str_detect(data_types, "Video files")) %>%
+survey <- survey |>
+  dplyr::mutate(collect_audio = stringr::str_detect(data_types, "Audio files")) |>
+  dplyr::mutate(collect_video = stringr::str_detect(data_types, "Video files")) |>
+  dplyr::mutate(collect_photos = stringr::str_detect(data_types, "Digital photographs and/or other images")) |>
   dplyr::mutate(
-    .,
-    collect_photos = stringr::str_detect(data_types, "Digital photographs and/or other images")
-  ) %>%
-  dplyr::mutate(
-    .,
     collect_computer_data = stringr::str_detect(
       data_types,
       "Data automatically generated from or by computer programs"
     )
-  ) %>%
-  dplyr::mutate(.,
-                collect_sensor = stringr::str_detect(data_types, "Data collected from sensors")) %>%
-  dplyr::mutate(.,
-                collect_docs = stringr::str_detect(data_types, "Documents or reports")) %>%
-  dplyr::mutate(.,
-                collect_models = stringr::str_detect(data_types, "Models/algorithms")) %>%
-  dplyr::mutate(., collect_obs = stringr::str_detect(data_types, "Observational data")) %>%
+  ) |>
+  dplyr::mutate(collect_sensor = stringr::str_detect(data_types, "Data collected from sensors")) |>
+  dplyr::mutate(collect_docs = stringr::str_detect(data_types, "Documents or reports")) |>
+  dplyr::mutate(collect_models = stringr::str_detect(data_types, "Models/algorithms")) |>
+  dplyr::mutate(collect_obs = stringr::str_detect(data_types, "Observational data")) |>
+  dplyr::mutate(collect_sims = stringr::str_detect(data_types, "Simulation data, models, and software code")) |>
   dplyr::mutate(
-    .,
-    collect_sims = stringr::str_detect(data_types, "Simulation data, models, and software code")
-  ) %>%
-  dplyr::mutate(
-    .,
     collect_procedures = stringr::str_detect(data_types, "Standard operating procedures and protocols")
-  ) %>%
-  dplyr::mutate(., collect_txt = stringr::str_detect(data_types, "Text files")) %>%
-  dplyr::mutate(., collect_genomic = stringr::str_detect(data_types, "Genomic")) %>%
-  dplyr::mutate(., collect_image = stringr::str_detect(data_types, "Image data")) %>%
-  dplyr::mutate(., collect_surveys = stringr::str_detect(data_types, "Survey results")) %>%
-  dplyr::mutate(.,
-                collect_spreadsheets = stringr::str_detect(data_types, "Spreadsheets")) %>%
-  dplyr::mutate(.,
-                collect_interviews = stringr::str_detect(data_types, "interview transcripts")) %>%
-  dplyr::mutate(.,
-                collect_gis = stringr::str_detect(data_types, "Geographic Information Systems")) %>%
-  dplyr::mutate(.,
-                collect_sketches = stringr::str_detect(data_types, "Sketches, diaries in digital form")) %>%
-  dplyr::mutate(.,
-                collect_vr = stringr::str_detect(data_types, "Virtual reality, 3D models")) %>%
-  dplyr::mutate(.,
-                collect_xml_json = stringr::str_detect(data_types, "Structured text files")) %>%
-  dplyr::mutate(.,
-                collect_web_social = stringr::str_detect(data_types, "Websites and blogs"))
-  
+  ) |>
+  dplyr::mutate(collect_txt = stringr::str_detect(data_types, "Text files")) |>
+  dplyr::mutate(collect_genomic = stringr::str_detect(data_types, "Genomic")) |>
+  dplyr::mutate(collect_image = stringr::str_detect(data_types, "Image data")) |>
+  dplyr::mutate(collect_surveys = stringr::str_detect(data_types, "Survey results")) |>
+  dplyr::mutate(collect_spreadsheets = stringr::str_detect(data_types, "Spreadsheets")) |>
+  dplyr::mutate(collect_interviews = stringr::str_detect(data_types, "interview transcripts")) |>
+  dplyr::mutate(collect_gis = stringr::str_detect(data_types, "Geographic Information Systems")) |>
+  dplyr::mutate(collect_sketches = stringr::str_detect(data_types, "Sketches, diaries in digital form")) |>
+  dplyr::mutate(collect_vr = stringr::str_detect(data_types, "Virtual reality, 3D models")) |>
+  dplyr::mutate(collect_xml_json = stringr::str_detect(data_types, "Structured text files")) |>
+  dplyr::mutate(collect_web_social = stringr::str_detect(data_types, "Websites and blogs"))
 ```
 
 ### Modify `restricted_data` {-}
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(., restricted_ethical = stringr::str_detect(restricted_data, "ethical concerns"),
-                restricted_legal_ip = stringr::str_detect(restricted_data, "legal/intellectual"),
-                restricted_sponsor = stringr::str_detect(restricted_data, "contractual restrictions"),
-                restricted_none = str_detect(restricted_data, "No; My data are not restricted"))
+survey <- survey |>
+  dplyr::mutate(
+    restricted_ethical = stringr::str_detect(restricted_data, "ethical concerns"),
+    restricted_legal_ip = stringr::str_detect(restricted_data, "legal/intellectual"),
+    restricted_sponsor = stringr::str_detect(restricted_data, "contractual restrictions"),
+    restricted_none = str_detect(restricted_data, "No; My data are not restricted")
+  )
 ```
 
 ### Modify `storage_active_projects` {-}
@@ -241,34 +224,27 @@ survey <- survey %>%
 :::
 
 ```{r}
-survey <- survey %>%
-  dplyr::mutate(.,
-                store_usb = stringr::str_detect(storage_active_projects,
-                                                "External USB or flash drive")) %>%
-  dplyr::mutate(.,
-                store_pc_lab = stringr::str_detect(storage_active_projects,
-                                                   "Personal/lab computer")) %>%
+survey <- survey |>
+  dplyr::mutate(store_usb = stringr::str_detect(storage_active_projects,
+                                                "External USB or flash drive")) |>
+  dplyr::mutate(store_pc_lab = stringr::str_detect(storage_active_projects,
+                                                   "Personal/lab computer")) |>
   dplyr::mutate(
-    .,
     store_dept_coll_server = stringr::str_detect(storage_active_projects,
                                                  "Departmental/college server")
-  ) %>%
-  dplyr::mutate(.,
-                store_icds = stringr::str_detect(storage_active_projects,
-                                                 "ICDS/ROAR allocation")) %>%
+  ) |>
+  dplyr::mutate(store_icds = stringr::str_detect(storage_active_projects,
+                                                 "ICDS/ROAR allocation")) |>
   dplyr::mutate(
-    .,
     store_onedrive = stringr::str_detect(storage_active_projects,
                                          "Microsoft OneDrive/SharePoint")
-  ) %>%
-  dplyr::mutate(.,
-                store_googledrive = stringr::str_detect(storage_active_projects,
-                                                        "Google Drive")) %>%
-  dplyr::mutate(.,
-                store_dropbox = stringr::str_detect(storage_active_projects,
-                                                    "Dropbox")) %>%
-  dplyr::mutate(., store_box = stringr::str_detect(storage_active_projects,
-                                                   "Box"))
+  ) |>
+  dplyr::mutate(store_googledrive = stringr::str_detect(storage_active_projects,
+                                                        "Google Drive")) |>
+  dplyr::mutate(store_dropbox = stringr::str_detect(storage_active_projects,
+                                                    "Dropbox")) |>
+  dplyr::mutate(store_box = stringr::str_detect(storage_active_projects,
+                                                "Box"))
 ```
 
 ### Modify `barriers_sharing_collab`  {-}
@@ -288,35 +264,30 @@ survey <- survey %>%
 :::
 
 ```{r}
-survey <- survey %>%
+survey <- survey |>
   dplyr::mutate(
-    .,
     barriers_sharing_security = stringr::str_detect(
       barriers_share_community,
       "Ensuring security/restricting access"
     )
-  ) %>%
+  ) |>
   dplyr::mutate(
-    .,
     barriers_sharing_curation = stringr::str_detect(
       barriers_share_community,
       "Taking time to curate, organize, document data"
     )
-  ) %>%
+  ) |>
   dplyr::mutate(
-    .,
     barriers_sharing_alter_before_share = stringr::str_detect(
       barriers_share_community,
       "Altering data to make it suitable to share"
     )
-  ) %>%
+  ) |>
   dplyr::mutate(
-    .,
     barriers_sharing_resources = stringr::str_detect(barriers_share_community,
                                                      "Insufficient resources for sharing")
-  ) %>%
+  ) |>
   dplyr::mutate(
-    .,
     barriers_sharing_staff = stringr::str_detect(
       barriers_share_community,
       "Lack of available or knowledgeable staff"
@@ -327,41 +298,32 @@ survey <- survey %>%
 ### Modify `where_shared_community` {-}
 
 ```{r}
-survey <- survey %>%
+survey <- survey |>
+  dplyr::mutate(share_inst_repo = stringr::str_detect(where_shared_community,
+                                                      "Institutional repository")) |>
   dplyr::mutate(
-    .,
-    share_inst_repo = stringr::str_detect(where_shared_community,
-                                          "Institutional repository")
-  ) %>%
-  dplyr::mutate(
-    .,
     share_journal_suppl = stringr::str_detect(
       where_shared_community,
       "Supplemental material linked to journal article"
     )
-  ) %>%
-  dplyr::mutate(.,
-                share_lab_web = stringr::str_detect(where_shared_community,
-                                                    "Lab/project website")) %>%
-  dplyr::mutate(.,
-                share_ext_repo = stringr::str_detect(where_shared_community,
-                                                     "External data repository")) %>%
+  ) |>
+  dplyr::mutate(share_lab_web = stringr::str_detect(where_shared_community,
+                                                    "Lab/project website")) |>
+  dplyr::mutate(share_ext_repo = stringr::str_detect(where_shared_community,
+                                                     "External data repository")) |>
   dplyr::mutate(
-    .,
     share_govt_repo = stringr::str_detect(where_shared_community,
                                           "Government data repository")
-  ) %>%
-  dplyr::mutate(.,
-                share_consortia = stringr::str_detect(where_shared_community,
+  ) |>
+  dplyr::mutate(share_consortia = stringr::str_detect(where_shared_community,
                                                       "Research consortia"))
 ```
 
 ### Modify `knowledge_open_science` {-}
 
 ```{r}
-survey <- survey %>%
+survey <- survey |>
   dplyr::mutate(
-    .,
     knowledge_open_science = recode(
       knowledge_open_science,
       `No experience/knowledge` = "None",
@@ -376,9 +338,8 @@ survey <- survey %>%
 ### Modify `awareness_FAIR` {-}
 
 ```{r}
-survey <- survey %>%
+survey <- survey |>
   dplyr::mutate(
-    .,
     awareness_FAIR = recode(
       awareness_FAIR,
       `No awareness` = "None",
@@ -393,9 +354,8 @@ survey <- survey %>%
 ### Modify `benefit_psu_center` {-}
 
 ```{r}
-survey <- survey %>%
+survey <- survey |>
   dplyr::mutate(
-    .,
     benefit_psu_center = recode(
       benefit_psu_center,
       `No benefit` = "None",
@@ -410,48 +370,33 @@ survey <- survey %>%
 ### Modify `service_psu_center` {-}
 
 ```{r}
-survey <- survey %>%
+survey <- survey |>
+  dplyr::mutate(help_data_review_qa = stringr::str_detect(service_psu_center,
+                                                          "Data review and quality")) |>
+  dplyr::mutate(help_data_mgmt_plan = stringr::str_detect(service_psu_center,
+                                                          "Data management plan")) |>
+  dplyr::mutate(help_data_doc = stringr::str_detect(service_psu_center,
+                                                    "Data documentation")) |>
   dplyr::mutate(
-    .,
-    help_data_review_qa = stringr::str_detect(service_psu_center,
-                                          "Data review and quality")
-  ) %>%
-  dplyr::mutate(
-    .,
-    help_data_mgmt_plan = stringr::str_detect(service_psu_center,
-                                          "Data management plan")
-  ) %>%
-  dplyr::mutate(
-    .,
-    help_data_doc = stringr::str_detect(service_psu_center,
-                                          "Data documentation")
-  ) %>%
-  dplyr::mutate(
-    .,
     help_data_analysis_verif = stringr::str_detect(service_psu_center,
-                                          "Third party verification")
-  ) %>%  
+                                                   "Third party verification")
+  ) |>
   dplyr::mutate(
-    .,
     help_student_staff_train = stringr::str_detect(service_psu_center,
-                                          "Training and technical assistance")
-  )  %>%
+                                                   "Training and technical assistance")
+  )  |>
   dplyr::mutate(
-    .,
     help_data_deidentif = stringr::str_detect(service_psu_center,
-                                          "De-identification or anonymization")
-  ) %>%
+                                              "De-identification or anonymization")
+  ) |>
   dplyr::mutate(
-    .,
     help_funder_compliance = stringr::str_detect(service_psu_center,
-                                          "Ensuring compliance with funding")
-  ) %>%
+                                                 "Ensuring compliance with funding")
+  ) |>
   dplyr::mutate(
-    .,
     help_where_to_share = stringr::str_detect(service_psu_center,
-                                          "recommendation of suitable")
+                                              "recommendation of suitable")
   )
- 
 ```
 
 ## Re-export cleaned data {-}
@@ -463,9 +408,10 @@ readr::write_csv(survey, "csv/open-science-survey-2022-fall-clean.csv")
 ## Select and export contact data for follow-up {-}
 
 ```{r}
-contact_info <- survey %>%
-  dplyr::select(., contact_info) %>%
-  dplyr::filter(., !is.na(contact_info))
+contact_info <- survey |>
+  dplyr::select(contact_info) |>
+  dplyr::filter(!is.na(contact_info))
 
-readr::write_csv(contact_info, "csv/open-science-survey-2022-fall-contact-info.csv")
+readr::write_csv(contact_info,
+                 "csv/open-science-survey-2022-fall-contact-info.csv")
 ```

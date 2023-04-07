@@ -3,7 +3,10 @@ bookdown::bs4_book:
   theme:
     primary: "#096B72"
     code_folding: hide
-  repo: 'https://github.com/penn-state-open-science/survey-fall-2022'
+  repo:
+      base: https://github.com/penn-state-open-science/survey-fall-2022
+      branch: main
+      subdir: src
 bookdown::gitbook:
   code_folding: hide
   css: css/style.css

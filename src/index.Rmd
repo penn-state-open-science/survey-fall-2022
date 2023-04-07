@@ -34,9 +34,9 @@ source("../R/functions.R")
 
 # About {-}
 
-This is a research protocol for *`r params$irb_long_name`*, `r params$irb_id` (`r params$irb_short_name`) written in **Markdown**.
+This is a research protocol for *`r params$irb_long_name`*, `r params$irb_id` (`r params$irb_short_name`) written in [**Markdown**](https://www.markdownguide.org/).
 
-It also represents an exercise in how to use git-based version control, Rmarkdown, and the `bookdown` package to create an open research protocol that also addresses questions required for the Penn State IRB's protocol review process. 
+It also represents an exercise in how to use git-based version control, [R Markdown](https://rmarkdown.rstudio.com/), and the [`bookdown`](https://bookdown.org/yihui/bookdown/) package to create an open research protocol that also addresses questions required for the [Penn State IRB's](https://www.research.psu.edu/irb) protocol review process. 
 Our goal is to reduce duplication of effort and to demonstrate how an IRB research application might also be used as a living, version-controlled, research protocol.
 
 These materials may be copied and reused by anyone.

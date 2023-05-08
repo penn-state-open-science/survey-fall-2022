@@ -1,6 +1,30 @@
 # functions.R
 
 ###############################################################################
+check_dependencies <- function(csv_dir = "src/csv") {
+  check_gmail_creds()
+  
+  if (!dir.exists(csv_dir)) {
+    message(csv_dir, " not found; creating.")
+    dir.create(csv_dir)
+  }
+}
+
+###############################################################################
+check_gmail_creds <- function() {
+  gmail_env_var <- Sys.getenv("GMAIL_SURVEY")
+  if (gmail_env_var == "") {
+    message("Gmail account used for survey access not stored in .Renviron.")
+    message("For convenience, you may wish to store your Gmail account (not password) in .Renviron.")
+    message("Use `usethis::edit_r_environ()` to add GMAIL_SURVEY='<your_gmail_account>'.")
+    message("Alternatively, make sure to provide your Gmail account as the 
+            `google_credential` parameter in any calls to `update_data()`")
+  } else {
+    message("Gmail credentials found.")
+  }
+}
+
+###############################################################################
 render_protocol_bootstrap4 <- function(input_dir = 'src') {
   stopifnot(is.character(input_dir))
   stopifnot(dir.exists(input_dir))
@@ -20,10 +44,15 @@ render_protocol_gitbook <- function(input_dir = 'src') {
 
 ###############################################################################
 update_data <-
-  function(csv_fn = "src/csv/open-science-survey-2022-fall.csv",
+  function(csv_dir = "src/csv",
+           csv_f = "open-science-survey-2022-fall.csv",
+           csv_fn = file.path(csv_dir, csv_f),
            google_sheet_fn = "C-ORR Survey 2022 Fall (Responses)",
            force_update = FALSE,
            google_credentials) {
+    
+    stopifnot(is.character(csv_dir))
+    stopifnot(is.character(csv_f))
     stopifnot(is.character(csv_fn))
     stopifnot(is.character(google_sheet_fn))
     stopifnot(is.logical(force_update))
@@ -31,7 +60,7 @@ update_data <-
     
     if (!file.exists(csv_fn)) {
       no_current_csv <- TRUE
-      csv_fn <- "src/csv/open-science-survey-2022-fall.csv"
+      csv_fn <- file.path(csv_dir, csv_f)
     } else {
       no_current_csv <- FALSE
       message("File '", csv_fn, "' exists. No changes made.")
@@ -39,9 +68,9 @@ update_data <-
     
     if (no_current_csv || force_update) {
       message("Forcing update. Downloading data from Google.")
-      if (!dir.exists('src/csv')) {
-        message("No `src/csv` directory found; creating.")
-        dir.create('protocol/csv')
+      if (!dir.exists(csv_dir)) {
+        message(csv_dir, " not found; creating.")
+        dir.create(csv_dir)
       }
       
       googledrive::drive_auth(google_credentials)
@@ -196,11 +225,12 @@ open_show_unique_depts <- function() {
 }
 
 ###############################################################################
-update_report <- function(rpt_url = "docs/index.html",
+update_report <- function(google_credentials = Sys.getenv("GMAIL_SURVEY"),
+                          rpt_url = "docs/index.html",
                           open_rpt = TRUE) {
   message("Updating data file")
   update_data(force_update = TRUE,
-              google_credentials = Sys.getenv("GMAIL_ROG"))
+              google_credentials = google_credentials)
   
   message("Rendering full report.")
   render_protocol_bootstrap4()
